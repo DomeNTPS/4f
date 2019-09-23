@@ -2,13 +2,17 @@ import React from 'react';
 import { StyleSheet,  Button,  View,  SafeAreaView,  Text,  Alert,} from 'react-native';
 import AppNavigator from './src/AppNavigator';
 
-export default function App() {
+export default class App extends React.Component {
+  render(){
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-    </View>
-    //<Button title='Submit' onPress{() => } />
-  );
+    <AppNavigator/>
+    
+    // <View style={styles.container}>
+    //   <Text>Hello !</Text>
+      
+    // </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
