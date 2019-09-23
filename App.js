@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,  Button,  View,  SafeAreaView,  Text,  Alert,} from 'react-native';
+import AppNavigator from './src/AppNavigator';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Hello World!</Text>
     </View>
+    //<Button title='Submit' onPress{() => } />
   );
 }
 
