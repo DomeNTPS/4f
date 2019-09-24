@@ -86,6 +86,21 @@ export default class Login extends React.Component {
                 }
             }
             />
+
+            <View style = {{flex: 0.02}}></View>
+
+            <TouchableOpacity
+            onPress = {
+                () =>
+                this.props.navigation.navigate('Home')
+            }
+            underlayColor = '#fff' >
+                <
+                Text style = {
+                    styles.ForgetText
+                } > Forget Password? </Text>  
+            </TouchableOpacity>
+
             <View style = { styles.bla } ></View>
 
             <TouchableOpacity style = {styles.container2}
@@ -148,6 +163,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
+    ForgetText: {
+        color: '#fff',
+        //textAlign: 'center',
+        paddingLeft: 200,
+        paddingRight: 10,
+        fontSize: 10,
+    },
         bla:{
             flex: 0.03,
             alignItems: 'center',
