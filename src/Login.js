@@ -22,7 +22,6 @@ export default class Login extends React.Component {
                 } >
                     <Image style = {
                     {
-                        
                         width: 150,
                         height: 150
                     }
