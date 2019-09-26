@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Alert, Linking, Dimensions, LayoutAnimation, Text, View, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
-import { BarCodeScanner, Permissions } from 'expo';
+import { BarCodeScanner } from 'expo';
+import * as Permissions from 'expo-permissions';
 
-export default class App extends Component {
+export default class ScanScreen extends React.Component {
   state = {
     hasCameraPermission: null,
     lastScannedUrl: null,
