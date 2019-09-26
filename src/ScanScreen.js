@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 class ScanScreen extends Component {
