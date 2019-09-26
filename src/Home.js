@@ -7,16 +7,17 @@ import {
     Text,
     Alert,
 } from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class Home extends React.Component {
     render() {
         return ( <View style = {styles.container} >
             <Text>We have no friends!</Text>
               <Button
-              title = "Add some friends"
+              title = "Qr man"
               onPress = {
                   () =>
-                  this.props.navigation.navigate('Friends')
+                  this.props.navigation.navigate('ScanScreen')
               }
               ></Button>
             </View>
