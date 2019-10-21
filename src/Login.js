@@ -27,12 +27,12 @@ export default class Login extends React.Component {
                     }
                 }
                     source = {
-                        require('../Image/tools.png')
+                        require('../Image/Logo_kmitl.png')
                     }
          /></View> 
         <View style = {styles.blank}></View>
             
-        <Text style = {{paddingRight: 250,fontSize: 20,color: 'white'}} >Login</Text>
+        <Text style = {{paddingRight: 250,fontSize: 20,color: '#000'}} >Login</Text>
 
        
 
@@ -51,10 +51,10 @@ export default class Login extends React.Component {
                 {
                     height: 40,
                     width: 300,
-                    borderColor: '#fff',
+                    borderColor: '#c0c0c0',
                     borderWidth: 1,
                     borderRadius: 10,
-                    backgroundColor: '#fff',
+                    backgroundColor: '#c0c0c0',
                    
                    
                 }
@@ -78,10 +78,10 @@ export default class Login extends React.Component {
                     alignContent: 'center',
                     height: 40,
                     width: 300,
-                    borderColor: '#fff',
+                    borderColor: '#c0c0c0',
                     borderWidth: 1,
                     borderRadius: 10,
-                    backgroundColor: '#fff',
+                    backgroundColor: '#c0c0c0',
                 }
             }
             />
@@ -93,7 +93,7 @@ export default class Login extends React.Component {
                 () =>
                 this.props.navigation.navigate('Home')
             }
-            underlayColor = '#fff' >
+            underlayColor = '#c0c0c0' >
                 <
                 Text style = {
                     styles.ForgetText
@@ -112,6 +112,8 @@ export default class Login extends React.Component {
                             styles.loginText
                         }> Submit </Text>
             </TouchableOpacity>
+
+            <View style = {styles.bla} ></View>
 
             <TouchableOpacity 
                 onPress = {
@@ -133,7 +135,7 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#000',
+        backgroundColor: '#fff',
         alignItems: 'center',
         // justifyContent: 'center',
     },
@@ -155,15 +157,15 @@ const styles = StyleSheet.create({
     },
 
     GuestText: {
-        color: '#fff',
+        color: '#c0c0c0',
         textAlign: 'center',
         paddingLeft: 10,
         paddingRight: 10,
-        fontSize: 20,
+        fontSize: 17,
     },
 
     ForgetText: {
-        color: '#fff',
+        color: '#c0c0c0',
         //textAlign: 'center',
         paddingLeft: 200,
         paddingRight: 10,
