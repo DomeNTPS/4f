@@ -6,11 +6,6 @@ export default class App extends React.Component {
   render(){
   return (
     <AppNavigator/>
-    
-    // <View style={styles.container}>
-    //   <Text>Hello !</Text>
-      
-    // </View>
     );
   }
 }
