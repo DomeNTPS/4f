@@ -6,9 +6,54 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: ''
+            UserName: '',
+            UserPass: ''
         };
     }
+
+    UserLoginFunction = () =>{
+ 
+        const { UserName }  = this.state ;
+        const { UserPass }  = this.state ;
+        
+        
+       fetch('https://reactnativecode.000webhostapp.com/User_Login.php', {
+         method: 'POST',
+         headers: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+        
+           name: UserName,
+        
+           password: UserPass
+        
+         })
+        
+       }).then((response) => response.json())
+             .then((responseJson) => {
+        
+               // If server response message same as Data Matched
+              if(responseJson === 'Data Matched')
+               {
+        
+                   //Then open Profile activity and send user email to profile activity.
+                   this.props.navigation.navigate('Home', { Name: UserName });
+        
+               }
+               else{
+        
+                 Alert.alert(responseJson);
+               }
+        
+             }).catch((error) => {
+               console.error(error);
+             });
+        
+        
+         }
+
     render() {   
         
          return(
@@ -44,7 +89,7 @@ export default class Login extends React.Component {
              })
              }
              value = {
-                 this.state.text
+                 this.state.UserName
              }
             placeholder = "Username"
             style = {
@@ -70,7 +115,7 @@ export default class Login extends React.Component {
                 })
             }
             value2 = {
-                this.state.text2
+                this.state.UserPass
             }
             placeholder = "Password"
             style = {
