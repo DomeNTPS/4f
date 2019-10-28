@@ -1,16 +1,18 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Home from './Home';
-import Friends from './Friends';
+import Part from './Part';
 import Login from './Login';
 import ScanScreen from './ScanScreen';
+import Data from './Data';
 
 const AppNavigator = createStackNavigator({
     
     Login: {screen: Login},
     Home: {screen: Home},
-    Friends: {screen: Friends},
+    Part: {screen: Part},
     ScanScreen: {screen: ScanScreen},
+    Data: {screen: Data},
     
 });
 

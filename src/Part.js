@@ -9,11 +9,9 @@ import {
     Image,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-
-export default class Home extends React.Component {
+export default class Friends extends React.Component {
     render() {
-        return (<View style ={styles.container}>
-             
+        return ( <View style = {styles.container} >
         <View style = {styles.containertop} >
         <TouchableOpacity
             title = "Scan"
@@ -36,22 +34,7 @@ export default class Home extends React.Component {
             </View>
         </TouchableOpacity>
         </View>
-        <View style = {styles.containerpicture}>
-
-        <TouchableOpacity onPress={()=>
-                this.props.navigation.navigate('Part')}>
-        <Image style = {
-                    {
-                        paddingRight : 20,
-                        paddingBottom : 30,
-                        width: 400,
-                        height: 250
-                    }
-                }
-        source={require('../Image/Part/Steam_boiler.png')}/>
-        </TouchableOpacity>
-        </View>
-        </View>
+            </View>
         );
     }
 }
@@ -60,19 +43,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-    
-        //justifyContent: 'center',
+        
     },
-
-    ImageIconStyle: {
-        padding: 10,
-        margin: 5,
-        height: 25,
-        width: 25,
-        resizeMode : 'stretch',
-
-    },
-
     containertop: {
         flex: 0.45,
         backgroundColor: '#fff',
@@ -92,5 +64,12 @@ const styles = StyleSheet.create({
         //alignItems: 'center',
         //justifyContent: 'center',
     },
+    ImageIconStyle: {
+        padding: 10,
+        margin: 5,
+        height: 25,
+        width: 25,
+        resizeMode : 'stretch',
 
+    },
 });
