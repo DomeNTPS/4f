@@ -6,9 +6,13 @@ import {
     SafeAreaView,
     Text,
     Alert,
+    Modal,
     Image,
+    Dimensions,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import ImageViewer from 'react-native-image-zoom-viewer';
+import ImageZoom from 'react-native-image-pan-zoom';
 
 export default class Home extends React.Component {
     render() {
@@ -38,8 +42,14 @@ export default class Home extends React.Component {
         </View>
         <View style = {styles.containerpicture}>
 
-        <TouchableOpacity onPress={()=>
-                this.props.navigation.navigate('Part')}>
+        
+        <ImageZoom     cropWidth={400}
+                       cropHeight={250}
+                       imageWidth={400}
+                       imageHeight={250} 
+                       onClick = {
+                                    () =>
+                                    this.props.navigation.navigate('Part')}>
         <Image style = {
                     {
                         paddingRight : 20,
@@ -48,8 +58,10 @@ export default class Home extends React.Component {
                         height: 250
                     }
                 }
+        
         source={require('../Image/Part/Steam_boiler.png')}/>
-        </TouchableOpacity>
+    
+        </ImageZoom >
         </View>
         </View>
         );
