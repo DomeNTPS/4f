@@ -11,13 +11,33 @@ import {
     Dimensions,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import ImageViewer from 'react-native-image-zoom-viewer';
+import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 import ImageZoom from 'react-native-image-pan-zoom';
 
 export default class Home extends React.Component {
+    // logOutZoomState = (event, gestureState, zoomableViewEventObject) => {
+    //     console.log('');
+    //     console.log('');
+    //     console.log('-------------');
+    //     console.log('Event: ', event);
+    //     console.log('GestureState: ', gestureState);
+    //     console.log('ZoomableEventObject: ', zoomableViewEventObject);
+    //     console.log('');
+    //     console.log(`Zoomed from ${zoomableViewEventObject.lastZoomLevel} to  ${zoomableViewEventObject.zoomLevel}`);
+    // }
     render() {
         return (<View style ={styles.container}>
-             
+            {/* <ReactNativeZoomableView
+                maxZoom={1.5}
+                minZoom={0}
+                zoomStep={0.5}
+                initialZoom={1}
+                bindToBorders={true}
+                // onZoomAfter={this.logOutZoomState}
+                style={{
+                    // padding: 10,
+                    backgroundColor: 'red',
+                }}>       */}
         <View style = {styles.containertop} >
         <TouchableOpacity
             title = "Scan"
@@ -40,16 +60,18 @@ export default class Home extends React.Component {
             </View>
         </TouchableOpacity>
         </View>
-        <View style = {styles.containerpicture}>
-
-        
+        <View style={styles.containerbottom}>
+            
         <ImageZoom     cropWidth={400}
                        cropHeight={250}
                        imageWidth={400}
-                       imageHeight={250} 
-                       onClick = {
-                                    () =>
-                                    this.props.navigation.navigate('Part')}>
+                       imageHeight={250}
+                        onDoubleClick={
+                            () => this.props.navigation.navigate('Part')} >
+        {/* <TouchableOpacity
+                    title = "Scan"
+            onPress = {
+                    () =>this.props.navigation.navigate('Part')}> */}
         <Image style = {
                     {
                         paddingRight : 20,
@@ -60,9 +82,11 @@ export default class Home extends React.Component {
                 }
         
         source={require('../Image/Part/Steam_boiler.png')}/>
-    
-        </ImageZoom >
-        </View>
+        {/* </TouchableOpacity> */}
+        </ImageZoom > 
+            
+            </View>
+            {/* </ReactNativeZoomableView> */}
         </View>
         );
     }
@@ -86,14 +110,15 @@ const styles = StyleSheet.create({
     },
 
     containertop: {
-        flex: 0.45,
+        flex: 0.1,
         backgroundColor: '#fff',
         alignItems: 'flex-end',
         paddingTop : 20,
+        
         //justifyContent: 'center',
     },
     containerbottom: {
-        flex: 0.8,
+        flex: 0.9,
         backgroundColor: '#fff',
         alignItems: 'center',
         //justifyContent: 'center',
