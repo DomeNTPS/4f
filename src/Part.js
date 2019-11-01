@@ -39,63 +39,74 @@ export default class Friends extends React.Component {
         <View style = {
                 styles.containerbottom1
             } >
-            < ImageZoom cropWidth = {200}
-                        cropHeight = {400}
-                        imageWidth = {200}
-                        imageHeight = {400}
+            < ImageZoom cropWidth = {125}
+                        cropHeight = {125}
+                        imageWidth = {125}
+                        imageHeight = {125}
             onDoubleClick = {
                 () => this.props.navigation.navigate('Part')} > 
                 <Image style = {
                 {
                     paddingRight: 0,
                     paddingBottom: 0,
-                    width: 200,
-                    height: 400
+                    width: 125,
+                    height: 125
                 }
             }
             source = {
-            require('../Image/boiler/boilerซ้าย.png')
+            require('../Image/boiler/boilerซ้ายf.png')
         }/>
         
         </ImageZoom >
-        < ImageZoom cropWidth = {100}
-                    cropHeight = {100}
-                    imageWidth = {100}
-                    imageHeight = {100}
+        <View style={
+                    styles.containerbottom2
+                } >
+        < ImageZoom cropWidth = {110}
+                    cropHeight = {150}
+                    imageWidth = {110}
+                    imageHeight = {150}
+                    // paddingTop = {100}
                     onDoubleClick = {
                 () => this.props.navigation.navigate('Part')} > 
                 <Image style = {
                 {
                     paddingRight: 0,
                     paddingBottom: 0,
-                    width: 100,
-                    height: 100
+                    paddingTop : 100,
+                    width: 110,
+                    height: 110
                 }
             }
             source = {
-            require('../Image/boiler/boilerกลาง.png')
+            require('../Image/boiler/boilerกลางf.png')
         }/>
-        </ImageZoom > 
-        <ImageZoom  cropWidth = {100}
-                    cropHeight = {100}
+        </ImageZoom >
+        </View>
+        <View style={
+                    styles.containerbottom3
+                } > 
+        <ImageZoom  
+                    cropWidth = {100}
+                    cropHeight = {200}
                     imageWidth = {100}
-                    imageHeight = {100}
+                    imageHeight = {200}
                     onDoubleClick = {
                 () => this.props.navigation.navigate('Part')
             } >
             <Image style = {
-                {
+                {   
                     paddingRight: 0,
                     paddingBottom: 0,
-                    width: 100,
-                    height: 100
+                    width: 80,
+                    height: 200
                 }
             }
         source = {
-            require('../Image/boiler/boilerขวา.png')
+            require('../Image/boiler/boilerขวาf.png')
         }
         /> 
-        </ImageZoom >   
+        </ImageZoom >
+        </View>   
         </View> 
         {/* <View style = {
                 styles.containerbottom2
@@ -153,12 +164,28 @@ const styles = StyleSheet.create({
     containerbottom1: {
         flex: 0.6,
         backgroundColor: '#fff',
-        flexDirection: "row"
+        flexDirection: "row",
+        padding : 40,
+        // paddingTop : 50,
     },
     containerbottom2: {
+        flex: 0.6,
+        paddingTop : 55,
+        paddingRight : 20,
+        backgroundColor: '#fff',
+        flexDirection: "row"
+    },
+    containerbottom3: {
+        flex: 0.6,
+        paddingTop: 5,
+        paddingRight: 10,
+        backgroundColor: '#fff',
+        flexDirection: "row"
+    },
+    containerbottom0: {
         flex: 0.2,
         backgroundColor: '#fff',
-        alignItems: 'center',
+        
     },
     containerpicture: {
         //flex: 0.8,
