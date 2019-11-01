@@ -39,22 +39,22 @@ export default class Friends extends React.Component {
         <View style = {
                 styles.containerbottom1
             } >
-            < ImageZoom cropWidth = {125}
-                        cropHeight = {125}
-                        imageWidth = {125}
-                        imageHeight = {125}
+            < ImageZoom cropWidth = {140}
+                        cropHeight = {188}
+                        imageWidth = {140}
+                        imageHeight = {188}
             onDoubleClick = {
                 () => this.props.navigation.navigate('Part')} > 
                 <Image style = {
                 {
                     paddingRight: 0,
                     paddingBottom: 0,
-                    width: 125,
-                    height: 125
+                    width: 140,
+                    height: 150
                 }
             }
             source = {
-            require('../Image/boiler/boilerซ้ายf.png')
+            require('../Image/equipment/boilerซ้ายแก้ไข1.png')
         }/>
         
         </ImageZoom >
@@ -62,23 +62,22 @@ export default class Friends extends React.Component {
                     styles.containerbottom2
                 } >
         < ImageZoom cropWidth = {110}
-                    cropHeight = {150}
+                    cropHeight = {130}
                     imageWidth = {110}
-                    imageHeight = {150}
-                    // paddingTop = {100}
+                    imageHeight = {130}
                     onDoubleClick = {
                 () => this.props.navigation.navigate('Part')} > 
                 <Image style = {
                 {
-                    paddingRight: 0,
+
                     paddingBottom: 0,
                     paddingTop : 100,
                     width: 110,
-                    height: 110
+                    height: 120
                 }
             }
             source = {
-            require('../Image/boiler/boilerกลางf.png')
+            require('../Image/equipment/boilerกลางแก้ไข.png')
         }/>
         </ImageZoom >
         </View>
@@ -87,9 +86,9 @@ export default class Friends extends React.Component {
                 } > 
         <ImageZoom  
                     cropWidth = {100}
-                    cropHeight = {200}
+                    cropHeight = {158}
                     imageWidth = {100}
-                    imageHeight = {200}
+                    imageHeight = {158}
                     onDoubleClick = {
                 () => this.props.navigation.navigate('Part')
             } >
@@ -97,50 +96,42 @@ export default class Friends extends React.Component {
                 {   
                     paddingRight: 0,
                     paddingBottom: 0,
-                    width: 80,
-                    height: 200
+                    width: 85,
+                    height: 140
                 }
             }
         source = {
-            require('../Image/boiler/boilerขวาf.png')
+            require('../Image/equipment/boilerขวาแก้ไข.png')
+        }
+        /> 
+        </ImageZoom >
+        </View>
+        </View>
+        <View style={
+                    styles.containerbottom0
+                } > 
+        <ImageZoom  
+                    cropWidth = {200}
+                    cropHeight = {100}
+                    imageWidth = {200}
+                    imageHeight = {100}
+                    onDoubleClick = {
+                () => this.props.navigation.navigate('Part')
+            } >
+            <Image style = {
+                {   
+                    paddingRight: 0,
+                    paddingBottom: 0,
+                    width: 250,
+                    height: 50
+                }
+            }
+        source = {
+            require('../Image/equipment/boilerล่างแก้ไข.png')
         }
         /> 
         </ImageZoom >
         </View>   
-        </View> 
-        {/* <View style = {
-                styles.containerbottom2
-            } >
-
-            
-        
-         < ImageZoom cropWidth = {
-             100
-         }
-     cropHeight = {100}
-     imageWidth = {
-         100
-     }
-     imageHeight = {
-         100
-     }
-     onDoubleClick = {
-             () => this.props.navigation.navigate('Part')
-         } >
-         <Image style = {
-             {
-                 paddingRight: 0,
-                 paddingBottom: 0,
-                 width: 100,
-                 height: 100
-             }
-         }
-     source = {
-         require('../Image/boiler/boilerล่าง.png')
-     }
-     /> 
-     </ImageZoom >  
-     </View>   */}
      </View>
         );
     }
@@ -165,27 +156,28 @@ const styles = StyleSheet.create({
         flex: 0.6,
         backgroundColor: '#fff',
         flexDirection: "row",
-        padding : 40,
-        // paddingTop : 50,
+        padding : 20,        
     },
     containerbottom2: {
         flex: 0.6,
-        paddingTop : 55,
-        paddingRight : 20,
+        paddingTop : 58,
+        paddingRight : 50,
         backgroundColor: '#fff',
         flexDirection: "row"
     },
     containerbottom3: {
         flex: 0.6,
-        paddingTop: 5,
-        paddingRight: 10,
+        paddingTop: 29.5,
+        paddingRight: 65,
         backgroundColor: '#fff',
         flexDirection: "row"
     },
     containerbottom0: {
-        flex: 0.2,
+        // flex: 0.2,
         backgroundColor: '#fff',
-        
+        flexDirection: "column",
+        paddingBottom : 200,
+        padding : 50
     },
     containerpicture: {
         //flex: 0.8,
