@@ -5,6 +5,10 @@ import Part from './Part';
 import Login from './Login';
 import ScanScreen from './ScanScreen';
 import Data from './Data';
+import Partboilerleft from './Partboilerleft';
+import Partboilermiddle from './Partboilermiddle';
+import Partboilerright from './Partboilerright';
+import Partboilerbottom from './Partboilerbottom';
 
 const AppNavigator = createStackNavigator({
     
