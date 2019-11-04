@@ -44,7 +44,7 @@ export default class Friends extends React.Component {
                         imageWidth = {140}
                         imageHeight = {188}
             onDoubleClick = {
-                () => this.props.navigation.navigate('Part')} > 
+                () => this.props.navigation.navigate('Partboilerleft')} > 
                 <Image style = {
                 {
                     paddingRight: 0,
@@ -66,7 +66,7 @@ export default class Friends extends React.Component {
                     imageWidth = {110}
                     imageHeight = {130}
                     onDoubleClick = {
-                () => this.props.navigation.navigate('Part')} > 
+                () => this.props.navigation.navigate('Partboilermiddle')} > 
                 <Image style = {
                 {
 
@@ -90,7 +90,7 @@ export default class Friends extends React.Component {
                     imageWidth = {100}
                     imageHeight = {158}
                     onDoubleClick = {
-                () => this.props.navigation.navigate('Part')
+                () => this.props.navigation.navigate('Partboilerright')
             } >
             <Image style = {
                 {   
@@ -116,7 +116,7 @@ export default class Friends extends React.Component {
                     imageWidth = {200}
                     imageHeight = {100}
                     onDoubleClick = {
-                () => this.props.navigation.navigate('Part')
+                () => this.props.navigation.navigate('Partboilerbottom')
             } >
             <Image style = {
                 {   

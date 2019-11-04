@@ -53,23 +53,23 @@ export default class Home extends React.Component {
         </View>
         <View style={styles.containerbottom}>
             
-        <ImageZoom     cropWidth={400}
-                       cropHeight={250}
-                       imageWidth={400}
-                       imageHeight={250}
+        <ImageZoom     cropWidth = {280}
+                        cropHeight = {376}
+                        imageWidth = {280}
+                        imageHeight = {376}
                         onDoubleClick={
-                            () => this.props.navigation.navigate('Part')} >
+                            () => this.props.navigation.navigate('Partboilerleft')} >
     
         <Image style = {
                     {
-                        paddingRight : 20,
-                        paddingBottom : 30,
-                        width: 400,
-                        height: 250
+                        paddingRight: 0,
+                        paddingBottom: 0,
+                        width: 280,
+                        height: 300
                     }
                 }
         
-        source={require('../Image/Part/Steam_boiler.png')}/>
+        source={require('../Image/equipment/boilerซ้ายแก้ไข1.png')}/>
       
         </ImageZoom > 
             </View>

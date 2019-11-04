@@ -53,23 +53,24 @@ export default class Home extends React.Component {
         </View>
         <View style={styles.containerbottom}>
             
-        <ImageZoom     cropWidth={400}
-                       cropHeight={250}
-                       imageWidth={400}
-                       imageHeight={250}
-                        onDoubleClick={
-                            () => this.props.navigation.navigate('Part')} >
-    
-        <Image style = {
-                    {
-                        paddingRight : 20,
-                        paddingBottom : 30,
-                        width: 400,
-                        height: 250
-                    }
+        < ImageZoom cropWidth = {220}
+                    cropHeight = {260}
+                    imageWidth = {220}
+                    imageHeight = {260}
+                    onDoubleClick = {
+                () => this.props.navigation.navigate('Partboilermiddle')} > 
+                <Image style = {
+                {
+
+                    paddingBottom: 0,
+                    paddingTop : 0,
+                    width: 220,
+                    height: 240
                 }
-        
-        source={require('../Image/Part/Steam_boiler.png')}/>
+            }
+            source = {
+            require('../Image/equipment/boilerกลางแก้ไข.png')
+        }/>
       
         </ImageZoom > 
             </View>
