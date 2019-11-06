@@ -8,7 +8,7 @@ import {
     Alert,
     Image,
 } from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
 export default class Friends extends React.Component {
     
@@ -36,37 +36,47 @@ export default class Friends extends React.Component {
             </View>
         </TouchableOpacity>
         </View>
+        < ScrollView maximumZoomScale = {
+            5
+        }
+        scrollEnabled = {
+            true
+        }
+        minimumZoomScale = {
+            1
+        }
+        showsHorizontalScrollIndicator = {
+            false
+        }
+        showsVerticalScrollIndicator = {
+            false
+        } >
         <View style = {
                 styles.containerbottom1
             } >
-            < ImageZoom cropWidth = {140}
-                        cropHeight = {188}
-                        imageWidth = {140}
-                        imageHeight = {188}
-            onDoubleClick = {
-                () => this.props.navigation.navigate('Partboilerleft')} > 
+            <TouchableOpacity
+                onPress = {
+                    () => this.props.navigation.navigate('Partboilerleft')
+                }>
                 <Image style = {
                 {
                     paddingRight: 0,
                     paddingBottom: 0,
                     width: 140,
-                    height: 150
+                    height: 150,
                 }
             }
             source = {
             require('../Image/equipment/boilerซ้ายแก้ไข1.png')
         }/>
-        
-        </ImageZoom >
+        </TouchableOpacity>
         <View style={
                     styles.containerbottom2
                 } >
-        < ImageZoom cropWidth = {110}
-                    cropHeight = {130}
-                    imageWidth = {110}
-                    imageHeight = {130}
-                    onDoubleClick = {
-                () => this.props.navigation.navigate('Partboilermiddle')} > 
+        < TouchableOpacity
+                onPress = {
+                () => this.props.navigation.navigate('Partboilermiddle')
+        } >
                 <Image style = {
                 {
 
@@ -79,19 +89,15 @@ export default class Friends extends React.Component {
             source = {
             require('../Image/equipment/boilerกลางแก้ไข.png')
         }/>
-        </ImageZoom >
+        </TouchableOpacity>
         </View>
         <View style={
                     styles.containerbottom3
                 } > 
-        <ImageZoom  
-                    cropWidth = {100}
-                    cropHeight = {158}
-                    imageWidth = {100}
-                    imageHeight = {158}
-                    onDoubleClick = {
+        < TouchableOpacity
+                onPress = {
                 () => this.props.navigation.navigate('Partboilerright')
-            } >
+        } >
             <Image style = {
                 {   
                     paddingRight: 0,
@@ -104,10 +110,10 @@ export default class Friends extends React.Component {
             require('../Image/equipment/boilerขวาแก้ไข.png')
         }
         /> 
-        </ImageZoom >
+        </TouchableOpacity>
         </View>
         </View>
-        <View style={
+        {/* <View style={
                     styles.containerbottom0
                 } > 
         <ImageZoom  
@@ -131,7 +137,8 @@ export default class Friends extends React.Component {
         }
         /> 
         </ImageZoom >
-        </View>   
+        </View> */}
+        </ScrollView>   
      </View>
         );
     }
@@ -156,21 +163,26 @@ const styles = StyleSheet.create({
         flex: 0.6,
         backgroundColor: '#fff',
         flexDirection: "row",
-        padding : 20,        
+        padding : 20,
+        width: 140,
+        height: 188,
+        position: "absolute",        
     },
     containerbottom2: {
         flex: 0.6,
         paddingTop : 58,
-        paddingRight : 50,
+        // paddingRight : 50,
         backgroundColor: '#fff',
-        flexDirection: "row"
+        flexDirection: "row",
+        position: "absolute",
     },
     containerbottom3: {
         flex: 0.6,
         paddingTop: 29.5,
-        paddingRight: 65,
+        // paddingRight: 65,
         backgroundColor: '#fff',
-        flexDirection: "row"
+        flexDirection: "row",
+        position: "absolute",
     },
     containerbottom0: {
         // flex: 0.2,
