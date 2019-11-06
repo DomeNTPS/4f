@@ -9,6 +9,7 @@ import {
     Modal,
     Image,
     Dimensions,
+    ScrollView,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
@@ -41,6 +42,7 @@ export default class Home extends React.Component {
             </View>
         </TouchableOpacity>
         </View>
+        <View style={styles.containerbottom}>
         <ScrollView maximumZoomScale = {
             5
         }
@@ -55,9 +57,7 @@ export default class Home extends React.Component {
         }
         showsVerticalScrollIndicator = {
             false
-        } >
-        <View style={styles.containerbottom}>
-            
+        } >            
         <TouchableOpacity
             title = "Scan"
             onPress = {
@@ -75,8 +75,9 @@ export default class Home extends React.Component {
         source={require('../Image/Part/Steam_boiler.png')}/>
       
         </TouchableOpacity>
-            </View>
         </ScrollView>
+        </View>
+        
         </View>
         );
     }

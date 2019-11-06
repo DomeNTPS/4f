@@ -8,10 +8,14 @@ import {
     Alert,
     Image,
 } from 'react-native';
-import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
+import {
+    TouchableOpacity,
+    ScrollView
+} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
-export default class Part extends React.Component {
-    
+
+export default class test extends React.Component {
+
     render() {
         return ( <View style = {styles.container} >
         <View style = {styles.containertop} >
@@ -38,7 +42,7 @@ export default class Part extends React.Component {
         </View>
         <View style = {styles.containerbottomall}>
         < ScrollView maximumZoomScale = {
-            10
+            5
         }
         scrollEnabled = {
             true
@@ -52,75 +56,51 @@ export default class Part extends React.Component {
         showsVerticalScrollIndicator = {
             false
         } >
-            <View style={
-                    styles.containerbottom0
-                } > 
-        < TouchableOpacity
+        <View style = {styles.containerbottom1} >
+            <TouchableOpacity
                 onPress = {
-                () => this.props.navigation.navigate('Partboilerbottom')
-        } >
-            <Image style = {
-                {   
+                    () => this.props.navigation.navigate('Partboilerleft')
+                }>
+                <Image style = {
+                {
                     paddingRight: 0,
                     paddingBottom: 0,
-                    width: 240,
-                    height: 20,
+                    width: 140,
+                    height: 150,
                 }
             }
-        source = {
-            require('../Image/equipment/boilerล่างแก้ไข.png')
-        }
-        /> 
+            source = {
+            require('../Image/equipment/boilerซ้ายแก้ไข1.png')
+        }/>
         </TouchableOpacity>
-        </View>
-            <View style={
+        <View style={
                     styles.containerbottom2
                 } >
-            < TouchableOpacity
+        < TouchableOpacity
                 onPress = {
                 () => this.props.navigation.navigate('Partboilermiddle')
-            } >
+        } >
                 <Image style = {
                 {
 
                     paddingBottom: 0,
-                    paddingTop : 0,
+                    paddingTop : 100,
                     width: 110,
                     height: 120
                 }
             }
             source = {
             require('../Image/equipment/boilerกลางแก้ไข.png')
-            }/>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.containerbottom5} >
-            < TouchableOpacity
-                onPress = {
-                () => this.props.navigation.navigate('Partboilerleft')
-            } >
-                <Image style = {
-                {
-
-                    paddingBottom: 0,
-                    paddingTop : 0,
-                    width: 110,
-                    height: 120
-                }
-            }
-            source = {
-            require('../Image/equipment/boilerซ้ายแก้ไข1.png')
-            }/>
-            </TouchableOpacity>
-            </View>
-            
-            <View style={
+        }/>
+        </TouchableOpacity>
+        </View>
+        <View style={
                     styles.containerbottom3
                 } > 
-            <TouchableOpacity
+        < TouchableOpacity
                 onPress = {
                 () => this.props.navigation.navigate('Partboilerright')
-            } >
+        } >
             <Image style = {
                 {   
                     paddingRight: 0,
@@ -129,13 +109,38 @@ export default class Part extends React.Component {
                     height: 140
                 }
             }
-            source = {
+        source = {
             require('../Image/equipment/boilerขวาแก้ไข.png')
-            }/> 
-            </TouchableOpacity>
-            </View>
-            
-       
+        }
+        /> 
+        </TouchableOpacity>
+        </View>
+        </View>
+        <View style={
+                    styles.containerbottom0
+                } > 
+        <ImageZoom  
+                    cropWidth = {200}
+                    cropHeight = {100}
+                    imageWidth = {200}
+                    imageHeight = {100}
+                    onDoubleClick = {
+                () => this.props.navigation.navigate('Partboilerbottom')
+            } >
+            <Image style = {
+                {   
+                    paddingRight: 0,
+                    paddingBottom: 0,
+                    width: 250,
+                    height: 50
+                }
+            }
+        source = {
+            require('../Image/equipment/boilerล่างแก้ไข.png')
+        }
+        /> 
+        </ImageZoom >
+        </View>
         </ScrollView>
         </View>   
      </View>
@@ -152,58 +157,48 @@ const styles = StyleSheet.create({
         
     },
     containertop: {
-        flex: 0.1,
+        flex: 0.2,
         backgroundColor: '#fff',
         alignItems: 'flex-end',
         paddingTop : 20,
         //justifyContent: 'center',
     },
-    containerbottom5: {
+    containerbottom1: {
         // flex: 0.6,
-        paddingTop: 50,
-        // paddingRight : 50,
-        // backgroundColor: '#f0f',
-        // flexDirection: "row",
-        padding: 43,
-        alignSelf: 'flex-start',
-        position: "absolute",
+        backgroundColor: '#fff',
+        flexDirection: "row",
+        padding : 120,
+        width: 140,
+        height: 188,
+        position: "absolute",        
     },
     containerbottom2: {
         // flex: 0.6,
-        paddingTop : 92,
+        paddingTop : 58,
         // paddingRight : 50,
-        // backgroundColor: '#0ff',
-        // flexDirection: "row",
-        padding: 158,
-        height: 300,
-        alignSelf: 'center',
+        backgroundColor: '#fff',
+        flexDirection: "row",
         position: "absolute",
     },
     containerbottom3: {
         // flex: 0.6,
-        paddingTop: 63,
-        // padding: 200,
-        alignSelf: 'flex-end',
-        paddingRight: 68,
-        // backgroundColor: '#AB6',
-        // flexDirection: "row",
+        paddingTop: 29.5,
+        // paddingRight: 65,
+        backgroundColor: '#fff',
+        flexDirection: "row",
         position: "absolute",
     },
     containerbottom0: {
+        // flex: 0.2,
         backgroundColor: '#fff',
-        // flexDirection: "column",
-        // flex: 0.9,
-        paddingTop : 400,
-        paddingRight : 20.5,
-        position: "absolute",
-        alignSelf : 'center',
-        // height: 50,
-        // width: 250,
+        flexDirection: "column",
+        paddingBottom : 200,
+        padding : 50
     },
     containerbottomall: {
-        flex: 0.9,
+        flex: 0.8,
         backgroundColor: '#ff0',
-        flexDirection: "row",
+        // flexDirection: "column",
         // paddingBottom: 200,
         // padding: 50
     },
@@ -221,8 +216,6 @@ const styles = StyleSheet.create({
         resizeMode : 'stretch',
 
     },
-    bla: {
-        flex: 0.03,
-        alignItems: 'center',
-    },
 });
+        
+

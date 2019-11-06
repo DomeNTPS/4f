@@ -6,7 +6,7 @@ import * as Permissions from 'expo-permissions';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { NavigationEvents } from 'react-navigation';
 
-export default class BarcodeScannerExample extends React.Component {
+export default class Data extends React.Component {
   state = {
     hasCameraPermission: null,
     scanned: false,
