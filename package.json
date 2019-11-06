@@ -10,6 +10,7 @@
   "dependencies": {
     "@dudigital/react-native-zoomable-view": "^1.0.14",
     "@react-native-community/async-storage": "^1.6.2",
+    "check": "^1.0.0",
     "check-node-version": "^4.0.1",
     "expo": "^34.0.1",
     "expo-ads-admob": "~6.0.0",
