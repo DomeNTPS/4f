@@ -18,17 +18,7 @@ export default class Home extends React.Component {
 
     render() {
         return (<View style ={styles.container}>
-            {/* <ReactNativeZoomableView
-                maxZoom={1.5}
-                minZoom={0}
-                zoomStep={0.5}
-                initialZoom={1}
-                bindToBorders={true}
-                // onZoomAfter={this.logOutZoomState}
-                style={{
-                    // padding: 10,
-                    backgroundColor: 'red',
-                }}>       */}
+
         <View style = {styles.containertop} >
         <TouchableOpacity
             title = "Scan"
@@ -51,13 +41,26 @@ export default class Home extends React.Component {
             </View>
         </TouchableOpacity>
         </View>
+        <ScrollView maximumZoomScale = {
+            5
+        }
+        scrollEnabled = {
+            true
+        }
+        minimumZoomScale = {
+            1
+        }
+        showsHorizontalScrollIndicator = {
+            false
+        }
+        showsVerticalScrollIndicator = {
+            false
+        } >
         <View style={styles.containerbottom}>
             
-        <ImageZoom     cropWidth={400}
-                       cropHeight={250}
-                       imageWidth={400}
-                       imageHeight={250}
-                        onDoubleClick={
+        <TouchableOpacity
+            title = "Scan"
+            onPress = {
                             () => this.props.navigation.navigate('Part')} >
     
         <Image style = {
@@ -71,8 +74,9 @@ export default class Home extends React.Component {
         
         source={require('../Image/Part/Steam_boiler.png')}/>
       
-        </ImageZoom > 
+        </TouchableOpacity>
             </View>
+        </ScrollView>
         </View>
         );
     }
