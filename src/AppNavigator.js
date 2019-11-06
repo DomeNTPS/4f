@@ -17,10 +17,10 @@ const AppNavigator = createStackNavigator({
     Part: {screen: Part},
     ScanScreen: {screen: ScanScreen},
     Data: {screen: Data},
-    Partboilerleft:{screen: Partboilerleft},
-    Partboilermiddle:{screen: Partboilermiddle},
-    Partboilerright:{screen: Partboilerright},
-    Partboilerbottom:{screen: Partboilerbottom},
+    Partboilerleft: {screen: Partboilerleft},
+    Partboilermiddle: {screen: Partboilermiddle},
+    Partboilerright: {screen: Partboilerright},
+    Partboilerbottom: {screen: Partboilerbottom},
     
 });
 
