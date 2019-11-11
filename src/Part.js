@@ -3,13 +3,16 @@ import {
     StyleSheet,
     Button,
     View,
-    SafeAreaView,
     Text,
-    Alert,
     Image,
 } from 'react-native';
 import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
-import ImageZoom from 'react-native-image-pan-zoom';
+
+import SvgUri from 'react-native-svg-uri';
+// import test3 from ;
+// import Svg,{
+//     Use,Image,
+// } from 'react-native-svg';
 export default class Part extends React.Component {
     
     render() {
@@ -24,6 +27,7 @@ export default class Part extends React.Component {
         >
             <Image style = {
                     {
+
                         paddingRight : 20,
                         paddingTop : 30,
                         width: 50,
@@ -52,90 +56,10 @@ export default class Part extends React.Component {
         showsVerticalScrollIndicator = {
             false
         } >
-            <View style={
-                    styles.containerbottom0
-                } > 
-        < TouchableOpacity
-                onPress = {
-                () => this.props.navigation.navigate('Partboilerbottom')
-        } >
-            <Image style = {
-                {   
-                    paddingRight: 0,
-                    paddingBottom: 0,
-                    width: 240,
-                    height: 20,
-                }
-            }
-        source = {
-            require('../Image/equipment/boilerล่างแก้ไข.png')
-        }
-        /> 
-        </TouchableOpacity>
-        </View>
-            <View style={
-                    styles.containerbottom2
-                } >
-            < TouchableOpacity
-                onPress = {
-                () => this.props.navigation.navigate('Partboilermiddle')
-            } >
-                <Image style = {
-                {
-
-                    paddingBottom: 0,
-                    paddingTop : 0,
-                    width: 110,
-                    height: 120
-                }
-            }
-            source = {
-            require('../Image/equipment/boilerกลางแก้ไข.png')
-            }/>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.containerbottom5} >
-            < TouchableOpacity
-                onPress = {
-                () => this.props.navigation.navigate('Partboilerleft')
-            } >
-                <Image style = {
-                {
-
-                    paddingBottom: 0,
-                    paddingTop : 0,
-                    width: 110,
-                    height: 120
-                }
-            }
-            source = {
-            require('../Image/equipment/boilerซ้ายแก้ไข1.png')
-            }/>
-            </TouchableOpacity>
-            </View>
-            
-            <View style={
-                    styles.containerbottom3
-                } > 
-            <TouchableOpacity
-                onPress = {
-                () => this.props.navigation.navigate('Partboilerright')
-            } >
-            <Image style = {
-                {   
-                    paddingRight: 0,
-                    paddingBottom: 0,
-                    width: 85,
-                    height: 140
-                }
-            }
-            source = {
-            require('../Image/equipment/boilerขวาแก้ไข.png')
-            }/> 
-            </TouchableOpacity>
-            </View>
-            
-       
+                    <SvgUri    
+                        width="200"
+                        height="200"
+                        source={require('../Image/Part/Boiler.svg')}/>
         </ScrollView>
         </View>   
      </View>
@@ -162,7 +86,7 @@ const styles = StyleSheet.create({
         // flex: 0.6,
         paddingTop: 50,
         // paddingRight : 50,
-        // backgroundColor: '#f0f',
+        backgroundColor: '#f0f',
         // flexDirection: "row",
         padding: 43,
         alignSelf: 'flex-start',
@@ -172,7 +96,7 @@ const styles = StyleSheet.create({
         // flex: 0.6,
         paddingTop : 92,
         // paddingRight : 50,
-        // backgroundColor: '#0ff',
+        backgroundColor: '#0ff',
         // flexDirection: "row",
         padding: 158,
         height: 300,
@@ -185,7 +109,7 @@ const styles = StyleSheet.create({
         // padding: 200,
         alignSelf: 'flex-end',
         paddingRight: 68,
-        // backgroundColor: '#AB6',
+        backgroundColor: '#AB6',
         // flexDirection: "row",
         position: "absolute",
     },
@@ -202,7 +126,7 @@ const styles = StyleSheet.create({
     },
     containerbottomall: {
         flex: 0.9,
-        backgroundColor: '#ff0',
+        backgroundColor: '#fff',
         flexDirection: "row",
         // paddingBottom: 200,
         // padding: 50
