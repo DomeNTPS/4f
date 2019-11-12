@@ -45,7 +45,7 @@ export default class Home extends React.Component {
                         height: 50
                     }
                 }
-                 source = {require ('../Image/Untitled-1.png')}/>
+                 source = {require ('../../Image/Untitled-1.png')}/>
             <View>
                 <Text style = {{paddingRight : 15}} >Qr scan</Text>
             </View>
@@ -70,7 +70,7 @@ export default class Home extends React.Component {
                 }
             }
         source = {
-            require('../Image/equipment/boilerขวาแก้ไข.png')
+            require('../../Image/equipment/boilerขวาแก้ไข.png')
         }
         /> 
         </ImageZoom >

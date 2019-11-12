@@ -34,7 +34,7 @@ export default class test extends React.Component {
                         height: 50
                     }
                 }
-                 source = {require ('../Image/Untitled-1.png')}/>
+                 source = {require ('../../Image/Untitled-1.png')}/>
             <View>
                 <Text style = {{paddingRight : 15}} >Qr scan</Text>
             </View>
@@ -70,7 +70,7 @@ export default class test extends React.Component {
                 }
             }
             source = {
-            require('../Image/equipment/boilerซ้ายแก้ไข1.png')
+            require('../../Image/equipment/boilerซ้ายแก้ไข1.png')
         }/>
         </TouchableOpacity>
         <View style={
@@ -90,7 +90,7 @@ export default class test extends React.Component {
                 }
             }
             source = {
-            require('../Image/equipment/boilerกลางแก้ไข.png')
+            require('../../Image/equipment/boilerกลางแก้ไข.png')
         }/>
         </TouchableOpacity>
         </View>
@@ -110,7 +110,7 @@ export default class test extends React.Component {
                 }
             }
         source = {
-            require('../Image/equipment/boilerขวาแก้ไข.png')
+            require('../../Image/equipment/boilerขวาแก้ไข.png')
         }
         /> 
         </TouchableOpacity>
@@ -136,7 +136,7 @@ export default class test extends React.Component {
                 }
             }
         source = {
-            require('../Image/equipment/boilerล่างแก้ไข.png')
+            require('../../Image/equipment/boilerล่างแก้ไข.png')
         }
         /> 
         </ImageZoom >

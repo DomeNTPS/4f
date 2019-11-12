@@ -72,7 +72,7 @@ export default class Login extends React.Component {
                     }
                 }
                     source = {
-                        require('../Image/Logo_kmitl.png')
+                        require('../../Image/Logo_kmitl.png')
                     }
          /></View> 
         <View style = {styles.blank}></View>
