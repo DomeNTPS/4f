@@ -15,7 +15,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 import ImageZoom from "react-native-image-pan-zoom";
 import Svg, { Circle, Rect } from "react-native-svg";
-/* import Logo from "../../Image/ic_permission.svg"; */
+import Logo from "../../Image/ic_permission.svg";
 export default class Home extends React.Component {
   render() {
     return (
@@ -51,7 +51,8 @@ export default class Home extends React.Component {
               title="Scan"
               onPress={() => this.props.navigation.navigate("Part")}
             >
-              <Svg height={160} width={160} viewBox="0 0 100 100">
+              <Logo height={300} width={300} />
+              {/* <Svg height={160} width={160} viewBox="0 0 100 100">
                 <Circle
                   cx="50"
                   cy="50"
@@ -69,7 +70,7 @@ export default class Home extends React.Component {
                   strokeWidth="2"
                   fill="yellow"
                 />
-              </Svg>
+              </Svg> */}
             </TouchableOpacity>
           </ScrollView>
         </View>
