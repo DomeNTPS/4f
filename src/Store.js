@@ -1,5 +1,4 @@
- {
-     /* <View style={
+{/* <View style={
                          styles.containerbottom2
                      } >
                  < TouchableOpacity
@@ -59,5 +58,46 @@
                  require('../Image/equipmentแก้ไข/Right.png')
                  }/> 
                  </TouchableOpacity>
-                 </View> */
- }
+                 </View> 
+                 containerbottom5: {
+        // flex: 0.6,
+        paddingTop: 50,
+        // paddingRight : 50,
+        backgroundColor: '#f0f',
+        // flexDirection: "row",
+        padding: 43,
+        alignSelf: 'flex-start',
+        position: "absolute",
+    },
+    containerbottom2: {
+        // flex: 0.6,
+        paddingTop : 92,
+        // paddingRight : 50,
+        backgroundColor: '#0ff',
+        // flexDirection: "row",
+        padding: 158,
+        height: 300,
+        alignSelf: 'center',
+        position: "absolute",
+    },
+    containerbottom3: {
+        // flex: 0.6,
+        paddingTop: 63,
+        // padding: 200,
+        alignSelf: 'flex-end',
+        paddingRight: 68,
+        backgroundColor: '#AB6',
+        // flexDirection: "row",
+        position: "absolute",
+    },
+    containerbottom0: {
+        backgroundColor: '#fff',
+        // flexDirection: "column",
+        // flex: 0.9,
+        paddingTop : 400,
+        paddingRight : 20.5,
+        position: "absolute",
+        alignSelf : 'center',
+        // height: 50,
+        // width: 250,
+    }, */}

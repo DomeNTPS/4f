@@ -5,14 +5,10 @@ import {
     View,
     Text,
     Image,
+    ImageBackground,
 } from 'react-native';
-import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
-
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler'; 
 import SvgUri from 'react-native-svg-uri';
-// import test3 from ;
-// import Svg,{
-//     Use,Image,
-// } from 'react-native-svg';
 export default class Part extends React.Component {
     
     render() {
@@ -42,7 +38,7 @@ export default class Part extends React.Component {
         </View>
         <View style = {styles.containerbottomall}>
         < ScrollView maximumZoomScale = {
-            10
+            5
         }
         scrollEnabled = {
             true
@@ -56,10 +52,37 @@ export default class Part extends React.Component {
         showsVerticalScrollIndicator = {
             false
         } >
-                    <SvgUri    
-                        width="200"
-                        height="200"
-                        source={require('../Image/Part/Boiler.svg')}/>
+            
+        <ImageBackground
+        source={require('../Image/boiler/sss.png')}
+        style={{ width: 530, height: 405, } }
+        >
+            {/* <TouchableOpacity style = {styles.container3}
+                 onPress = {
+                     () =>
+                     this.props.navigation.navigate('Partboilermiddle')
+                }
+                >
+            </TouchableOpacity> */}
+            <TouchableOpacity style = {styles.container2}
+                 onPress = {
+                     () =>
+                     this.props.navigation.navigate('Partboilerleft')
+                }
+                >
+            </TouchableOpacity>
+            
+        </ImageBackground>
+        
+        {/* <Button 
+                style = {styles.loginText
+                }
+                
+                onPress ={
+                () => this.props.navigation.navigate('Partboilerbottom') 
+            } > </Button>
+             */}
+                           
         </ScrollView>
         </View>   
      </View>
@@ -72,9 +95,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        
-        
-    },
+      },
     containertop: {
         flex: 0.1,
         backgroundColor: '#fff',
@@ -82,52 +103,12 @@ const styles = StyleSheet.create({
         paddingTop : 20,
         //justifyContent: 'center',
     },
-    containerbottom5: {
-        // flex: 0.6,
-        paddingTop: 50,
-        // paddingRight : 50,
-        backgroundColor: '#f0f',
-        // flexDirection: "row",
-        padding: 43,
-        alignSelf: 'flex-start',
-        position: "absolute",
-    },
-    containerbottom2: {
-        // flex: 0.6,
-        paddingTop : 92,
-        // paddingRight : 50,
-        backgroundColor: '#0ff',
-        // flexDirection: "row",
-        padding: 158,
-        height: 300,
-        alignSelf: 'center',
-        position: "absolute",
-    },
-    containerbottom3: {
-        // flex: 0.6,
-        paddingTop: 63,
-        // padding: 200,
-        alignSelf: 'flex-end',
-        paddingRight: 68,
-        backgroundColor: '#AB6',
-        // flexDirection: "row",
-        position: "absolute",
-    },
-    containerbottom0: {
-        backgroundColor: '#fff',
-        // flexDirection: "column",
-        // flex: 0.9,
-        paddingTop : 400,
-        paddingRight : 20.5,
-        position: "absolute",
-        alignSelf : 'center',
-        // height: 50,
-        // width: 250,
-    },
+    
     containerbottomall: {
         flex: 0.9,
         backgroundColor: '#fff',
-        flexDirection: "row",
+        alignItems: 'center',
+        //flexDirection: 'row',
         // paddingBottom: 200,
         // padding: 50
     },
@@ -149,4 +130,40 @@ const styles = StyleSheet.create({
         flex: 0.03,
         alignItems: 'center',
     },
+    buttonleft:{
+        position : 'absolute',
+        top : 10,
+        left : 20,
+        // marginTop : 10,
+        width : 70,
+        // backgroundColor : 'red',
+
+    },
+     loginText: {
+         color: '#000',
+         textAlign: 'left',
+        //  paddingLeft: 10,
+        //  paddingRight: 10,
+         fontSize: 20,
+     },
+      container2: {
+        //   backgroundColor: 'orange',
+         // alignItems: 'flex-start',
+          //justifyContent: 'center',
+          borderColor: 'white',
+        //   position: 'absolute',
+          borderRadius: 10,
+          width : 150,
+          height : 250,
+      },
+    //   container3: {
+    //       backgroundColor: 'orange',
+    //       alignItems: 'flex-start',
+    //       //justifyContent: 'center',
+    //       borderColor: 'white',
+    //       borderRadius: 10,
+    //       width: 170,
+    //       height: 250,
+    //   },
+
 });
