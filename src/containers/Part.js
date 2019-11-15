@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
+import Boiler from "../../Image/boiler/Untitled-1-01(fix).svg";
 export default class Part extends React.Component {
   render() {
     return (
@@ -35,13 +36,14 @@ export default class Part extends React.Component {
         </View>
         <View style={styles.containerbottomall}>
           <ScrollView
-            maximumZoomScale={10}
+            maximumZoomScale={3}
             scrollEnabled={true}
             minimumZoomScale={1}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <View style={styles.containerbottom0}>
+            <Boiler height={450} width={410} alignSelf = 'center' />
+            {/* <View style={styles.containerbottom0}>
               <TouchableOpacity
                 onPress={() =>
                   this.props.navigation.navigate("Partboilerbottom")
@@ -107,7 +109,7 @@ export default class Part extends React.Component {
                   source={require("../../Image/equipment/boilerขวาแก้ไข.png")}
                 />
               </TouchableOpacity>
-            </View>
+            </View> */}
           </ScrollView>
         </View>
       </View>
@@ -171,7 +173,7 @@ const styles = StyleSheet.create({
   },
   containerbottomall: {
     flex: 0.9,
-    backgroundColor: "#ff0",
+    backgroundColor: "#fff",
     flexDirection: "row"
     // paddingBottom: 200,
     // padding: 50

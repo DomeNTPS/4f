@@ -15,7 +15,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 import ImageZoom from "react-native-image-pan-zoom";
 import Svg, { Circle, Rect } from "react-native-svg";
-import Logo from "../../Image/ic_permission.svg";
+// import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class Home extends React.Component {
   render() {
     return (
@@ -49,9 +49,19 @@ export default class Home extends React.Component {
           >
             <TouchableOpacity
               title="Scan"
+              alignItems = "center"
               onPress={() => this.props.navigation.navigate("Part")}
             >
-              <Logo height={300} width={300} />
+              <Image
+                style = {
+                  {
+                    width: 400,
+                    height: 230
+                  }
+                }
+                source={require("../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png")}>
+              </Image>
+              {/* <Logo height={300} width={300} /> */}
               {/* <Svg height={160} width={160} viewBox="0 0 100 100">
                 <Circle
                   cx="50"
