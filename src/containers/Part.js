@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boiler from "../../Image/boiler/Untitled-1-01(fix).svg";
+import Boiler from "../../Image/boiler/boiler fix.svg";
 export default class Part extends React.Component {
   render() {
     return (
@@ -43,73 +43,47 @@ export default class Part extends React.Component {
             showsVerticalScrollIndicator={false}
           >
             <Boiler height={450} width={410} alignSelf = 'center' />
-            {/* <View style={styles.containerbottom0}>
-              <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate("Partboilerbottom")
-                }
-              >
-                <Image
-                  style={{
-                    paddingRight: 0,
-                    paddingBottom: 0,
-                    width: 240,
-                    height: 20
-                  }}
-                  source={require("../../Image/equipment/boilerล่างแก้ไข.png")}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.containerbottom2}>
-              <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate("Partboilermiddle")
-                }
-              >
-                <Image
-                  style={{
-                    paddingBottom: 0,
-                    paddingTop: 0,
-                    width: 110,
-                    height: 120
-                  }}
-                  source={require("../../Image/equipment/boilerกลางแก้ไข.png")}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.containerbottom5}>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Partboilerleft")}
-              >
-                <Image
-                  style={{
-                    paddingBottom: 0,
-                    paddingTop: 0,
-                    width: 110,
-                    height: 120
-                  }}
-                  source={require("../../Image/equipment/boilerซ้ายแก้ไข1.png")}
-                />
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.containerbottom3}>
-              <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate("Partboilerright")
-                }
-              >
-                <Image
-                  style={{
-                    paddingRight: 0,
-                    paddingBottom: 0,
-                    width: 85,
-                    height: 140
-                  }}
-                  source={require("../../Image/equipment/boilerขวาแก้ไข.png")}
-                />
-              </TouchableOpacity>
-            </View> */}
+            < View style = {
+              styles.containerbottom3
+            } >
+            < TouchableOpacity style = {{height : 450 ,width : 410}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerbottom")
+              } >
+                </ TouchableOpacity>
+                </ View>
+            < View style = {
+              styles.containerbottom0
+            } >
+            < TouchableOpacity style = {{height : 250 ,width : 170}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerleft")
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottom1
+            } >
+            < TouchableOpacity style = {{height : 300 ,width : 130}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilermiddle")
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottom2
+            } >
+            < TouchableOpacity style = {{height : 300 ,width : 130}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerright")
+              } >
+                </ TouchableOpacity>
+                </ View>
+                
           </ScrollView>
         </View>
       </View>
@@ -129,55 +103,42 @@ const styles = StyleSheet.create({
     paddingTop: 20
     //justifyContent: 'center',
   },
-  containerbottom5: {
-    // flex: 0.6,
-    paddingTop: 50,
-    // paddingRight : 50,
-    // backgroundColor: '#f0f',
-    // flexDirection: "row",
-    padding: 43,
-    alignSelf: "flex-start",
-    position: "absolute"
-  },
-  containerbottom2: {
-    // flex: 0.6,
-    paddingTop: 92,
-    // paddingRight : 50,
-    // backgroundColor: '#0ff',
-    // flexDirection: "row",
-    padding: 158,
-    height: 300,
-    alignSelf: "center",
-    position: "absolute"
-  },
-  containerbottom3: {
-    // flex: 0.6,
-    paddingTop: 63,
-    // padding: 200,
-    alignSelf: "flex-end",
-    paddingRight: 68,
-    // backgroundColor: '#AB6',
-    // flexDirection: "row",
-    position: "absolute"
+  containerbottomall: {
+  flex: 0.9,
+  backgroundColor: "#fff",
+  borderColor: "red",
+  borderStyle: "solid",
+  borderWidth: 10,
+  alignItems: "center",
   },
   containerbottom0: {
-    backgroundColor: "#fff",
-    // flexDirection: "column",
-    // flex: 0.9,
-    paddingTop: 400,
-    paddingRight: 20.5,
+    //  backgroundColor: "#ff0",
+    height: 250, 
+    width: 170,
     position: "absolute",
-    alignSelf: "center"
-    // height: 50,
-    // width: 250,
   },
-  containerbottomall: {
-    flex: 0.9,
-    backgroundColor: "#fff",
-    flexDirection: "row"
-    // paddingBottom: 200,
-    // padding: 50
+   containerbottom1: {
+    //backgroundColor: "#f00",
+    height: 300,
+    width: 130,
+    alignSelf: "center",
+    position: "absolute",
   },
+  containerbottom2: {
+    height: 300,
+    width: 150,
+    alignSelf: "flex-end",
+    position: "absolute",
+    //backgroundColor: '#AB6',
+  },
+  containerbottom3: {
+    alignSelf: "stretch",
+    //backgroundColor: '#cd0',
+    position: "absolute",
+    height: 450,
+    width: 410,
+  },
+  
   containerpicture: {
     //flex: 0.8,
     backgroundColor: "#fff"
