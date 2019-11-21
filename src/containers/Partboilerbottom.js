@@ -13,6 +13,7 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 import ImageZoom from "react-native-image-pan-zoom";
+import Boilerbottom from "../../Image/boiler/boiler fix.svg";
 
 export default class Home extends React.Component {
   render() {
