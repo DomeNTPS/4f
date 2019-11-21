@@ -6,30 +6,19 @@ import {
   SafeAreaView,
   Text,
   Alert,
-  Modal,
-  Image,
-  Dimensions
+  Image
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
+import {
+  TouchableOpacity,
+  ScrollView
+} from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilerbottom from "../../Image/boiler/boiler fix.svg";
+import Boilerbottom from "../../Image/boiler/boiler bottom fix.svg";
 
-export default class Home extends React.Component {
+export default class Partboilerbottom extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <ReactNativeZoomableView
-                maxZoom={1.5}
-                minZoom={0}
-                zoomStep={0.5}
-                initialZoom={1}
-                bindToBorders={true}
-                // onZoomAfter={this.logOutZoomState}
-                style={{
-                    // padding: 10,
-                    backgroundColor: 'red',
-                }}>       */}
         <View style={styles.containertop}>
           <TouchableOpacity
             title="Scan"
@@ -50,25 +39,47 @@ export default class Home extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.containerbottom}>
-          <ImageZoom
-            cropWidth={400}
-            cropHeight={200}
-            imageWidth={400}
-            imageHeight={200}
-            onDoubleClick={() =>
-              this.props.navigation.navigate("Partboilerbottom")
-            }
+           <ScrollView
+            maximumZoomScale={3}
+            scrollEnabled={true}
+            minimumZoomScale={1}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
           >
-            <Image
-              style={{
-                paddingRight: 0,
-                paddingBottom: 0,
-                width: 500,
-                height: 100
-              }}
-              source={require("../../Image/equipment/boilerล่างแก้ไข.png")}
-            />
-          </ImageZoom>
+            <Boilerbottom height={200} width={410} alignSelf = 'center' />
+            
+            < View style = {
+              styles.containerbottom0
+            } >
+            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerbottomleft")
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottom1
+            } >
+            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerbottomcenter")
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottom2
+            } >
+            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerbottomright")
+              } >
+                </ TouchableOpacity>
+                </ View>
+                
+          </ScrollView>
         </View>
       </View>
     );
@@ -105,10 +116,30 @@ const styles = StyleSheet.create({
     alignItems: "center"
     //justifyContent: 'center',
   },
-  containerpicture: {
-    //flex: 0.8,
-    backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  }
+  containerbottom0: {
+    // backgroundColor: "#ff0",
+    height: 100, 
+    width: 150,
+    position: "absolute",
+    marginTop: 60,
+    marginLeft: 10,
+  },
+   containerbottom1: {
+    // backgroundColor: "#f00",
+    height: 100,
+    width: 150,
+    // alignSelf: "center",
+    position: "absolute",
+    marginTop: 60,
+    marginLeft: 160,
+  },
+  containerbottom2: {
+    height: 100,
+    width: 150,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 60,
+    marginLeft: 310,
+  },
 });

@@ -11,7 +11,7 @@ import {
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/boiler/boiler fix.svg";
-export default class Part extends React.Component {
+export default class Partboilerbottomcenter extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -46,7 +46,7 @@ export default class Part extends React.Component {
             < View style = {
               styles.containerbottom3
             } >
-            < TouchableOpacity style = {{height : 80 ,width : 330}}
+            < TouchableOpacity style = {{height : 450 ,width : 410}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottom")
@@ -56,7 +56,7 @@ export default class Part extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 200 ,width : 160}}
+            < TouchableOpacity style = {{height : 250 ,width : 170}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerleft")
@@ -66,7 +66,7 @@ export default class Part extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 153 ,width : 153}}
+            < TouchableOpacity style = {{height : 300 ,width : 130}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddle")
@@ -76,7 +76,7 @@ export default class Part extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 160 ,width : 100}}
+            < TouchableOpacity style = {{height : 300 ,width : 130}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerright")
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     marginLeft: 300,
   },
   containerbottom3: {
-    // alignSelf: "stretch",
+    alignSelf: "stretch",
     // backgroundColor: '#cd0',
     position: "absolute",
     height: 80,
