@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boiler from "../../Image/boiler/boiler fix.svg";
+import Boilerbuttomright from "../../Image/boiler/boilerbuttomright.svg";
 export default class Partboilerbottomleft extends React.Component {
   render() {
     return (
@@ -42,48 +42,9 @@ export default class Partboilerbottomleft extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boiler height={450} width={410} alignSelf = 'center' />
-            < View style = {
-              styles.containerbottom3
-            } >
-            < TouchableOpacity style = {{height : 450 ,width : 410}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("Partboilerbottom")
-              } >
-                </ TouchableOpacity>
-                </ View>
-            < View style = {
-              styles.containerbottom0
-            } >
-            < TouchableOpacity style = {{height : 250 ,width : 170}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("Partboilerleft")
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom1
-            } >
-            < TouchableOpacity style = {{height : 300 ,width : 130}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("Partboilermiddle")
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom2
-            } >
-            < TouchableOpacity style = {{height : 300 ,width : 130}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("Partboilerright")
-              } >
-                </ TouchableOpacity>
-                </ View>
-                
+            <Boilerbuttomright height={200
+            } width={410} alignSelf = 'center' />
+            
           </ScrollView>
         </View>
       </View>
