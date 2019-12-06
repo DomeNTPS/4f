@@ -16,10 +16,10 @@ import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/R
 import ImageZoom from "react-native-image-pan-zoom";
 import Svg, { Circle, Rect } from "react-native-svg";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
-export default class Home extends React.Component {
+export default class PartV extends React.Component {
   render() {
       const {navigation}=this.props;
-      const test=navigation.getParam('text','some default value');
+      const KKS=navigation.getParam('KKS','some default value');
     return (
       <View style={styles.container}>
         <View style={styles.containertop}>
@@ -48,43 +48,17 @@ export default class Home extends React.Component {
             minimumZoomScale={1}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
-          >
-            <TouchableOpacity
-              title="Scan"
-              alignItems = "center"
-              onPress={() => this.props.navigation.navigate("Part")}
-            >
-              <Image
-                style = {
-                  {
-                    width: 400,
-                    height: 230
-                  }
-                }
-                source={require("../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png")}>
-              </Image>
-              {/* <Logo height={300} width={300} /> */}
-              {/* <Svg height={160} width={160} viewBox="0 0 100 100">
-                <Circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  stroke="blue"
-                  strokeWidth="2.5"
-                  fill="green"
-                />
-                <Rect
-                  x="15"
-                  y="15"
-                  width="70"
-                  height="70"
-                  stroke="red"
-                  strokeWidth="2"
-                  fill="yellow"
-                />
-              </Svg> */}
-            </TouchableOpacity>
-            <Text>{test}</Text>
+          >  
+          <Image
+            style = {
+              {
+                width: 200,
+                height: 150
+              }
+              }
+            source={require("../../Image/boiler/PartV.png")}>
+          </Image>
+          <Text>{KKS}</Text>
            
           </ScrollView>
         </View>

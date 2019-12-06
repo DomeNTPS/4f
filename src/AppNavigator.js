@@ -12,7 +12,8 @@ import Partboilerbottom from "./containers/Partboilerbottom";
 import Partboilerbottomleft from "./containers/Partboilerbottomleft";
 import Partboilerbottomcenter from "./containers/Partboilerbottomcenter";
 import Partboilerbottomright from "./containers/Partboilerbottomright";
-import test from "./containers/test";
+import PartV from "./containers/PartV";
+import PartEllipse from "./containers/PartEllipse";
 
 const AppNavigator = createStackNavigator({
   Login: { screen: Login },
@@ -27,7 +28,8 @@ const AppNavigator = createStackNavigator({
   Partboilerbottomleft: { screen: Partboilerbottomleft },
   Partboilerbottomcenter: { screen: Partboilerbottomcenter },
   Partboilerbottomright: { screen: Partboilerbottomright },
-  test:{screen:test},
+  PartV:{screen:PartV},
+  PartEllipse:{screen:PartEllipse},
 });
 
 const App = createAppContainer(AppNavigator);
