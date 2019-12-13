@@ -1,59 +1,41 @@
-import { View,Text,StyleSheet,Image,style,Button,TextInput,useState } from 'react-native';
+import { View, Text, StyleSheet, Image, style, Button, TextInput, useState, ActivityIndicator,Platform } from 'react-native';
 import React,{Component} from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class Login extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            UserName: '',
-            UserPass: ''
-        };
+    constructor()
+    {
+        super();
+        this.state = { ID: '', Passwords: '', loading: false, disabled: false}
     }
 
-    UserLoginFunction = () =>{
- 
-        const { UserName }  = this.state ;
-        const { UserPass }  = this.state ;
-        
-        
-       fetch('https://reactnativecode.000webhostapp.com/User_Login.php', {
-         method: 'POST',
-         headers: {
-           'Accept': 'application/json',
-           'Content-Type': 'application/json',
-         },
-         body: JSON.stringify({
-        
-           name: UserName,
-        
-           password: UserPass
-        
-         })
-        
-       }).then((response) => response.json())
-             .then((responseJson) => {
-        
-               // If server response message same as Data Matched
-              if(responseJson === 'Data Matched')
-               {
-        
-                   //Then open Profile activity and send user email to profile activity.
-                   this.props.navigation.navigate('Home', { Name: UserName });
-        
-               }
-               else{
-        
-                 Alert.alert(responseJson);
-               }
-        
-             }).catch((error) => {
-               console.error(error);
-             });
-        
-        
-         }
+    saveData = () => {
+            this.setState({ loading: true, disabled: true }, () => {
+                
+                fetch('gamersite123.000webhostapp.com/user_registration.php',
+                       {
+                        method: 'POST',
+                        headers:
+                        {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(
+                            {
+                                ID: this.state.ID,
 
+                                Passwords: this.state.Passwords
+                            })
+
+                    }).then((response) => response.json()).then((responseJson) => {
+                        alert(responseJson);
+                        this.setState({ loading: false, disabled: false });
+                    }).catch((error) => {
+                        console.error(error);
+                        this.setState({ loading: false, disabled: false });
+                    });
+            });
+    }
     render() {   
         
          return(
@@ -83,11 +65,7 @@ export default class Login extends React.Component {
 
         <View style = {styles.bla}></View>
         <TextInput
-            onChangeText = {
-             (text) => this.setState({
-                 text
-             })
-             }
+            onChangeText={(text) => this.setState({ ID: text })}
              value = {
                  this.state.UserName
              }
@@ -109,11 +87,7 @@ export default class Login extends React.Component {
             <View style = {{flex: 0.01}}></View>
 
             <TextInput
-            onChangeText = {
-                (text2) => this.setState({
-                    text2
-                })
-            }
+            onChangeText={(text) => this.setState({ Passwords: text })}
             value2 = {
                 this.state.UserPass
             }
@@ -148,7 +122,10 @@ export default class Login extends React.Component {
             <View style = { styles.bla } ></View>
 
             <TouchableOpacity style = {styles.container2}
-                 onPress = {
+                disabled={this.state.disabled} 
+                activeOpacity={0.8} 
+                onPress={
+                    //this.saveData
                      () =>
                      this.props.navigation.navigate('Home')
                 }
@@ -157,6 +134,13 @@ export default class Login extends React.Component {
                             styles.loginText
                         }> Submit </Text>
             </TouchableOpacity>
+                 {
+                     (this.state.loading)
+                         ?
+                         (<ActivityIndicator size="large" />)
+                         :
+                         null
+                 }
 
             <View style = {styles.bla} ></View>
 

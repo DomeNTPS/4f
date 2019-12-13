@@ -15,11 +15,20 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 import ImageZoom from "react-native-image-pan-zoom";
 import Svg, { Circle, Rect } from "react-native-svg";
+import axios from "axios";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class PartV extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      partv: [],
+    }
+  }
   render() {
       const {navigation}=this.props;
       const KKS=navigation.getParam('KKS','some default value');
+      const{partv}=this.state;
+      console.log({partv});
     return (
       <View style={styles.container}>
         <View style={styles.containertop}>
@@ -58,12 +67,21 @@ export default class PartV extends React.Component {
               }
             source={require("../../Image/boiler/PartV.png")}>
           </Image>
-          <Text>{KKS}</Text>
+          <Text>{partv}</Text>
            
           </ScrollView>
         </View>
       </View>
     );
+  }
+  componentDidMount(){
+    axios.get('http://192.168.43.217:3000/running_equipment')
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 }
 
@@ -107,3 +125,4 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   }
 });
+
