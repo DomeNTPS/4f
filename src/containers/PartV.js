@@ -52,6 +52,7 @@ export default class PartV extends React.Component {
           <Image
             style = {
               {
+                paddingTop: 30,
                 width: 200,
                 height: 150
               }
@@ -105,5 +106,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
     //alignItems: 'center',
     //justifyContent: 'center',
+  },
+  parttext: {
+    alignItems: "center",
+    paddingTop: 30,
+
   }
 });
