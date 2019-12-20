@@ -18,17 +18,11 @@ import Svg, { Circle, Rect } from "react-native-svg";
 import axios from "axios";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class PartV extends React.Component {
-  constructor(props){
-    super(props);
-    this.state ={
-      partv: [],
-    }
-  }
   render() {
-      const {navigation}=this.props;
-      const KKS=navigation.getParam('KKS','some default value');
-      const{partv}=this.state;
-      console.log({partv});
+      // const {navigation}=this.props;
+      // var KKS=navigation.getParam('KKS','some default value');
+      
+    
     return (
       <View style={styles.container}>
         <View style={styles.containertop}>
@@ -66,23 +60,33 @@ export default class PartV extends React.Component {
                 height: 150
               }
               }
-            source={require("../../Image/boiler/PartV.png")}>
+            source = {
+              require("../../Image/boiler/PartV.png")
+            }
+            
+            onPress={ () =>componentDidMount()}>
+            
           </Image>
-          <Text>{partv}</Text>
+          <Text>hi</Text>
            
           </ScrollView>
         </View>
       </View>
     );
   }
+  
   componentDidMount(){
-    axios.get('http://192.168.43.217:3000/running_equipment')
+    
+    const { navigation } = this.props;
+    const kks = navigation.getParam('KKS', 'some default value');
+    var a =axios.get(`http://10.26.11.189:3000/running_equipment/${kks}`)
     .then(response => {
       console.log(response.data);
     })
     .catch(error => {
       console.log(error);
     });
+    console.log(a);
   }
 }
 
