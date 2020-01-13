@@ -6,6 +6,8 @@ import Login from "./containers/Login";
 import ScanScreen from "./containers/ScanScreen";
 import Data from "./containers/Data";
 import Partboilerleft from "./containers/Partboilerleft";
+import Partboilerlefttop from "./containers/Partboilerlefttop";
+import Partboilerleftbottom from "./containers/Partboilerleftbottom";
 import Partboilermiddle from "./containers/Partboilermiddle";
 import Partboilerright from "./containers/Partboilerright";
 import Partboilerbottom from "./containers/Partboilerbottom";
@@ -22,6 +24,8 @@ const AppNavigator = createStackNavigator({
   ScanScreen: { screen: ScanScreen },
   Data: { screen: Data },
   Partboilerleft: { screen: Partboilerleft },
+  Partboilerlefttop: { screen: Partboilerlefttop },
+  Partboilerleftbottom: { screen: Partboilerleftbottom },
   Partboilermiddle: { screen: Partboilermiddle },
   Partboilerright: { screen: Partboilerright },
   Partboilerbottom: { screen: Partboilerbottom },

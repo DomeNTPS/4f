@@ -13,9 +13,9 @@ import {
   ScrollView
 } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilerleft from "../../Image/boiler/boilerleft.svg";
+import Boilerlefttop from "../../Image/boiler/boilerlefttop.svg";
 
-export default class Partboilerleft extends React.Component {
+export default class Partboilerlefttop extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -46,12 +46,12 @@ export default class Partboilerleft extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerleft height={400} width={410} alignSelf = 'center' />
+            <Boilerlefttop height={200} width={410} alignSelf = 'center' />
             
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 144 ,width : 370}}
+            < TouchableOpacity style = {{height : 72 ,width : 185}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerlefttop")
@@ -61,7 +61,7 @@ export default class Partboilerleft extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 248 ,width : 274}}
+            < TouchableOpacity style = {{height : 124 ,width : 137}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerleftbottom")
@@ -108,20 +108,20 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   containerbottom0: {
-    //   backgroundColor: "#ff0",
-    height: 144, 
-    width: 370,
+    //  backgroundColor: "#ff0",
+    height: 72, 
+    width: 185,
     position: "absolute",
     marginTop: 0,
-    marginLeft: 20,
+    marginLeft: 110,
   },
    containerbottom1: {
-     // backgroundColor: "#f00",
-    height: 248,
-    width: 274,
+    //  backgroundColor: "#f00",
+    height: 124,
+    width: 137,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 144,
-    marginLeft: 110,
+    marginTop: 72,
+    marginLeft: 157,
   },
 });

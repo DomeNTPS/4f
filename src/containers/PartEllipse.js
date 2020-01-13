@@ -56,7 +56,7 @@ export default class PartEllipse extends React.Component {
                 height: 150
               }
               }
-            source={require("../../Image/boiler/PartEllipse.png")}>
+            source={require("../../Image/boiler/PartEllipse.svg")}>
           </Image>
           <Text>{KKS}</Text>
            
