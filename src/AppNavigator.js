@@ -9,7 +9,14 @@ import Partboilerleft from "./containers/Partboilerleft";
 import Partboilerlefttop from "./containers/Partboilerlefttop";
 import Partboilerleftbottom from "./containers/Partboilerleftbottom";
 import Partboilermiddle from "./containers/Partboilermiddle";
+import Partboilermiddletopleft from "./containers/Partboilermiddletopleft";
+import Partboilermiddletopright from "./containers/Partboilermiddletopright";
+import Partboilermiddlebottomleft from "./containers/Partboilermiddlebottomleft";
+import Partboilermiddlebottomright from "./containers/Partboilermiddlebottomright";
 import Partboilerright from "./containers/Partboilerright";
+import Partboilerrighttop from "./containers/Partboilerrighttop";
+import Partboilerrightmid from "./containers/Partboilerrightmid";
+import Partboilerrightbottom from "./containers/Partboilerrightbottom";
 import Partboilerbottom from "./containers/Partboilerbottom";
 import Partboilerbottomleft from "./containers/Partboilerbottomleft";
 import Partboilerbottomcenter from "./containers/Partboilerbottomcenter";
@@ -27,7 +34,14 @@ const AppNavigator = createStackNavigator({
   Partboilerlefttop: { screen: Partboilerlefttop },
   Partboilerleftbottom: { screen: Partboilerleftbottom },
   Partboilermiddle: { screen: Partboilermiddle },
+  Partboilermiddletopleft: { screen: Partboilermiddletopleft },
+  Partboilermiddletopright: { screen: Partboilermiddletopright },
+  Partboilermiddlebottomleft: { screen: Partboilermiddlebottomleft },
+  Partboilermiddlebottomright: { screen: Partboilermiddlebottomright },
   Partboilerright: { screen: Partboilerright },
+  Partboilerrighttop: { screen: Partboilerrighttop },
+  Partboilerrightmid: { screen: Partboilerrightmid },
+  Partboilerrightbottom: { screen: Partboilerrightbottom },
   Partboilerbottom: { screen: Partboilerbottom },
   Partboilerbottomleft: { screen: Partboilerbottomleft },
   Partboilerbottomcenter: { screen: Partboilerbottomcenter },

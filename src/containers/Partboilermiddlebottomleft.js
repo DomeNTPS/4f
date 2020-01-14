@@ -10,8 +10,8 @@ import {
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilerlefttop from "../../Image/boiler/boilerlefttop.svg";
-export default class Partboilerlefttop extends React.Component {
+import Boilermiddlebottomleft from "../../Image/boiler/boilermidbottom.svg";
+export default class Partboilermiddlebottomleft extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -42,8 +42,8 @@ export default class Partboilerlefttop extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerlefttop height={200
-            } width={410} alignSelf = 'center' />
+            <Boilermiddlebottomleft height={400
+            } width={300} alignSelf = 'center' />
             < View style = {
               styles.containerbottom0
             } >
