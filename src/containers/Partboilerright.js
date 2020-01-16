@@ -46,7 +46,7 @@ export default class Partboilerright extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerright height={400} width={200} alignSelf = 'center' />
+            <Boilerright height={400} width={400} alignSelf = 'center' />
             
             < View style = {
               styles.containerbottom0

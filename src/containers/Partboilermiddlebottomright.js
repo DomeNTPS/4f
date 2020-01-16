@@ -43,7 +43,7 @@ export default class Partboilermiddlebottomright extends React.Component {
             showsVerticalScrollIndicator={false}
           >
             <Boilermiddlebottomright height={400
-            } width={300} alignSelf = 'center' />
+            } width={400} alignSelf = 'center' />
             < View style = {
               styles.containerbottom0
             } >
