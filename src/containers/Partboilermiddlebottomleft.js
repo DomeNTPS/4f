@@ -43,11 +43,11 @@ export default class Partboilermiddlebottomleft extends React.Component {
             showsVerticalScrollIndicator={false}
           >
             <Boilermiddlebottomleft height={400
-            } width={300} alignSelf = 'center' />
+            } width={400} alignSelf = 'center' />
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 13 ,width : 85}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("test")
@@ -62,7 +62,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP001PT001'})
@@ -72,7 +72,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP002PI001'})
@@ -83,7 +83,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom3
             } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CT001TT001'})
@@ -93,7 +93,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom4
             } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CF001FT001'})
@@ -103,7 +103,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom5
             } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB10AA003'})
@@ -113,7 +113,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom6
             } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB10AA002'})
@@ -123,7 +123,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom7
             } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB10AA005'})
@@ -133,7 +133,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom8
             } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB10AA004'})
@@ -143,7 +143,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom9
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 85}}
+            < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("test")
@@ -178,66 +178,66 @@ const styles = StyleSheet.create({
   alignItems: "center",
   },
   containerbottom0: {
-    //  backgroundColor: "#ff0",
-    height: 13, 
-    width: 85,
+    backgroundColor: "#ff0",
+    height: 53, 
+    width: 117,
     position: "absolute",
-    marginTop: 138,
-    marginLeft: 15,
+    marginTop: 300,
+    marginLeft: 70,
   },
    containerbottom1: {
-      // backgroundColor: "#f00",
-    height: 23,
-    width: 50,
+    backgroundColor: "#f00",
+    height: 40,
+    width: 30,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 57,
-    marginLeft: 135,
+    marginTop: 54,
+    marginLeft: 220,
   },
   containerbottom2: {
-    height: 23,
-    width: 50,
+    height: 40,
+    width: 30,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 57,
-    marginLeft: 196,
+    backgroundColor: '#AB6',
+    marginTop: 110,
+    marginLeft: 220,
   },
   containerbottom3: {
-      // backgroundColor: "#f00",
-    height: 23,
-    width: 50,
+    backgroundColor: "#f00",
+    height: 40,
+    width: 30,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 57,
-    marginLeft: 258,
+    marginTop: 165,
+    marginLeft: 220,
   },
   containerbottom4: {
-    height: 23,
-    width: 50,
+    height: 40,
+    width: 30,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 57,
-    marginLeft: 324,
+    backgroundColor: '#AB6',
+    marginTop: 220,
+    marginLeft: 220,
   },
    containerbottom5: {
-    height: 13,
-    width: 8,
+    height: 40,
+    width: 30,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 95,
-    marginLeft: 156,
+    backgroundColor: '#AB6',
+    marginTop: 90,
+    marginLeft: 308,
   },
   containerbottom6: {
-    height: 13,
-    width: 8,
+    height: 40,
+    width: 30,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#f00',
-    marginTop: 120.5,
-    marginLeft: 156,
+    backgroundColor: '#f00',
+    marginTop: 180,
+    marginLeft: 308,
   },
   containerbottom7: {
     height: 13,

@@ -46,45 +46,45 @@ export default class Partboilermid extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilermid height={400} width={200} alignSelf = 'center' />
+            <Boilermid height={400} width={400} alignSelf = 'center' />
             
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 250 ,width : 220}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermidtopleft")
+                this.props.navigation.navigate("Partboilermiddletopleft")
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 250 ,width : 130}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermidtopright")
+                this.props.navigation.navigate("Partboilermiddletopright")
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 140 ,width : 150}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerrightmidbottomleft")
+                this.props.navigation.navigate("Partboilermiddlebottomleft")
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
               styles.containerbottom3
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 150 ,width : 120}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerrightmidbottomright")
+                this.props.navigation.navigate("Partboilermiddlebottomright")
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -96,65 +96,66 @@ export default class Partboilermid extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff"
+      container: {
+        flex: 1,
+        backgroundColor: "#fff"
 
-    //justifyContent: 'center',
-  },
+        //justifyContent: 'center',
+      },
 
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
-  },
+      ImageIconStyle: {
+        padding: 10,
+        margin: 5,
+        height: 25,
+        width: 25,
+        resizeMode: "stretch"
+      },
 
-  containertop: {
-    flex: 0.1,
-    backgroundColor: "#fff",
-    alignItems: "flex-end",
-    paddingTop: 20
+      containertop: {
+        flex: 0.1,
+        backgroundColor: "#fff",
+        alignItems: "flex-end",
+        paddingTop: 20
 
-    //justifyContent: 'center',
-  },
-  containerbottom: {
-    flex: 0.9,
-    backgroundColor: "#fff",
-    alignItems: "center"
-    //justifyContent: 'center',
-  },
-  containerbottom0: {
-    // backgroundColor: "#ff0",
-    height: 100, 
-    width: 150,
-    position: "absolute",
-    marginTop: 60,
-    marginLeft: 10,
-  },
-   containerbottom1: {
-    // backgroundColor: "#f00",
-    height: 100,
-    width: 150,
-    position: "absolute",
-    marginTop: 60,
-    marginLeft: 160,
-  },
-  containerbottom2: {
-    height: 100,
-    width: 150,
-    position: "absolute",
-    // backgroundColor: '#AB6',
-    marginTop: 60,
-    marginLeft: 310,
-  },
-  containerbottom3: {
-    height: 100,
-    width: 150,
-    position: "absolute",
-    // backgroundColor: '#AR7',
-    marginTop: 60,
-    marginLeft: 310,
-  },
+        //justifyContent: 'center',
+      },
+      containerbottom: {
+        flex: 0.9,
+        backgroundColor: "#fff",
+        alignItems: "center"
+        //justifyContent: 'center',
+      },
+      containerbottom0: {
+        backgroundColor: "#ff0",
+        height: 250,
+        width: 220,
+        position: "absolute",
+        marginTop: 10,
+        marginLeft: 20,
+      },
+      containerbottom1: {
+        backgroundColor: "#f00",
+        height: 250,
+        width: 130,
+        // alignSelf: "center",
+        position: "absolute",
+        marginTop: 10,
+        marginLeft: 245,
+      },
+      containerbottom2: {
+        height: 140,
+        width: 150,
+        position: "absolute",
+        backgroundColor: '#AB6',
+        marginTop: 270,
+        marginLeft: 20,
+      },
+        containerbottom3: {
+        height: 150,
+        width: 120,
+        position: "absolute",
+        backgroundColor: '#bf0',
+        marginTop: 270,
+        marginLeft: 200,
+      },
 });
