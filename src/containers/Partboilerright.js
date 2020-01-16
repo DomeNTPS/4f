@@ -46,12 +46,12 @@ export default class Partboilerright extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerright height={400} width={200} alignSelf = 'center' />
+            <Boilerright height={400} width={400} alignSelf = 'center' />
             
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 78 ,width : 156}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerrighttop")
@@ -61,7 +61,7 @@ export default class Partboilerright extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 180 ,width : 145}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerrightmid")
@@ -71,7 +71,7 @@ export default class Partboilerright extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 128 ,width : 183}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerrightbottom")
@@ -118,28 +118,28 @@ const styles = StyleSheet.create({
   },
   containerbottom0: {
     // backgroundColor: "#ff0",
-    height: 100, 
-    width: 150,
+    height: 78, 
+    width: 156,
     position: "absolute",
-    marginTop: 60,
-    marginLeft: 10,
+    marginTop: 0,
+    marginLeft: 113,
   },
    containerbottom1: {
     // backgroundColor: "#f00",
-    height: 100,
-    width: 150,
+    height: 180,
+    width: 145,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 60,
-    marginLeft: 160,
+    marginTop: 78,
+    marginLeft: 170,
   },
   containerbottom2: {
-    height: 100,
-    width: 150,
+    height: 128,
+    width: 183,
     // alignSelf: "flex-end",
     position: "absolute",
     // backgroundColor: '#AB6',
-    marginTop: 60,
-    marginLeft: 310,
+    marginTop: 258,
+    marginLeft: 113,
   },
 });

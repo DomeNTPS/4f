@@ -42,8 +42,8 @@ export default class Partboilerlefttop extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerlefttop height={200
-            } width={410} alignSelf = 'center' />
+            <Boilerlefttop height={300
+            } width={400} alignSelf = 'center' />
             < View style = {
               styles.containerbottom0
             } >
@@ -178,28 +178,28 @@ const styles = StyleSheet.create({
   alignItems: "center",
   },
   containerbottom0: {
-    //  backgroundColor: "#ff0",
-    height: 13, 
+    backgroundColor: "#ff0",
+    height: 40, 
     width: 85,
     position: "absolute",
-    marginTop: 138,
+    marginTop: 0,
     marginLeft: 15,
   },
    containerbottom1: {
-      // backgroundColor: "#f00",
-    height: 23,
-    width: 50,
+    backgroundColor: "#f00",
+    height: 20,
+    width: 40,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 57,
-    marginLeft: 135,
+    marginTop: 65,
+    marginLeft: 132,
   },
   containerbottom2: {
     height: 23,
     width: 50,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
+    backgroundColor: '#AB6',
     marginTop: 57,
     marginLeft: 196,
   },

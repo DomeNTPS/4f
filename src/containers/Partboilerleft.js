@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
 
-    //justifyContent: 'center',
   },
 
   ImageIconStyle: {
@@ -99,16 +98,15 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingTop: 20
 
-    //justifyContent: 'center',
   },
   containerbottom: {
     flex: 0.9,
     backgroundColor: "#fff",
     alignItems: "center"
-    //justifyContent: 'center',
+
   },
   containerbottom0: {
-    //   backgroundColor: "#ff0",
+    // backgroundColor: "#ff0",
     height: 144, 
     width: 370,
     position: "absolute",
@@ -116,10 +114,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
    containerbottom1: {
-     // backgroundColor: "#f00",
+    // backgroundColor: "#f00",
     height: 248,
     width: 274,
-    // alignSelf: "center",
     position: "absolute",
     marginTop: 144,
     marginLeft: 110,
