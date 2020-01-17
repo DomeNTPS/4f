@@ -47,16 +47,12 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 53 ,width : 117}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("test")
-          
-                
+                this.props.navigation.navigate("test",{KKS:'10LAB40CF001 FT 001'})  
               }
-              
-               >
-                
+               >            
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
@@ -65,7 +61,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP001PT001'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB40 AA 004'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -75,7 +71,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP002PI001'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB40 AA 001'})
             
               } >
                 </ TouchableOpacity>
@@ -86,7 +82,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CT001TT001'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB40 AA 003'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -96,7 +92,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CF001FT001'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB40 AA 002'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -106,7 +102,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA003'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB40 AA 006'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -116,7 +112,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA002'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB40 AA 005'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -126,7 +122,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA005'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10AA005'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -136,7 +132,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 40 ,width : 30}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA004'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10AA004'})
               } >
                 </ TouchableOpacity>
                 </ View>
