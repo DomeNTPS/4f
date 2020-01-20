@@ -82,7 +82,7 @@ export default class Partboilermiddletopright extends React.Component {
             < TouchableOpacity style = {{height : 20 ,width : 70}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CT001TT001'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH10CT003 TT 003 '})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -92,7 +92,7 @@ export default class Partboilermiddletopright extends React.Component {
             < TouchableOpacity style = {{height : 20 ,width : 70}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CF001FT001'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH10CT001 TT 001'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -102,7 +102,7 @@ export default class Partboilermiddletopright extends React.Component {
             < TouchableOpacity style = {{height : 20 ,width : 70}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA003'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAH10CT004 TT 004'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -112,7 +112,7 @@ export default class Partboilermiddletopright extends React.Component {
             < TouchableOpacity style = {{height : 20 ,width : 70}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA002'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAH10CT002 TT 002'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -139,13 +139,13 @@ const styles = StyleSheet.create({
   containerbottomall: {
   flex: 0.9,
   backgroundColor: "#fff",
-  borderColor: "red",
-  borderStyle: "solid",
-  borderWidth: 10,
+  // borderColor: "red",
+  // borderStyle: "solid",
+  // borderWidth: 10,
   alignItems: "center",
   },
   containerbottom0: {
-    backgroundColor: "#ff0",
+    // backgroundColor: "#ff0",
     height: 315, 
     width: 30,
     position: "absolute",
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     marginLeft: 80,
   },
    containerbottom1: {
-    backgroundColor: "#f00",
+    // backgroundColor: "#f00",
     height: 315,
     width: 30,
     // alignSelf: "center",
@@ -166,12 +166,12 @@ const styles = StyleSheet.create({
     width: 30,
     // alignSelf: "flex-end",
     position: "absolute",
-    backgroundColor: '#AB6',
+    // backgroundColor: '#AB6',
     marginTop: 10,
     marginLeft: 290,
   },
   containerbottom3: {
-    backgroundColor: "#f00",
+    // backgroundColor: "#f00",
     height: 20,
     width: 70,
     // alignSelf: "center",
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     width: 70,
     // alignSelf: "flex-end",
     position: "absolute",
-    backgroundColor: '#AB6',
+    // backgroundColor: '#AB6',
     marginTop: 338,
     marginLeft: 223,
   },
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     width: 70,
     // alignSelf: "flex-end",
     position: "absolute",
-    backgroundColor: '#AB6',
+    // backgroundColor: '#AB6',
     marginTop: 365,
     marginLeft: 115,
   },
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     width: 70,
     // alignSelf: "flex-end",
     position: "absolute",
-    backgroundColor: '#f00',
+    // backgroundColor: '#f00',
     marginTop: 365,
     marginLeft: 223,
   },
