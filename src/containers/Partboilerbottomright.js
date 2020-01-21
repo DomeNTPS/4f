@@ -42,8 +42,28 @@ export default class Partboilerbottomleft extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerbuttomright height={200
+            <Boilerbuttomright height={400
             } width={410} alignSelf = 'center' />
+            < View style = {
+              styles.containerbottom0
+            } >
+            < TouchableOpacity style = {{height : 35 ,width : 52}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerbottom")
+              } >
+                </TouchableOpacity>
+                </View>
+                < View style = {
+              styles.containerbottom1
+            } >
+            < TouchableOpacity 
+            onPress = {
+                () =>
+                this.props.navigation.navigate("Partboilerbottom")
+              } >
+                </TouchableOpacity>
+                </View>
             
           </ScrollView>
         </View>
@@ -73,20 +93,21 @@ const styles = StyleSheet.create({
   alignItems: "center",
   },
   containerbottom0: {
-    // backgroundColor: "#ff0",
-    height: 200, 
-    width: 160,
+    backgroundColor: "#ff0",
+    height: 35, 
+    width: 52,
     position: "absolute",
-    marginTop: 60,
+    marginTop: '20%',
+    marginLeft: '33%',
   },
    containerbottom1: {
-    // backgroundColor: "#f00",
-    height: 153,
-    width: 153,
+    backgroundColor: "#f00",
+    height: 35,
+    width: 52,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 136,
-    marginLeft: 147,
+    marginTop: '50%',
+    marginLeft: '33%',
   },
   containerbottom2: {
     height: 160,
