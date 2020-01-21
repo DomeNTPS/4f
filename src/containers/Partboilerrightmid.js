@@ -44,112 +44,248 @@ export default class Partboilerrightmid extends React.Component {
           >
             <Boilerrightmid height={400
             } width={410} alignSelf = 'center' />
-            < View style = {
+             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 13 ,width : 85}}
+            < TouchableOpacity style = {{height : 365, width : 55}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("test")
-          
-                
-              }
-              
-               >
-                
+              } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
+            < TouchableOpacity style = {{height : 25 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP001PT001'})
+                this.props.navigation.navigate("test")
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP002PI001'})
-            
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom3
-            } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CT001TT001'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom4
-            } >
-            < TouchableOpacity style = {{height : 23 ,width : 50}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CF001FT001'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom5
-            } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA003'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom6
-            } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA002'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom7
-            } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA005'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom8
-            } >
-            < TouchableOpacity style = {{height : 13 ,width : 8}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA004'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom9
-            } >
-            < TouchableOpacity style = {{height : 25 ,width : 85}}
+            < TouchableOpacity style = {{height : 32 ,width : 11}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("test")
               } >
                 </ TouchableOpacity>
                 </ View>
+                < View style = {
+              styles.containerbottomE1
+            } >
+            < TouchableOpacity style = {{height : 23 ,width : 67}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH30CT003TT003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomE2
+            } >
+            < TouchableOpacity style = {{height : 23 ,width : 67}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH30CT004TT004'})
+            
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomE3
+            } >
+            < TouchableOpacity style = {{height : 23 ,width : 67}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH30CT001TT001'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomE4
+            } >
+            < TouchableOpacity style = {{height : 23 ,width : 67}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH30CP003PI003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomE5
+            } >
+            < TouchableOpacity style = {{height : 27 ,width : 85}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartEllipse",{KKS:'10HAH30CT002TT002'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV1
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA010'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV2
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA009'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV3
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA008'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV4
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA007'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV5
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA001'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV6
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA006'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV7
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA005'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV8
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA002'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV9
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV10
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV11
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV12
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV13
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV14
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV15
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV16
+            } >
+            < TouchableOpacity style = {{height : 9 ,width : 18}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10HAH30AA003'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+               
           </ScrollView>
         </View>
       </View>
@@ -172,105 +308,221 @@ const styles = StyleSheet.create({
   containerbottomall: {
   flex: 0.9,
   backgroundColor: "#fff",
-  borderColor: "red",
-  borderStyle: "solid",
-  borderWidth: 10,
+  
   alignItems: "center",
   },
   containerbottom0: {
-    //  backgroundColor: "#ff0",
-    height: 13, 
-    width: 85,
+    // backgroundColor: "#ff0",
+    height: 365, 
+    width: 55,
     position: "absolute",
-    marginTop: 138,
-    marginLeft: 15,
+    marginTop: 15,
+    marginLeft: 31,
   },
-   containerbottom1: {
-      // backgroundColor: "#f00",
-    height: 23,
-    width: 50,
-    // alignSelf: "center",
+  containerbottom1: {
+    // backgroundColor: "#ff0",
+    height: 25, 
+    width: 25,
     position: "absolute",
-    marginTop: 57,
-    marginLeft: 135,
+    marginTop: 20,
+    marginLeft: 110,
   },
   containerbottom2: {
-    height: 23,
-    width: 50,
-    // alignSelf: "flex-end",
+    // backgroundColor: "#ff0",
+    height: 11, 
+    width: 32,
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 57,
-    marginLeft: 196,
+    marginTop: 28.5,
+    marginLeft: 162,
   },
-  containerbottom3: {
-      // backgroundColor: "#f00",
+  containerbottomE1: {
+    // backgroundColor: "#f00",
     height: 23,
-    width: 50,
+    width: 67,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 57,
-    marginLeft: 258,
+    marginTop: 85,
+    marginLeft: 250,
   },
-  containerbottom4: {
+  containerbottomE2: {
     height: 23,
-    width: 50,
+    width: 67,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 57,
-    marginLeft: 324,
+    // backgroundColor: '#AB6',
+    marginTop: 171,
+    marginLeft: 250,
   },
-   containerbottom5: {
-    height: 13,
-    width: 8,
+  containerbottomE3: {
+    // backgroundColor: "#f00",
+    height: 23,
+    width: 67,
+    // alignSelf: "center",
+    position: "absolute",
+    marginTop: 233,
+    marginLeft: 181,
+  },
+  containerbottomE4: {
+    height: 23,
+    width: 67,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 95,
-    marginLeft: 156,
+    // backgroundColor: '#AB6',
+    marginTop: 276,
+    marginLeft: 181,
   },
-  containerbottom6: {
-    height: 13,
-    width: 8,
+  containerbottomE5: {
+    // backgroundColor: "#f00",
+    height: 27,
+    width: 85,
+    // alignSelf: "center",
+    position: "absolute",
+    marginTop: 334,
+    marginLeft: 282,
+  },
+   containerbottomV1: {
+    height: 9,
+    width: 18,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#f00',
-    marginTop: 120.5,
-    marginLeft: 156,
+    // backgroundColor: '#AB6',
+    marginTop: 73.5,
+    marginLeft: 106.5,
   },
-  containerbottom7: {
-    height: 13,
-    width: 8,
+  containerbottomV2: {
+    height: 9,
+    width: 18,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#AB6',
-    marginTop: 95,
-    marginLeft: 217.5,
+    // backgroundColor: '#f00',
+    marginTop: 73.5,
+    marginLeft: 148.5,
   },
-  containerbottom8: {
-    height: 13,
-    width: 8,
+  containerbottomV3: {
+    height: 9,
+    width: 18,
     // alignSelf: "flex-end",
     position: "absolute",
-    //  backgroundColor: '#f00',
-    marginTop: 120.5,
-    marginLeft: 217.5,
+    // backgroundColor: '#AB6',
+    marginTop: 109.5,
+    marginLeft: 106.5,
   },
-  containerbottom9: {
-    //  backgroundColor: "#ff0",
-    height: 13, 
-    width: 15,
+  containerbottomV4: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
     position: "absolute",
-    marginTop: 138,
-    marginLeft: 340,
+    // backgroundColor: '#f00',
+    marginTop: 109.5,
+    marginLeft: 148.5,
   },
-  
-  containerpicture: {
-    //flex: 0.8,
-    // backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
+  containerbottomV5: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 159.5,
+    marginLeft: 106.5,
+  },
+  containerbottomV6: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#f00',
+    marginTop: 159.5,
+    marginLeft: 148.5,
+  },
+  containerbottomV7: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 195,
+    marginLeft: 106.5,
+  },
+  containerbottomV8: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#f00',
+    marginTop: 195,
+    marginLeft: 148.5,
+  },
+  containerbottomV9: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 239.5,
+    marginLeft: 106.5,
+  },
+  containerbottomV10: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#f00',
+    marginTop: 239.5,
+    marginLeft: 148.5,
+  },
+  containerbottomV11: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 283,
+    marginLeft: 106.5,
+  },
+  containerbottomV12: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#f00',
+    marginTop: 283,
+    marginLeft: 148.5,
+  },
+  containerbottomV13: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 325,
+    marginLeft: 106.5,
+  },
+  containerbottomV14: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#f00',
+    marginTop: 325,
+    marginLeft: 148.5,
+  },
+  containerbottomV15: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#AB6',
+    marginTop: 360.5,
+    marginLeft: 106.5,
+  },
+  containerbottomV16: {
+    height: 9,
+    width: 18,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    // backgroundColor: '#f00',
+    marginTop: 360.5,
+    marginLeft: 148.5,
   },
   ImageIconStyle: {
     padding: 10,
