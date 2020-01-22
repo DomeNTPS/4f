@@ -92,9 +92,9 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   containerbottom: {
-    borderColor: "red",
-    borderStyle: "solid",
-    borderWidth: 10,
+    // borderColor: "red",
+    // borderStyle: "solid",
+    // borderWidth: 10,
     flex: 0.9,
     backgroundColor: "#fff",
     alignItems: "center"

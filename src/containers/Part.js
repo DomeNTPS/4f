@@ -106,9 +106,9 @@ const styles = StyleSheet.create({
   containerbottomall: {
   flex: 0.9,
   backgroundColor: "#fff",
-  borderColor: "red",
-  borderStyle: "solid",
-  borderWidth: 10,
+  // borderColor: "red",
+  // borderStyle: "solid",
+  // borderWidth: 10,
   alignItems: "center",
   },
   containerbottom0: {
