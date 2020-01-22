@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         //justifyContent: 'center',
       },
       containerbottom0: {
-        backgroundColor: "#ff0",
+        // backgroundColor: "#ff0",
         height: 250,
         width: 220,
         position: "absolute",
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
       },
       containerbottom1: {
-        backgroundColor: "#f00",
+        // backgroundColor: "#f00",
         height: 250,
         width: 130,
         // alignSelf: "center",
