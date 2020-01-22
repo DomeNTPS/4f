@@ -57,7 +57,7 @@ export default class Partboilerbottomleft extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity 
+            < TouchableOpacity  style = {{height : 90 ,width : 123}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottom")
@@ -67,7 +67,7 @@ export default class Partboilerbottomleft extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity 
+            < TouchableOpacity style = {{height : 30 ,width : 75}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10HAC10CT002 TT 002'})
@@ -75,9 +75,9 @@ export default class Partboilerbottomleft extends React.Component {
                 </TouchableOpacity>
                 </View>
                 < View style = {
-              styles.containerbottom3
+              styles.containerbottom3 
             } >
-            < TouchableOpacity 
+            < TouchableOpacity style = {{height : 30 ,width : 75}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10HAC10CT001 TT 001'})
@@ -87,7 +87,7 @@ export default class Partboilerbottomleft extends React.Component {
                 < View style = {
               styles.containerbottom4
             } >
-            < TouchableOpacity 
+            < TouchableOpacity style = {{height : 30 ,width : 75}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CT002 TT 002'})

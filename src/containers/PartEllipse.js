@@ -52,11 +52,11 @@ export default class PartEllipse extends React.Component {
           <Image
             style = {
               {
-                width: 350,
-                height: 150
+                width: 300,
+                height: 300
               }
               }
-            source={require("../../Image/boiler/PartEllipse.svg")}>
+            source={require("../../Image/boiler/Alat_Ukur_Suhu_html_8f08d63c.jpg")}>
           </Image>
           <Text>{KKS}</Text>
            

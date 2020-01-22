@@ -19,8 +19,8 @@ import axios from "axios";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class PartV extends React.Component {
   render() {
-      // const {navigation}=this.props;
-      // var KKS=navigation.getParam('KKS','some default value');
+      const {navigation}=this.props;
+      var KKS=navigation.getParam('KKS','some default value');
       
     
     return (
@@ -67,7 +67,7 @@ export default class PartV extends React.Component {
             onPress={ () =>componentDidMount()}>
             
           </Image>
-          <Text>hi</Text>
+           <Text>{KKS}</Text>
            
           </ScrollView>
         </View>
