@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import {
   StyleSheet,
   Button,
@@ -11,24 +11,42 @@ import {
   Dimensions,
   ScrollView
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
-import ImageZoom from "react-native-image-pan-zoom";
-import Svg, { Circle, Rect } from "react-native-svg";
+import {
+  TouchableOpacity
+} from "react-native-gesture-handler";
 import axios from "axios";
-// import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
-export default class PartV extends React.Component {
-  render() {
-      const {navigation}=this.props;
-      var KKS=navigation.getParam('KKS','some default value');
-      
+// import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
+
+const PartV = (props) => {
+  const { navigation } = props
+
+  const [partInfo, setPartInfo] = useState({
+    DateExpired: "loading",
+    DateStart: "loading",
+    KKScode: "loading",
+    active: 0,
+  })
+  useEffect(() => {
     
-    return (
-      <View style={styles.container}>
+    const fetching = async () => {
+      try {
+        const kks = navigation.getParam('KKS', 'some default value');
+        let {
+          data
+        } = await axios.get(`http://10.26.15.242:3000/running_equipment/${kks}`)
+        setPartInfo(data[0])
+      } catch (e) {
+        console.log(e)
+      }
+    }
+    fetching()
+  }, [])
+  return (
+     <View style={styles.container}>
         <View style={styles.containertop}>
           <TouchableOpacity
             title="Scan"
-            onPress={() => this.props.navigation.navigate("ScanScreen")}
+            onPress={() => navigation.navigate("ScanScreen")}
           >
             <Image
               style={{
@@ -51,6 +69,7 @@ export default class PartV extends React.Component {
             minimumZoomScale={1}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
+            width={'100%'}
           >  
           <Image
             style = {
@@ -67,28 +86,17 @@ export default class PartV extends React.Component {
             onPress={ () =>componentDidMount()}>
             
           </Image>
-           <Text>{KKS}</Text>
-           
+          <Text style = {styles.parttext}>{partInfo.KKScode}</Text>
+          <Text style = {styles.parttext}>{partInfo.DateStart}</Text>
+          <Text style = {styles.parttext}>{partInfo.DateExpired}</Text>
           </ScrollView>
         </View>
       </View>
-    );
-  }
-  
-  componentDidMount(){
-    
-    const { navigation } = this.props;
-    const kks = navigation.getParam('KKS', 'some default value');
-    var a =axios.get(`http://10.26.11.189:3000/running_equipment/${kks}`)
-    .then(response => {
-      console.log(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-    });
-    console.log(a);
-  }
+  )
 }
+
+export default PartV
+
 
 const styles = StyleSheet.create({
   container: {
@@ -120,7 +128,7 @@ const styles = StyleSheet.create({
     // borderWidth: 10,
     flex: 0.9,
     backgroundColor: "#fff",
-    alignItems: "center"
+    alignItems: "center",
     //justifyContent: 'center',
   },
   containerpicture: {
@@ -135,4 +143,3 @@ const styles = StyleSheet.create({
 
   }
 });
-
