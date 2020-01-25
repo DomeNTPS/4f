@@ -14,7 +14,6 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 import ImageZoom from "react-native-image-pan-zoom";
-import Svg, { Circle, Rect } from "react-native-svg";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class Home extends React.Component {
   render() {

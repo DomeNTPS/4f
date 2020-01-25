@@ -11,9 +11,7 @@ import {
   Dimensions,
   ScrollView
 } from "react-native";
-import {
-  TouchableOpacity
-} from "react-native-gesture-handler";
+import {TouchableOpacity} from "react-native-gesture-handler";
 import axios from "axios";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
 
@@ -74,9 +72,10 @@ const PartV = (props) => {
           <Image
             style = {
               {
-                paddingTop: 30,
+                marginTop: 30,
                 width: 200,
-                height: 150
+                height: 200,
+                alignSelf: "center"
               }
               }
             source = {
@@ -86,7 +85,8 @@ const PartV = (props) => {
             onPress={ () =>componentDidMount()}>
             
           </Image>
-          <Text style = {styles.parttext}>{partInfo.KKScode}</Text>
+          <View style = { styles.blank} ></View>
+          <Text style = {styles.parttextHead}>{partInfo.KKScode}</Text>
           <Text style = {styles.parttext}>{partInfo.DateStart}</Text>
           <Text style = {styles.parttext}>{partInfo.DateExpired}</Text>
           </ScrollView>
@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
 
     //justifyContent: 'center',
   },
-
   ImageIconStyle: {
     padding: 10,
     margin: 5,
@@ -128,7 +127,7 @@ const styles = StyleSheet.create({
     // borderWidth: 10,
     flex: 0.9,
     backgroundColor: "#fff",
-    alignItems: "center",
+    // alignItems: "center",
     //justifyContent: 'center',
   },
   containerpicture: {
@@ -138,8 +137,17 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   parttext: {
-    alignItems: "center",
+    alignSelf: "center",
+    paddingTop: 10,
+  },
+  parttextHead: {
+    alignSelf: "center",
     paddingTop: 30,
-
-  }
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  blank:{
+    flex: 0.2,
+    alignItems: 'center',
+  },
 });
