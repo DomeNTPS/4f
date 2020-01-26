@@ -42,6 +42,7 @@ export default class Home extends React.Component {
           zoomStep={0.5}
           initialZoom={1}
           bindToBorders={true}
+          captureEvent={true}
           style={styles.containerbottom}
         >
           <TouchableOpacity
@@ -70,7 +71,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
-
     //justifyContent: 'center',
   },
 
