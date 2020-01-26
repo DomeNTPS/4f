@@ -13,8 +13,6 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
-import ImageZoom from "react-native-image-pan-zoom";
-// import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class Home extends React.Component {
   render() {
     return (
@@ -38,15 +36,15 @@ export default class Home extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-        <View style={styles.containerbottom}>
-          <ScrollView
-            maximumZoomScale={5}
-            scrollEnabled={true}
-            minimumZoomScale={1}
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-          >
-            <TouchableOpacity
+        <ReactNativeZoomableView
+          maxZoom={1.5}
+          minZoom={0.5}
+          zoomStep={0.5}
+          initialZoom={1}
+          bindToBorders={true}
+          style={styles.containerbottom}
+        >
+          <TouchableOpacity
               title="Scan"
               alignItems = "center"
               onPress={() => this.props.navigation.navigate("Part")}
@@ -60,29 +58,9 @@ export default class Home extends React.Component {
                 }
                 source={require("../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png")}>
               </Image>
-              {/* <Logo height={300} width={300} /> */}
-              {/* <Svg height={160} width={160} viewBox="0 0 100 100">
-                <Circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  stroke="blue"
-                  strokeWidth="2.5"
-                  fill="green"
-                />
-                <Rect
-                  x="15"
-                  y="15"
-                  width="70"
-                  height="70"
-                  stroke="red"
-                  strokeWidth="2"
-                  fill="yellow"
-                />
-              </Svg> */}
+              
             </TouchableOpacity>
-          </ScrollView>
-        </View>
+          </ReactNativeZoomableView>
       </View>
     );
   }
@@ -118,7 +96,8 @@ const styles = StyleSheet.create({
     // borderWidth: 10,
     flex: 0.9,
     backgroundColor: "#fff",
-    alignItems: "center"
+    alignItems: "center",
+    width:"100%",
     //justifyContent: 'center',
   },
   containerpicture: {
