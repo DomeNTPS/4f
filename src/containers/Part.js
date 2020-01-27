@@ -34,14 +34,15 @@ export default class Part extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-        <View style={styles.containerbottomall}>
-          <ScrollView
-            maximumZoomScale={3}
-            scrollEnabled={true}
-            minimumZoomScale={1}
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-          >
+        <ReactNativeZoomableView
+          maxZoom={1.5}
+          minZoom={0.5}
+          zoomStep={0.5}
+          initialZoom={1}
+          bindToBorders={true}
+          captureEvent={true}
+          style={styles.containerbottom}
+        >
             <Boiler height={450} width={410} alignSelf = 'center' />
             < View style = {
               styles.containerbottom3
@@ -84,8 +85,7 @@ export default class Part extends React.Component {
                 </ TouchableOpacity>
                 </ View>
                 
-          </ScrollView>
-        </View>
+        </ReactNativeZoomableView>
       </View>
     );
   }
