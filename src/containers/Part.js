@@ -11,6 +11,7 @@ import {
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/boiler/boiler fix.svg";
+import PinchZoomView from 'react-native-pinch-zoom-view
 import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 export default class Part extends React.Component {
   render() {
@@ -35,13 +36,7 @@ export default class Part extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-        <ReactNativeZoomableView
-          maxZoom={1.5}
-          minZoom={0.5}
-          zoomStep={0.5}
-          initialZoom={1}
-          bindToBorders={true}
-          captureEvent={true}
+        <PinchZoomView
           style={styles.containerbottom}
         >
             <Boiler height={450} width={410} alignSelf = 'center' />
@@ -86,7 +81,7 @@ export default class Part extends React.Component {
                 </ TouchableOpacity>
                 </ View>
                 
-        </ReactNativeZoomableView>
+        </PinchZoomView>
       </View>
     );
   }
