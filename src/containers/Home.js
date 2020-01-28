@@ -27,7 +27,8 @@ export default class Home extends React.Component {
                 paddingRight: 20,
                 paddingTop: 30,
                 width: 50,
-                height: 50
+                height: 50,
+                zIndex:10000000
               }}
               source={require("../../Image/Untitled-1.png")}
             />
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     // borderStyle: "solid",
     // borderWidth: 10,
     flex: 0.9,
-    backgroundColor: "#fff",
+
     alignItems: "center",
     width:"100%",
     //justifyContent: 'center',
