@@ -12,7 +12,6 @@ import {
   ScrollView
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 export default class Home extends React.Component {
   render() {
     return (
@@ -37,15 +36,7 @@ export default class Home extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-        <ReactNativeZoomableView
-          maxZoom={1.5}
-          minZoom={0.5}
-          zoomStep={0.5}
-          initialZoom={1}
-          bindToBorders={true}
-          captureEvent={true}
-          style={styles.containerbottom}
-        >
+        <View style={styles.containerbottom}>
           <TouchableOpacity
               title="Scan"
               alignItems = "center"
@@ -62,7 +53,7 @@ export default class Home extends React.Component {
               </Image>
               
             </TouchableOpacity>
-          </ReactNativeZoomableView>
+          </View>
       </View>
     );
   }
@@ -97,8 +88,7 @@ const styles = StyleSheet.create({
     // borderWidth: 10,
     flex: 0.9,
 
-    alignItems: "center",
-    width:"100%",
+    alignItems: "center"
     //justifyContent: 'center',
   },
   containerpicture: {

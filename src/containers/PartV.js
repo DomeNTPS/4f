@@ -31,7 +31,7 @@ const PartV = (props) => {
         const kks = navigation.getParam('KKS', 'some default value');
         let {
           data
-        } = await axios.get(`http://10.26.15.242:3000/running_equipment/${kks}`)
+        } = await axios.get(`http://10.26.3.164:3000/running_equipment/${kks}`)
         setPartInfo(data[0])
       } catch (e) {
         console.log(e)

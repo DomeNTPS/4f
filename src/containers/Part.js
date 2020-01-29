@@ -11,8 +11,7 @@ import {
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/boiler/boiler fix.svg";
-import PinchZoomView from 'react-native-pinch-zoom-view';
-import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
+
 export default class Part extends React.Component {
   render() {
     return (
@@ -36,29 +35,35 @@ export default class Part extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
-        <PinchZoomView
-          style={styles.containerbottom}
-        >
+        <View  style={styles.containerbottom}>
+        <ScrollView
+            maximumZoomScale={3}
+            scrollEnabled={true}
+            minimumZoomScale={1}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+          >
+          
             <Boiler height={450} width={410} alignSelf = 'center' />
             < View style = {
               styles.containerbottom3
             } >
-            < TouchableOpacity style = {{height : 80 ,width : 330}}
+            <TouchableOpacity style = {{height : 80 ,width : 330}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottom")
               } >
-                </ TouchableOpacity>
+                </TouchableOpacity>
                 </ View>
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 200 ,width : 160}}
+            <TouchableOpacity style = {{height : 200 ,width : 160}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerleft")
               } >
-                </ TouchableOpacity>
+                </TouchableOpacity>
                 </ View>
                 < View style = {
               styles.containerbottom1
@@ -80,8 +85,9 @@ export default class Part extends React.Component {
               } >
                 </ TouchableOpacity>
                 </ View>
-                
-        </PinchZoomView>
+               
+        </ScrollView>
+         </View>
       </View>
     );
   }
