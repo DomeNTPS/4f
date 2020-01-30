@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilerbottomleft from "../../Image/boiler/boilerbuttomleft.svg";
+import Boilerbottomleft from "../../Image/Boiler New/Boilerbottomleft.svg";
 export default class Partboilerbottomleft extends React.Component {
   render() {
     return (

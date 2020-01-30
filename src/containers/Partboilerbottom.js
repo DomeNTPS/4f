@@ -13,7 +13,7 @@ import {
   ScrollView
 } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilerbottom from "../../Image/boiler/boiler bottom fix.svg";
+import Boilerbottom from "../../Image/Boiler New/Boilerbottom.svg";
 
 export default class Partboilerbottom extends React.Component {
   render() {
