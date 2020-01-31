@@ -10,9 +10,9 @@ import {
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boiler from "../../Image/boiler/boiler fix.svg";
+import Boiler from "../../Image/Boiler New/Boiler.svg";
 
-export default class Part extends React.Component {
+export default class PartBoiler extends React.Component {
   render() {
     return (
       <View style={styles.container}>

@@ -13,7 +13,7 @@ import {
   ScrollView
 } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilermid from "../../Image/boiler/boilermid.svg";
+import Boilermid from "../../Image/Boiler New/Boilermid.svg";
 
 export default class Partboilermid extends React.Component {
   render() {

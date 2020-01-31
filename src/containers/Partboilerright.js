@@ -13,7 +13,7 @@ import {
   ScrollView
 } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
-import Boilerright from "../../Image/boiler/boilerright.svg";
+import Boilerright from "../../Image/Boiler New/Boilerright";
 
 export default class Partboilerright extends React.Component {
   render() {

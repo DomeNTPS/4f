@@ -1,7 +1,7 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import Home from "./containers/Home";
-import Part from "./containers/Part";
+import Partboiler from "./containers/Partboiler";
 import Login from "./containers/Login";
 import ScanScreen from "./containers/ScanScreen";
 import Data from "./containers/Data";
@@ -27,7 +27,7 @@ import PartEllipse from "./containers/PartEllipse";
 const AppNavigator = createStackNavigator({
   Login: { screen: Login },
   Home: { screen: Home },
-  Part: { screen: Part },
+  Partboiler: { screen: Partboiler },
   ScanScreen: { screen: ScanScreen },
   Data: { screen: Data },
   Partboilerleft: { screen: Partboilerleft },

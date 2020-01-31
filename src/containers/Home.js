@@ -40,7 +40,7 @@ export default class Home extends React.Component {
           <TouchableOpacity
               title="Scan"
               alignItems = "center"
-              onPress={() => this.props.navigation.navigate("Part")}
+              onPress={() => this.props.navigation.navigate("Partboiler")}
             >
               <Image
                 style = {
