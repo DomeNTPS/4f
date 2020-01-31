@@ -12,3 +12,38 @@ import {
   ScrollView
 } from "react-native";
 import {TouchableOpacity} from "react-native-gesture-handler";
+
+export default class Home extends React.Component {
+  render(){
+    return(
+      <View style = {styles.container}>
+        <View style = {styles.containertop} >
+        <TouchableOpacity title = "Scan"
+      onPress = {
+          () => this.props.navigation.navigate("ScanScreen")
+        } >
+        <Image style = {
+        {
+          paddingRight: 20,
+          paddingTop: 30,
+          width: 50,
+          height: 50,
+          zIndex: 10000000
+        }
+      }
+      source = {
+        require("../../Image/Untitled-1.png")
+      }
+      /> 
+      <View>
+        <Text style = {
+          {
+            paddingRight: 15
+          }
+        }> Qr scan </Text> </View> 
+        </TouchableOpacity> 
+      </View>
+      </View>
+    );
+  }
+}
