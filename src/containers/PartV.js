@@ -89,6 +89,13 @@ const PartV = (props) => {
           <Text style = {styles.parttextHead}>{partInfo.KKScode}</Text>
           <Text style = {styles.parttext}>{partInfo.DateStart}</Text>
           <Text style = {styles.parttext}>{partInfo.DateExpired}</Text>
+          <TouchableOpacity
+            style = {styles.container2}
+            title = "withdraw" 
+            onPress = {
+              () => navigation.navigate("Edit")}>
+                <Text> Withdraw </Text>
+          </TouchableOpacity>
           </ScrollView>
         </View>
       </View>
@@ -104,6 +111,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
 
     //justifyContent: 'center',
+  },
+  container2: {
+    backgroundColor: 'orange',
+    alignItems: 'center',
+    //justifyContent: 'center',
+    borderColor: 'white',
+    borderRadius: 10,
   },
   ImageIconStyle: {
     padding: 10,

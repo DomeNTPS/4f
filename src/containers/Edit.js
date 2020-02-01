@@ -19,7 +19,7 @@ export default class Home extends React.Component {
       <View style = {styles.container}>
         <View style = {styles.containertop} >
         <TouchableOpacity title = "Scan"
-      onPress = {
+          onPress = {
           () => this.props.navigation.navigate("ScanScreen")
         } >
         <Image style = {
@@ -40,10 +40,28 @@ export default class Home extends React.Component {
           {
             paddingRight: 15
           }
-        }> Qr scan </Text> </View> 
+        }> Qr scan </Text> 
+        </View> 
         </TouchableOpacity> 
       </View>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        // justifyContent: 'center',
+      },
+      containertop: {
+        flex: 0.1,
+        backgroundColor: "#fff",
+        alignItems: "flex-end",
+        paddingTop: 20
+
+        //justifyContent: 'center',
+      },
+});
