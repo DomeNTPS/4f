@@ -48,7 +48,7 @@ export default class PartBoiler extends React.Component {
             < View style = {
               styles.containerbottom3
             } >
-            <TouchableOpacity style = {{height : 80 ,width : 330}}
+            <TouchableOpacity style = {{height : 100 ,width : 330}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottom")
@@ -58,7 +58,7 @@ export default class PartBoiler extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            <TouchableOpacity style = {{height : 200 ,width : 160}}
+            <TouchableOpacity style = {{height : 200 ,width : 149}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerleft")
@@ -68,7 +68,7 @@ export default class PartBoiler extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 153 ,width : 153}}
+            < TouchableOpacity style = {{height : 157 ,width : 130}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddle")
@@ -78,7 +78,7 @@ export default class PartBoiler extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 160 ,width : 100}}
+            < TouchableOpacity style = {{height : 153 ,width : 120}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerright")
@@ -116,36 +116,36 @@ const styles = StyleSheet.create({
   containerbottom0: {
     // backgroundColor: "#ff0",
     height: 200, 
-    width: 160,
+    width: 149,
     position: "absolute",
     marginTop: 60,
   },
    containerbottom1: {
     // backgroundColor: "#f00",
-    height: 153,
-    width: 153,
+    height: 157,
+    width: 130,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 136,
+    marginTop: 145,
     marginLeft: 147,
   },
   containerbottom2: {
-    height: 160,
-    width: 100,
+    height: 153,
+    width: 120,
     // alignSelf: "flex-end",
     position: "absolute",
     // backgroundColor: '#AB6',
-    marginTop: 120,
-    marginLeft: 300,
+    marginTop: 105,
+    marginLeft: 277,
   },
   containerbottom3: {
     // alignSelf: "stretch",
     // backgroundColor: '#cd0',
     position: "absolute",
-    height: 80,
+    height: 100,
     width: 330,
-    marginTop: 285,
-    marginLeft: 50,
+    marginTop: 255,
+    marginLeft: 60,
   },
   
   containerpicture: {

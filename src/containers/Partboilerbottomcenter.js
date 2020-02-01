@@ -44,112 +44,123 @@ export default class Partboilerbottomcenter extends React.Component {
           >
             <Boiler height={450} width={410} alignSelf = 'center' />
             < View style = {
-              styles.containerbottom0
+              styles.containerbottomE1
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 14 ,width : 34}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 011'})
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP003PI002'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomE2
+            } >
+            < TouchableOpacity style = {{height : 14 ,width : 34}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP003PI002'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                < View style = {
+              styles.containerbottomV1
+            } >
+            < TouchableOpacity style = {{height : 13 ,width : 7}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA011'})
               } >
                 </ TouchableOpacity>
                 </ View>
             < View style = {
-              styles.containerbottom1
+              styles.containerbottomV2
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 13 ,width : 7}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 010'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA010'})
+              } >
+                </ TouchableOpacity>
+                </ View>
+                
+                < View style = {
+              styles.containerbottomV3
+            } >
+            < TouchableOpacity style = {{height : 7 ,width : 13}}
+            onPress = {
+                () =>
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA009'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom2
+              styles.containerbottomV4
             } >
-            < TouchableOpacity style = {{height : 20 ,width : 60}}
+            < TouchableOpacity style = {{height : 7 ,width : 13}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CP003 PI 002'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA012'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom3
+              styles.containerbottomV5
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 7 ,width : 13}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 009'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA006'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom4
+              styles.containerbottomV6
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 7 ,width : 13}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 012'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA007'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom5
+              styles.containerbottomV7
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 7 ,width : 13}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 006'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA001'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom6
+              styles.containerbottomV8
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 7 ,width : 13}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 007'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA008'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom7
+              styles.containerbottomV9
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 10 ,width : 5}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 001'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA014'})
               } >
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
-              styles.containerbottom8
+              styles.containerbottomV10
             } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
+            < TouchableOpacity style = {{height : 10 ,width : 5}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 008'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom9
-            } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 014'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom10
-            } >
-            < TouchableOpacity style = {{height : 25 ,width : 25}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10 AA 013'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10AA013'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -180,111 +191,105 @@ const styles = StyleSheet.create({
   // borderWidth: 10,
   alignItems: "center",
   },
-  containerbottom0: {
-    // backgroundColor: "#ff0",
-    height: 25, 
-    width: 25,
-    position: "absolute",
-    marginTop: 160,
-    marginLeft: 150,
-  },
-   containerbottom1: {
-    // backgroundColor: "#f00",
-    height: 25,
-    width: 25,
-    // alignSelf: "center",
-    position: "absolute",
-    marginTop: 190,
-    marginLeft: 150,
-  },
-  containerbottom2: {
-    height: 20,
-    width: 60,
+  containerbottomE1: {
+    height: 14,
+    width: 34,
     // alignSelf: "flex-end",
     position: "absolute",
     // backgroundColor: '#AB6',
-    marginTop: 194.5,
-    marginLeft: 254,
+    marginTop: 200,
+    marginLeft: 220,
   },
-  containerbottom3: {
+  containerbottomE2: {
+    height: 14,
+    width: 34,
+    // alignSelf: "flex-end",
+    position: "absolute",
+    backgroundColor: '#AB6',
+    marginTop: 243,
+    marginLeft: 355,
+  },
+  containerbottomV1: {
+    // backgroundColor: "#ff0",
+    height: 13, 
+    width: 7,
+    position: "absolute",
+    marginTop: 177,
+    marginLeft: 160,
+  },
+   containerbottomV2: {
+    // backgroundColor: "#f00",
+    height: 13,
+    width: 7,
+    // alignSelf: "center",
+    position: "absolute",
+    marginTop: 197,
+    marginLeft: 160,
+  },
+  
+  containerbottomV3: {
     // backgroundColor: '#cd0',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 205,
-    marginLeft: 120,
+    height: 7,
+    width: 13,
+    marginTop: 213.5,
+    marginLeft: 136,
   },
-    containerbottom4: {
+    containerbottomV4: {
     // backgroundColor: '#cdA',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 205,
-    marginLeft: 185,
+    height: 7,
+    width: 13,
+    marginTop: 213.5,
+    marginLeft: 176,
   }, 
-    containerbottom5: {
+    containerbottomV5: {
     // backgroundColor: '#AAA',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 265,
-    marginLeft: 87,
+    height: 7,
+    width: 13,
+    marginTop: 258,
+    marginLeft: 116,
   }, 
-    containerbottom6: {
+    containerbottomV6: {
     // backgroundColor: '#A0A',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 265,
-    marginLeft: 119,
+    height: 7,
+    width: 13,
+    marginTop: 258,
+    marginLeft: 136,
   },
-  containerbottom7: {
+  containerbottomV7: {
     // backgroundColor: '#ABA',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 265,
-    marginLeft: 153,
+    height: 7,
+    width: 13,
+    marginTop: 258,
+    marginLeft: 156.5,
   },
-  containerbottom8: {
+  containerbottomV8: {
     // backgroundColor: '#ADB',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 265,
-    marginLeft: 185,
+    height: 7,
+    width: 13,
+    marginTop: 258,
+    marginLeft: 176.5,
   },
-  containerbottom9: {
+  containerbottomV9: {
     // backgroundColor: '#DBA',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 223,
-    marginLeft: 270,
+    height: 10,
+    width: 5,
+    marginTop: 222,
+    marginLeft: 234.5,
   },
-  containerbottom10: {
+  containerbottomV10: {
     // backgroundColor: '#AFA',
     position: "absolute",
-    height: 25,
-    width: 25,
-    marginTop: 248,
-    marginLeft: 270,
+    height: 10,
+    width: 5,
+    marginTop: 242.5,
+    marginLeft: 234.5,
   },
-  containerpicture: {
-    //flex: 0.8,
-    backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  },
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
-  },
-  bla: {
-    flex: 0.03,
-    alignItems: "center"
-  }
+  
 });

@@ -51,7 +51,7 @@ export default class Partboilerbottom extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 60 ,width : 160}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottomleft")
@@ -61,7 +61,7 @@ export default class Partboilerbottom extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 50 ,width : 180}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottomcenter")
@@ -71,7 +71,7 @@ export default class Partboilerbottom extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style = {{height : 97 ,width : 75}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottomright")
@@ -118,28 +118,28 @@ const styles = StyleSheet.create({
   },
   containerbottom0: {
     // backgroundColor: "#ff0",
-    height: 100, 
-    width: 150,
+    height: 60, 
+    width: 160,
     position: "absolute",
-    marginTop: 60,
-    marginLeft: 10,
+    marginTop: 100,
+    marginLeft: 5,
   },
    containerbottom1: {
     // backgroundColor: "#f00",
-    height: 100,
-    width: 150,
+    height: 50,
+    width: 180,
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 60,
-    marginLeft: 160,
+    marginTop: 110,
+    marginLeft: 210,
   },
   containerbottom2: {
-    height: 100,
-    width: 150,
+    height: 97,
+    width: 75,
     // alignSelf: "flex-end",
     position: "absolute",
     // backgroundColor: '#AB6',
-    marginTop: 60,
-    marginLeft: 310,
+    marginTop: 40,
+    marginLeft: 330,
   },
 });
