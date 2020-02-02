@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   Text,
   Alert,
-  Image
+  Image,
 } from "react-native";
 import {
   TouchableOpacity,
@@ -51,7 +51,7 @@ export default class Partboilermid extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 250 ,width : 220}}
+            < TouchableOpacity style = {{height : 215 ,width : 180}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddletopleft")
@@ -61,7 +61,7 @@ export default class Partboilermid extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 250 ,width : 130}}
+            < TouchableOpacity style = {{height : 217 ,width : 130}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddletopright")
@@ -71,7 +71,7 @@ export default class Partboilermid extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 140 ,width : 150}}
+            < TouchableOpacity style = {{height : 100 ,width : 150}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddlebottomleft")
@@ -127,35 +127,42 @@ const styles = StyleSheet.create({
       },
       containerbottom0: {
         // backgroundColor: "#ff0",
-        height: 250,
-        width: 220,
+        borderColor: "orange",
+        borderWidth: 5,
+        height: 215,
+        width: 180,
         position: "absolute",
-        marginTop: 10,
-        marginLeft: 20,
+        marginTop: "5%",
+        marginLeft: "7%",
       },
       containerbottom1: {
         // backgroundColor: "#f00",
-        height: 250,
+        borderColor: "black",
+        borderWidth: 5,
+        height: 217,
         width: 130,
-        // alignSelf: "center",
         position: "absolute",
-        marginTop: 10,
-        marginLeft: 245,
+        marginTop: "5%",
+        marginLeft: "55%",
       },
       containerbottom2: {
-        height: 140,
-        width: 150,
+        height: 30,
+        width: 110,
         position: "absolute",
         // backgroundColor: '#AB6',
-        marginTop: 270,
-        marginLeft: 20,
+        borderColor: "red",
+        borderWidth: 5,
+        marginTop: "60%",
+        marginLeft: "6%",
       },
         containerbottom3: {
-        height: 150,
-        width: 120,
+        height: 50,
+        width: 30,
         position: "absolute",
         // backgroundColor: '#bf0',
-        marginTop: 270,
-        marginLeft: 200,
+        borderColor: "blue",
+        borderWidth: 5,
+        marginTop: "60%",
+        marginLeft: "45%",
       },
 });
