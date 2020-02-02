@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     width: 34,
     // alignSelf: "flex-end",
     position: "absolute",
-    backgroundColor: '#AB6',
+    // backgroundColor: '#AB6',
     marginTop: 243,
     marginLeft: 355,
   },

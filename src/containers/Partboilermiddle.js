@@ -52,7 +52,7 @@ export default class Partboilermid extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 215 ,width : 180}}
+            < TouchableOpacity style = {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddletopleft")
@@ -62,7 +62,7 @@ export default class Partboilermid extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 217 ,width : 130}}
+            < TouchableOpacity style = {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddletopright")
@@ -72,7 +72,7 @@ export default class Partboilermid extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 100 ,width : 150}}
+            < TouchableOpacity style =  {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddlebottomleft")
@@ -82,7 +82,7 @@ export default class Partboilermid extends React.Component {
                 < View style = {
               styles.containerbottom3
             } >
-            < TouchableOpacity style = {{height : 150 ,width : 120}}
+            < TouchableOpacity style =  {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilermiddlebottomright")
@@ -131,9 +131,9 @@ const styles = StyleSheet.create({
       containerbottom0: {
         // backgroundColor: "#ff0",
         borderColor: "orange",
-        borderWidth: 5,
-        height: 215,
-        width: 183,
+        borderWidth: 2,
+        height: "54.5%",
+        width: "45.5%",
         position: "absolute",
         marginTop: "4%",
         marginLeft: "7%",
@@ -141,31 +141,31 @@ const styles = StyleSheet.create({
       containerbottom1: {
         // backgroundColor: "#f00",
         borderColor: "black",
-        borderWidth: 5,
-        height: 217,
-        width: 130,
+        borderWidth: 2,
+        height: "56%",
+        width: "35%",
         position: "absolute",
         marginTop: "4%",
-        marginLeft: "54%",
+        marginLeft: "56%",
       },
       containerbottom2: {
-        height: 30,
-        width: 110,
+        height: "25%",
+        width: "17%",
         position: "absolute",
         // backgroundColor: '#AB6',
-        borderColor: "red",
-        borderWidth: 5,
-        marginTop: "57%",
-        marginLeft: "6%",
+        borderColor: "#AB6",
+        borderWidth: 2,
+        marginTop: "59%",
+        marginLeft: "10%",
       },
         containerbottom3: {
-        height: 50,
-        width: 30,
+        width: "17%",
+        height: "25%",
         position: "absolute",
         // backgroundColor: '#bf0',
         borderColor: "blue",
-        borderWidth: 5,
-        marginTop: "57%",
+        borderWidth: 2,
+        marginTop: "59%",
         marginLeft: "45%",
       },
 });
