@@ -7,6 +7,7 @@ import {
   Text,
   Alert,
   Image,
+  Dimensions,
 } from "react-native";
 import {
   TouchableOpacity,
@@ -46,7 +47,7 @@ export default class Partboilermid extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilermid height={400} width={400} alignSelf = 'center' />
+            <Boilermid height={400} width={win.width} alignSelf = 'center' />
             
             < View style = {
               styles.containerbottom0
@@ -95,6 +96,8 @@ export default class Partboilermid extends React.Component {
   }
 }
 
+
+const win = Dimensions.get('screen');
 const styles = StyleSheet.create({
       container: {
         flex: 1,
@@ -130,9 +133,9 @@ const styles = StyleSheet.create({
         borderColor: "orange",
         borderWidth: 5,
         height: 215,
-        width: 180,
+        width: 183,
         position: "absolute",
-        marginTop: "5%",
+        marginTop: "4%",
         marginLeft: "7%",
       },
       containerbottom1: {
@@ -142,8 +145,8 @@ const styles = StyleSheet.create({
         height: 217,
         width: 130,
         position: "absolute",
-        marginTop: "5%",
-        marginLeft: "55%",
+        marginTop: "4%",
+        marginLeft: "54%",
       },
       containerbottom2: {
         height: 30,
@@ -152,7 +155,7 @@ const styles = StyleSheet.create({
         // backgroundColor: '#AB6',
         borderColor: "red",
         borderWidth: 5,
-        marginTop: "60%",
+        marginTop: "57%",
         marginLeft: "6%",
       },
         containerbottom3: {
@@ -162,7 +165,7 @@ const styles = StyleSheet.create({
         // backgroundColor: '#bf0',
         borderColor: "blue",
         borderWidth: 5,
-        marginTop: "60%",
+        marginTop: "57%",
         marginLeft: "45%",
       },
 });

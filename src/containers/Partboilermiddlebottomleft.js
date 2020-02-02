@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   Text,
   Alert,
-  Image
+  Image,
+  Dimensions
 } from "react-native";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
@@ -42,8 +43,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilermiddlebottomleft height={400
-            } width={400} alignSelf = 'center' />
+            <Boilermiddlebottomleft height={400} width={win.width} alignSelf = 'center' />
             < View style = {
               styles.containerbottom0
             } >
@@ -123,6 +123,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
   }
 }
 
+const win = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
