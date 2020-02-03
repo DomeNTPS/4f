@@ -17,6 +17,9 @@ import ImageZoom from "react-native-image-pan-zoom";
 import Boilerbottom from "../../Image/Boiler New/Boilerbottom.svg";
 
 export default class Partboilerbottom extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={styles.container}>

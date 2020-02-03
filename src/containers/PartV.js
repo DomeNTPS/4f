@@ -101,7 +101,7 @@ const PartV = (props) => {
       </View>
   )
 }
-
+PartV.navigationOptions = {header:null}
 export default PartV
 
 

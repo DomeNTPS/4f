@@ -17,6 +17,9 @@ import ImageZoom from "react-native-image-pan-zoom";
 import Svg, { Circle, Rect } from "react-native-svg";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";
 export default class PartEllipse extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
       const {navigation}=this.props;
       const KKS=navigation.getParam('KKS','some default value');

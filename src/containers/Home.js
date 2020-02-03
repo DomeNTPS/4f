@@ -13,6 +13,9 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 export default class Home extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -24,7 +27,7 @@ export default class Home extends React.Component {
             <Image
               style={{
                 paddingRight: 20,
-                paddingTop: 30,
+                marginTop: "10%",
                 width: 50,
                 height: 50,
                 zIndex:10000000
@@ -65,31 +68,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
     //justifyContent: 'center',
   },
-
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
-  },
-
   containertop: {
-    flex: 0.1,
+    flex: 0.25,
     backgroundColor: "#fff",
-    alignItems: "flex-end",
-    paddingTop: 20
-
-    //justifyContent: 'center',
+    alignSelf: 'flex-end',  
+    marginTop: "15%",
+    marginRight: "2%"
   },
   containerbottom: {
-    // borderColor: "red",
-    // borderStyle: "solid",
-    // borderWidth: 10,
-    flex: 0.9,
-
+    flex: 0.75,
     alignItems: "center"
-    //justifyContent: 'center',
   },
   containerpicture: {
     //flex: 0.8,

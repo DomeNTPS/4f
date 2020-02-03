@@ -17,6 +17,9 @@ import ImageZoom from "react-native-image-pan-zoom";
 import Boilerleft from "../../Image/Boiler New/Boilerleft.svg";
 
 export default class Partboilerleft extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -85,24 +88,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
 
   },
-
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
-  },
-
   containertop: {
-    flex: 0.1,
+    flex: 0.25,
     backgroundColor: "#fff",
     alignItems: "flex-end",
-    paddingTop: 20
+    marginTop: "15%",
+    marginRight: "2%"
 
   },
   containerbottom: {
-    flex: 0.9,
+    flex: 0.75,
     backgroundColor: "#fff",
     alignItems: "center"
 

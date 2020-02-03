@@ -14,6 +14,9 @@ import {
 import {TouchableOpacity} from "react-native-gesture-handler";
 
 export default class Home extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render(){
     return(
       <View style = {styles.container}>

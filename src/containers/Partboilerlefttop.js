@@ -12,6 +12,9 @@ import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boilerlefttop from "../../Image/Boiler New/Boilerlefttop.svg";
 export default class Partboilerlefttop extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={styles.container}>

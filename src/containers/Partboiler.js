@@ -13,6 +13,9 @@ import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/Boiler New/Boiler.svg";
 
 export default class PartBoiler extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -85,7 +88,6 @@ export default class PartBoiler extends React.Component {
               } >
                 </ TouchableOpacity>
                 </ View>
-               
         </ScrollView>
          </View>
       </View>
@@ -99,60 +101,54 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
   },
   containertop: {
-    flex: 0.1,
+    flex: 0.25,
     backgroundColor: "#fff",
-    alignItems: "flex-end",
-    paddingTop: 20
-    //justifyContent: 'center',
+    alignSelf: "flex-end",
+    marginTop: "15%",
+    marginRight: "2%"
   },
   containerbottomall: {
-  flex: 0.9,
-  backgroundColor: "#fff",
-  // borderColor: "red",
-  // borderStyle: "solid",
-  // borderWidth: 10,
+  flex: 0.75,
   alignItems: "center",
   },
   containerbottom0: {
-    // backgroundColor: "#ff0",
-    height: 200, 
-    width: 149,
+    borderColor: "#ff0",
+    borderWidth: 2,
+    height: "30%", 
+    width: "32%",
     position: "absolute",
-    marginTop: 60,
+    marginTop: "20%",
+    marginLeft: "3%",
   },
    containerbottom1: {
-    // backgroundColor: "#f00",
-    height: 157,
-    width: 130,
+    borderColor: "#f00",
+    borderWidth: 2,
+    height: "20%",
+    width: "14%",
     // alignSelf: "center",
     position: "absolute",
-    marginTop: 145,
-    marginLeft: 147,
+    marginTop: "35%",
+    marginLeft: "36%",
   },
   containerbottom2: {
-    height: 153,
-    width: 120,
+    height: "30%",
+    width: "32%",
     // alignSelf: "flex-end",
     position: "absolute",
-    // backgroundColor: '#AB6',
-    marginTop: 105,
-    marginLeft: 277,
+    borderColor: '#AB6',
+    borderWidth: 2,
+    marginTop: "20%",
+    marginLeft: "70%",
   },
   containerbottom3: {
     // alignSelf: "stretch",
-    // backgroundColor: '#cd0',
+    borderColor: '#cd0',
+    borderWidth: 2,
     position: "absolute",
     height: 100,
     width: 330,
     marginTop: 255,
     marginLeft: 60,
-  },
-  
-  containerpicture: {
-    //flex: 0.8,
-    backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
   },
   ImageIconStyle: {
     padding: 10,

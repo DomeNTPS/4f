@@ -1,8 +1,11 @@
-import { View, Text, StyleSheet, Image, style, Button, TextInput, useState, ActivityIndicator,Platform } from 'react-native';
+import { View, Text, StyleSheet, Image, style, Button, TextInput, useState, ActivityIndicator,Platform,StatusBar } from 'react-native';
 import React,{Component} from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class Login extends React.Component {
+    static navigationOptions = {
+        header: null
+    }
     constructor()
     {
         super();
@@ -40,9 +43,11 @@ export default class Login extends React.Component {
         
          return(
             <View style = { styles.container }> 
+                <StatusBar barStyle="default"></StatusBar>
                 < View style = {styles.blank} ></View>
                 < View style = {
                     {
+                        marginTop: "5%",
                         alignSelf: 'center',
                         height: 150,
                     }
@@ -59,7 +64,7 @@ export default class Login extends React.Component {
          /></View> 
         <View style = {styles.blank}></View>
             
-        <Text style = {{paddingRight: 250,fontSize: 20,color: '#000'}} >Login</Text>
+        <Text style = {{marginLeft: "15%",fontSize: 20,color: '#000'}} >Login</Text>
 
        
 
@@ -72,13 +77,13 @@ export default class Login extends React.Component {
             placeholder = "Username"
             style = {
                 {
-                    height: 40,
-                    width: 300,
+                    height: "5%",
+                    width: "70%",
                     borderColor: '#c0c0c0',
                     borderWidth: 1,
                     borderRadius: 10,
                     backgroundColor: '#c0c0c0',
-                   
+                    marginLeft: "15%"
                    
                 }
             }
@@ -94,13 +99,13 @@ export default class Login extends React.Component {
             placeholder = "Password"
             style = {
                 {
-                    alignContent: 'center',
-                    height: 40,
-                    width: 300,
+                    height: "5%",
+                    width: "70%",
                     borderColor: '#c0c0c0',
                     borderWidth: 1,
                     borderRadius: 10,
                     backgroundColor: '#c0c0c0',
+                    marginLeft: "15%"
                 }
             }
             />
@@ -113,8 +118,7 @@ export default class Login extends React.Component {
                 this.props.navigation.navigate('Home')
             }
             underlayColor = '#c0c0c0' >
-                <
-                Text style = {
+                <Text style = {
                     styles.ForgetText
                 } > Forget Password? </Text>  
             </TouchableOpacity>
@@ -165,16 +169,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        // justifyContent: 'center',
     },
 
     container2: {
         backgroundColor: 'orange',
-        alignItems: 'center',
+        alignSelf: 'center',
         //justifyContent: 'center',
         borderColor: 'white',
         borderRadius: 10,
+        width: "30%",
     },
 
     loginText: {
