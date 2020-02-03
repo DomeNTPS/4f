@@ -21,8 +21,10 @@ const PartV = (props) => {
   const [partInfo, setPartInfo] = useState({
     DateExpired: "loading",
     DateStart: "loading",
-    KKScode: "loading",
-    active: 0,
+    KKS: "loading",
+    NameEquip : "loading",
+    URLimage :"loading",
+    CountStock : "loading"
   })
   useEffect(() => {
     
@@ -31,8 +33,8 @@ const PartV = (props) => {
         const kks = navigation.getParam('KKS', 'some default value');
         let {
           data
-        } = await axios.get(`http://10.26.3.164:3000/running_equipment/${kks}`)
-        setPartInfo(data[0])
+        } = await axios.get(`http://35.240.203.149:5000/running_equipment/${kks}`)
+        setPartInfo(data)
       } catch (e) {
         console.log(e)
       }
@@ -79,16 +81,19 @@ const PartV = (props) => {
               }
               }
             source = {
-              require("../../Image/boiler/PartV.png")
+              // require("../../Image/boiler/PartV.png")
+              {uri :partInfo.URLimage}
             }
             
             onPress={ () =>componentDidMount()}>
             
           </Image>
           <View style = { styles.blank} ></View>
-          <Text style = {styles.parttextHead}>{partInfo.KKScode}</Text>
+          <Text style = {styles.parttextHead}>{partInfo.NameEquip}</Text>
+          <Text style = {styles.parttextHead}>{partInfo.KKS}</Text>
           <Text style = {styles.parttext}>{partInfo.DateStart}</Text>
           <Text style = {styles.parttext}>{partInfo.DateExpired}</Text>
+          <Text style = {styles.parttext}>{partInfo.CountStock}</Text>
           <TouchableOpacity
             style = {styles.container2}
             title = "withdraw" 
