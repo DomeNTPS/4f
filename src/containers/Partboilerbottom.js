@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   Text,
   Alert,
-  Image
+  Image,
+  Dimensions
 } from "react-native";
 import {
   TouchableOpacity,
@@ -46,7 +47,7 @@ export default class Partboilerbottom extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boilerbottom height={200} width={410} alignSelf = 'center' />
+            <Boilerbottom height={300} width={win.width} alignSelf = 'center' />
             
             < View style = {
               styles.containerbottom0
@@ -86,6 +87,7 @@ export default class Partboilerbottom extends React.Component {
   }
 }
 
+const win = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -117,7 +119,8 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   containerbottom0: {
-    // backgroundColor: "#ff0",
+    borderColor: "#ff0",
+    borderWidth: 2,
     height: 60, 
     width: 160,
     position: "absolute",
@@ -125,7 +128,8 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
    containerbottom1: {
-    // backgroundColor: "#f00",
+    borderColor: "#f00",
+    borderWidth: 2,
     height: 50,
     width: 180,
     // alignSelf: "center",
@@ -138,7 +142,8 @@ const styles = StyleSheet.create({
     width: 75,
     // alignSelf: "flex-end",
     position: "absolute",
-    // backgroundColor: '#AB6',
+    borderColor: '#AB6',
+    borderWidth: 2,
     marginTop: 40,
     marginLeft: 330,
   },

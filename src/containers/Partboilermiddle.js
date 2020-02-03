@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
         marginLeft: "56%",
       },
       containerbottom2: {
-        height: "25%",
-        width: "17%",
+        height: "0.5%",
+        width: 70,
         position: "absolute",
         // backgroundColor: '#AB6',
         borderColor: "#AB6",
@@ -159,8 +159,8 @@ const styles = StyleSheet.create({
         marginLeft: "10%",
       },
         containerbottom3: {
-        width: "17%",
-        height: "25%",
+        width: "10%",
+        height: "2%",
         position: "absolute",
         // backgroundColor: '#bf0',
         borderColor: "blue",
