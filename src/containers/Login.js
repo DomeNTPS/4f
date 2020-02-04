@@ -1,19 +1,28 @@
 import { View, Text, StyleSheet, Image, style, Button, TextInput, useState, ActivityIndicator,Platform,StatusBar } from 'react-native';
 import React,{Component} from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import axios from "axios";
 
 export default class Login extends React.Component {
     static navigationOptions = {
         header: null
     }
-    constructor()
-    {
-        super();
-        this.state = { ID: '', Passwords: '', loading: false, disabled: false}
-    }
+    state = { ID: "", Passwords: "",errorMessage: null, loading: false, disabled: false};
+    handleLogin = async() => {
+        try {
+        const { ID, Passwords } = this.state;
+        let {
+            data
+          } = await axios.post(`http://35.240.203.149:5000/employee`,{ID :{ID},Pass:{Passwords}})
+          .then(navigation.navigate("Home",{KKS:'10LAB10CF001FT001',KKS1:'10'}))
+        } catch (e) {
+          console.log(e)
+        }
+      }
     render() {   
-        
-         return(
+        const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 30
+        LayoutAnimation.easeInEaseOut() //Animation
+        return(
             <View style = { styles.container }> 
                 <StatusBar barStyle="default"></StatusBar>
                 < View style = {styles.blank} ></View>
@@ -39,13 +48,14 @@ export default class Login extends React.Component {
         <Text style = {{marginLeft: "15%",fontSize: 20,color: '#000'}} >Login</Text>
 
        
-
+        <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={keyboardVerticalOffset}>
         <View style = {styles.bla}></View>
         <TextInput
-            onChangeText={(text) => this.setState({ ID: text })}
+            onChangeText={ID => this.setState(ID)}
              value = {
-                 this.state.UserName
+                 this.state.ID
              }
+            autoCapitalize="none"
             placeholder = "Username"
             style = {
                 {
@@ -64,10 +74,11 @@ export default class Login extends React.Component {
             <View style = {{flex: 0.01}}></View>
 
             <TextInput
-            onChangeText={(text) => this.setState({ Passwords: text })}
+            onChangeText={Passwords => this.setState(Passwords)}
             value2 = {
-                this.state.UserPass
+                this.state.Passwords
             }
+            autoCapitalize="none"
             placeholder = "Password"
             style = {
                 {
@@ -83,7 +94,7 @@ export default class Login extends React.Component {
             />
 
             <View style = {{flex: 0.02}}></View>
-
+            </KeyboardAvoidingView>
             <TouchableOpacity
             onPress = {
                 () =>
@@ -129,8 +140,9 @@ export default class Login extends React.Component {
                             <Text style = {
                             styles.GuestText
                         } > Guest Login </Text> 
-            </TouchableOpacity>
-        </View>
+            </TouchableOpacity>   
+        
+        </View> 
     
         );
     }
