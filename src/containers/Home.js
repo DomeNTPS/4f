@@ -12,6 +12,7 @@ import {
   ScrollView
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ContainerTop from '../Layout/containtop';
 export default class Home extends React.Component {
   static navigationOptions = {
     header: null
@@ -19,26 +20,8 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.containertop}>
-          <TouchableOpacity
-            title="Scan"
-            onPress={() => this.props.navigation.navigate("ScanScreen")}
-          >
-            <Image
-              style={{
-                paddingRight: 20,
-                marginTop: "10%",
-                width: 50,
-                height: 50,
-                zIndex:10000000
-              }}
-              source={require("../../Image/Untitled-1.png")}
-            />
-            <View>
-              <Text style={{ paddingRight: 15 }}>Qr scan</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+         <ContainerTop navigation ={this.props.navigation}>
+        </ContainerTop>
         <View style={styles.containerbottom}>
           <TouchableOpacity
               title="Scan"
@@ -68,21 +51,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff"
     //justifyContent: 'center',
   },
-  containertop: {
-    flex: 0.25,
-    backgroundColor: "#fff",
-    alignSelf: 'flex-end',  
-    marginTop: "15%",
-    marginRight: "2%"
-  },
   containerbottom: {
-    flex: 0.75,
+    flex: 1,
     alignItems: "center"
   },
-  containerpicture: {
-    //flex: 0.8,
-    backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  }
 });

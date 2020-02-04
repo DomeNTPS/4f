@@ -11,34 +11,6 @@ export default class Login extends React.Component {
         super();
         this.state = { ID: '', Passwords: '', loading: false, disabled: false}
     }
-
-    saveData = () => {
-            this.setState({ loading: true, disabled: true }, () => {
-                
-                fetch('gamersite123.000webhostapp.com/user_registration.php',
-                       {
-                        method: 'POST',
-                        headers:
-                        {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(
-                            {
-                                ID: this.state.ID,
-
-                                Passwords: this.state.Passwords
-                            })
-
-                    }).then((response) => response.json()).then((responseJson) => {
-                        alert(responseJson);
-                        this.setState({ loading: false, disabled: false });
-                    }).catch((error) => {
-                        console.error(error);
-                        this.setState({ loading: false, disabled: false });
-                    });
-            });
-    }
     render() {   
         
          return(

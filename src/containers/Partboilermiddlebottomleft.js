@@ -12,6 +12,7 @@ import {
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boilermiddlebottomleft from "../../Image/Boiler New/Boilermidbottomleft.svg";
+import ContainerTop from '../Layout/containtop';
 export default class Partboilermiddlebottomleft extends React.Component {
   static navigationOptions = {
     header: null
@@ -19,25 +20,8 @@ export default class Partboilermiddlebottomleft extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.containertop}>
-          <TouchableOpacity
-            title="Scan"
-            onPress={() => this.props.navigation.navigate("ScanScreen")}
-          >
-            <Image
-              style={{
-                paddingRight: 20,
-                paddingTop: 30,
-                width: 50,
-                height: 50
-              }}
-              source={require("../../Image/Untitled-1.png")}
-            />
-            <View>
-              <Text style={{ paddingRight: 15 }}>Qr scan</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+         <ContainerTop navigation ={this.props.navigation}>
+        </ContainerTop>
         <View style={styles.containerbottomall}>
           <ScrollView
             maximumZoomScale={3}
@@ -132,19 +116,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  containertop: {
-    flex: 0.1,
-    backgroundColor: "#fff",
-    alignItems: "flex-end",
-    paddingTop: 20
-    //justifyContent: 'center',
-  },
   containerbottomall: {
-  flex: 0.9,
+  flex: 1,
   backgroundColor: "#fff",
-  // borderColor: "red",
-  // borderStyle: "solid",
-  // borderWidth: 10,
   alignItems: "center",
   },
   containerbottom0: {
@@ -208,19 +182,6 @@ const styles = StyleSheet.create({
     // backgroundColor: '#f00',
     marginTop: 180,
     marginLeft: 308,
-  },
-  containerpicture: {
-    //flex: 0.8,
-    // backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  },
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
   },
   bla: {
     flex: 0.03,

@@ -11,7 +11,7 @@ import {
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/Boiler New/Boiler.svg";
-
+import ContainerTop from '../Layout/containtop';
 export default class PartBoiler extends React.Component {
   static navigationOptions = {
     header: null
@@ -19,25 +19,8 @@ export default class PartBoiler extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.containertop}>
-          <TouchableOpacity
-            title="Scan"
-            onPress={() => this.props.navigation.navigate("ScanScreen")}
-          >
-            <Image
-              style={{
-                paddingRight: 20,
-                paddingTop: 30,
-                width: 50,
-                height: 50
-              }}
-              source={require("../../Image/Untitled-1.png")}
-            />
-            <View>
-              <Text style={{ paddingRight: 15 }}>Qr scan</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+        <ContainerTop navigation ={this.props.navigation}>
+        </ContainerTop>
         <View  style={styles.containerbottom}>
         <ScrollView
             maximumZoomScale={3}
@@ -100,15 +83,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  containertop: {
-    flex: 0.25,
-    backgroundColor: "#fff",
-    alignSelf: "flex-end",
-    marginTop: "15%",
-    marginRight: "2%"
-  },
   containerbottomall: {
-  flex: 0.75,
+  flex: 1,
   alignItems: "center",
   },
   containerbottom0: {
