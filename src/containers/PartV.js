@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Button,
@@ -9,50 +9,69 @@ import {
   Modal,
   Image,
   Dimensions,
-  ScrollView
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  TextInput
 } from "react-native";
-import {TouchableOpacity} from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import axios from "axios";
-import ContainerTop from '../Layout/containtop';
-import Dayjs from 'dayjs'
 import dayjs from "dayjs";
+import Dialog, {
+  DialogTitle,
+  DialogContent,
+  DialogFooter,
+  DialogButton,
+  SlideAnimation,
+  ScaleAnimation
+} from "react-native-popup-dialog";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
+export const PartV = props => {
+  const { navigation } = props;
+  // state = {
+  //   defaultAnimationDialog: false,
+  // };
 
-const PartV = (props) => {
-  const { navigation } = props
 
   const [partInfo, setPartInfo] = useState({
     DateExpired: "loading",
     DateStart: "loading",
     KKS: "loading",
-    NameEquip : "loading",
-    URLimage :"loading",
-    CountStock : "loading"
+    NameEquip: "loading",
+    URLimage: "loading",
+    CountStock: "loading"
+  });
+  const [AnimationDialog,setAnimationDialog] = useState({
+    defaultAnimationDialog: false
   })
+  const [WithdrawCount,setWithdrawCount] =useState({
+    CountUse : 0,
+  })
+  
   useEffect(() => {
-    
     const fetching = async () => {
       try {
-        const kks = navigation.getParam('KKS', 'some default value');
-        let {
-          data
-        } = await axios.get(`http://35.240.203.149:5000/running_equipment/${kks}`)
-        setPartInfo(data)
+        const kks = navigation.getParam("KKS", "some default value");
+        let { data } = await axios.get(
+          `http://35.240.203.149:5000/running_equipment/${kks}`
+        );
+        setPartInfo(data);
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
-    }
-    fetching()
-  }, [])
+    };
+    fetching();
+  }, []);
   const dateExpire = dayjs(partInfo.DateExpired).format("DD/MM/YYYY");
   const dateStart = dayjs(partInfo.DateStart).format("DD/MM/YYYY");
+  const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 30
+  const Count = `${WithdrawCount.CountUse}`
   return (
     <View style={styles.container}>
-     <View style={styles.containertop}>
-      <TouchableOpacity
-            onPress={navigation.goBack}>
-      <Text style={{fontSize: 25}}>Back</Text>
-      </TouchableOpacity>
+      <View style={styles.containertop}>
+        <TouchableOpacity onPress={navigation.goBack}>
+          <Text style={{ fontSize: 25 }}>Back</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.containerbottom}>
         <ScrollView
@@ -71,29 +90,115 @@ const PartV = (props) => {
               alignSelf: "center"
             }}
             source={
-              // require("../../Image/boiler/PartV.png")
               { uri: partInfo.URLimage }
             }
-            onPress={() => componentDidMount()}
           ></Image>
           <View style={styles.textBackground}>
-          <Text style={styles.parttextHead}>Name : {partInfo.NameEquip}</Text>
-          <Text style={styles.parttext}>KKS          : {partInfo.KKS}</Text>
-          <Text style={styles.parttext}>Date Start   : {dateStart}</Text>
-          <Text style={styles.parttext}>Date Expired : {dateExpire}</Text>
-          <Text style={styles.parttext}>Quantity     : {partInfo.CountStock}</Text>
-          <TouchableOpacity style={styles.buttonstyle}>
-            <Text style={styles.buttonText}> Withdraw </Text>
-          </TouchableOpacity>
+            <Text style={styles.parttextHead}>Name : {partInfo.NameEquip}</Text>
+            <Text style={styles.parttext}>KKS : {partInfo.KKS}</Text>
+            <Text style={styles.parttext}>Date Start : {dateStart}</Text>
+            <Text style={styles.parttext}>Date Expired : {dateExpire}</Text>
+            <Text style={styles.parttext}>
+              Quantity : {partInfo.CountStock}
+            </Text>
+            <TouchableOpacity
+              style={styles.buttonstyle}
+              onPress={() => {
+
+                setAnimationDialog( {defaultAnimationDialog : true});
+              }}
+            >
+              <Text style={styles.buttonText}> Withdraw </Text>
+            </TouchableOpacity>
           </View>
+          <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={keyboardVerticalOffset}>
+          <Dialog
+            onDismiss={() => {
+
+              setAnimationDialog( {defaultAnimationDialog : false});
+            }}
+            width={0.5}
+            
+            visible={AnimationDialog.defaultAnimationDialog}
+            rounded
+            actionsBordered
+            onTouchOutside={() => {
+              setAnimationDialog( {defaultAnimationDialog : false});
+            }}
+            dialogTitle={
+              <DialogTitle
+                title="Number of Withdraw"
+                style={{
+                  backgroundColor: "#F7F7F8"
+                }}
+                hasTitleBar={false}
+                align="left"
+              />
+            }
+            footer={
+              <DialogFooter>
+                <DialogButton
+                  text="CANCEL"
+                  bordered
+                  onPress={() => {
+                    setAnimationDialog({defaultAnimationDialog: false});
+                  }}
+                  key="button-1"
+                />
+                <DialogButton
+                  text="OK"
+                  bordered
+                  onPress={() => {
+                    console.log(WithdrawCount.CountUse)
+                    console.log(partInfo.CountStock-WithdrawCount.CountUse)
+                    setAnimationDialog({defaultAnimationDialog: false});
+                  }}
+                  key="button-2"
+                />
+              </DialogFooter>
+            }
+
+              
+            
+          >
+            <DialogContent
+              style={{
+                backgroundColor: "#F7F7F8"
+              }}
+            > 
+            <Text>In inventory {partInfo.CountStock} piece </Text>
+            <TextInput
+            onChangeText={Num => setWithdrawCount({CountUse : parseInt(Num, 10)})}
+             value = {
+              this.Num
+             }
+             defaultValue = {Count}
+             clearTextOnFocus = {true}
+            style = {
+                {
+                    
+                    width: "25%",
+                    // borderColor: '#c0c0c0',
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    // backgroundColor: '#c0c0c0',
+                    marginLeft: "15%",
+                    fontSize : 20
+                   
+                }
+            }
+            keyboardType='numeric'
+            />
+            </DialogContent>
+          </Dialog>
+          </KeyboardAvoidingView>
         </ScrollView>
       </View>
     </View>
   );
-}
-PartV.navigationOptions = {header:null}
-export default PartV
-
+};
+PartV.navigationOptions = { header: null };
+export default PartV;
 
 const styles = StyleSheet.create({
   container: {
@@ -111,10 +216,10 @@ const styles = StyleSheet.create({
     height: 150,
     width: "100%",
     backgroundColor: "#fff",
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    display: 'flex',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    display: "flex",
     paddingLeft: 32,
     paddingRight: 10,
     paddingTop: 50
@@ -161,14 +266,13 @@ const styles = StyleSheet.create({
     shadowColor: "#0000",
     borderRadius: 10,
     width: 100,
-    marginLeft : 50
+    marginLeft: 50
   },
   buttonText: {
-        color: '#fff',
-        textAlign: 'center',
-        paddingLeft: 10,
-        paddingRight: 10,
-        fontSize: 15,
-    },
-
+    color: "#fff",
+    textAlign: "center",
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontSize: 15
+  }
 });
