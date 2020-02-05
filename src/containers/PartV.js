@@ -14,6 +14,8 @@ import {
 import {TouchableOpacity} from "react-native-gesture-handler";
 import axios from "axios";
 import ContainerTop from '../Layout/containtop';
+import Dayjs from 'dayjs'
+import dayjs from "dayjs";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
 
 const PartV = (props) => {
@@ -42,53 +44,52 @@ const PartV = (props) => {
     }
     fetching()
   }, [])
+  const dateExpire = dayjs(partInfo.DateExpired).format("DD/MM/YYYY");
+  const dateStart = dayjs(partInfo.DateStart).format("DD/MM/YYYY");
   return (
-     <View style={styles.container}>
-         <ContainerTop navigation={navigation}>
-        </ContainerTop>
-        <View style={styles.containerbottom}>
-          <ScrollView
-            maximumZoomScale={5}
-            scrollEnabled={true}
-            minimumZoomScale={1}
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-            width={'100%'}
-          >  
-          <Image
-            style = {
-              {
-                marginTop: 30,
-                width: 200,
-                height: 200,
-                alignSelf: "center"
-              }
-              }
-            source = {
-              // require("../../Image/boiler/PartV.png")
-              {uri :partInfo.URLimage}
-            }
-            
-            onPress={ () =>componentDidMount()}>
-            
-          </Image>
-          <View style = { styles.blank} ></View>
-          <Text style = {styles.parttextHead}>{partInfo.NameEquip}</Text>
-          <Text style = {styles.parttextHead}>{partInfo.KKS}</Text>
-          <Text style = {styles.parttext}>{partInfo.DateStart}</Text>
-          <Text style = {styles.parttext}>{partInfo.DateExpired}</Text>
-          <Text style = {styles.parttext}>{partInfo.CountStock}</Text>
-          <TouchableOpacity
-            style = {styles.container2}
-            title = "withdraw" 
-            onPress = {
-              () => navigation.navigate("Edit")}>
-                <Text> Withdraw </Text>
-          </TouchableOpacity>
-          </ScrollView>
-        </View>
+    <View style={styles.container}>
+     <View style={styles.containertop}>
+      <TouchableOpacity
+            onPress={navigation.goBack}>
+      <Text style={{fontSize: 25}}>Back</Text>
+      </TouchableOpacity>
       </View>
-  )
+      <View style={styles.containerbottom}>
+        <ScrollView
+          maximumZoomScale={5}
+          scrollEnabled={true}
+          minimumZoomScale={1}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          width={"100%"}
+        >
+          <Image
+            style={{
+              marginTop: 30,
+              width: 200,
+              height: 200,
+              alignSelf: "center"
+            }}
+            source={
+              // require("../../Image/boiler/PartV.png")
+              { uri: partInfo.URLimage }
+            }
+            onPress={() => componentDidMount()}
+          ></Image>
+          <View style={styles.textBackground}>
+          <Text style={styles.parttextHead}>Name : {partInfo.NameEquip}</Text>
+          <Text style={styles.parttext}>KKS          : {partInfo.KKS}</Text>
+          <Text style={styles.parttext}>Date Start   : {dateStart}</Text>
+          <Text style={styles.parttext}>Date Expired : {dateExpire}</Text>
+          <Text style={styles.parttext}>Quantity     : {partInfo.CountStock}</Text>
+          <TouchableOpacity style={styles.buttonstyle}>
+            <Text style={styles.buttonText}> Withdraw </Text>
+          </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </View>
+    </View>
+  );
 }
 PartV.navigationOptions = {header:null}
 export default PartV
@@ -98,32 +99,76 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
-
-    //justifyContent: 'center',
   },
   container2: {
-    backgroundColor: 'orange',
-    alignItems: 'center',
+    backgroundColor: "orange",
+    alignItems: "center",
     //justifyContent: 'center',
-    borderColor: 'white',
-    borderRadius: 10,
+    borderColor: "white",
+    borderRadius: 10
+  },
+  containertop: {
+    height: 150,
+    width: "100%",
+    backgroundColor: "#fff",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    display: 'flex',
+    paddingLeft: 32,
+    paddingRight: 10,
+    paddingTop: 50
   },
   containerbottom: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#fff"
   },
   parttext: {
-    alignSelf: "center",
-    paddingTop: 10,
+    // alignSelf: "center",
+    paddingTop: 10
   },
   parttextHead: {
-    alignSelf: "center",
+    // alignSelf: "center",
     paddingTop: 30,
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
-  blank:{
-    flex: 0.2,
-    alignItems: 'center',
+  blank: {
+    flex: 0.5,
+    alignItems: "center",
+    backgroundColor: "red"
   },
+  textBackground: {
+    backgroundColor: "#e2e2e2",
+    borderRadius: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    width: 300,
+    marginLeft: 60,
+    marginTop: 20,
+    paddingBottom: 10,
+    alignContent: "flex-start",
+    paddingLeft: 50
+  },
+  buttonstyle: {
+    marginTop: 30,
+    backgroundColor: "orange",
+    shadowColor: "#0000",
+    borderRadius: 10,
+    width: 100,
+    marginLeft : 50
+  },
+  buttonText: {
+        color: '#fff',
+        textAlign: 'center',
+        paddingLeft: 10,
+        paddingRight: 10,
+        fontSize: 15,
+    },
+
 });

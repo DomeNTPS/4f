@@ -23,7 +23,6 @@ import Partboilerbottomcenter from "./containers/Partboilerbottomcenter";
 import Partboilerbottomright from "./containers/Partboilerbottomright";
 import PartV from "./containers/PartV";
 import PartEllipse from "./containers/PartEllipse";
-import Edit from "./containers/Edit";
 
 const AppNavigator = createStackNavigator({
   Login: { screen: Login },
@@ -49,7 +48,6 @@ const AppNavigator = createStackNavigator({
   Partboilerbottomright: { screen: Partboilerbottomright },
   PartV:{screen:PartV},
   PartEllipse:{screen:PartEllipse},
-  Edit:{screen:Edit},
 });
 
 const App = createAppContainer(AppNavigator);

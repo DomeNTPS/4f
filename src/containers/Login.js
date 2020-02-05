@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, style, Button, TextInput, useState, ActivityIndicator,Platform,StatusBar } from 'react-native';
+import { View, Text, StyleSheet, Image, style, Button, TextInput, useState, ActivityIndicator,Platform,StatusBar,LayoutAnimation,KeyboardAvoidingView } from 'react-native';
 import React,{Component} from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import axios from "axios";
@@ -47,9 +47,9 @@ export default class Login extends React.Component {
             
         <Text style = {{marginLeft: "15%",fontSize: 20,color: '#000'}} >Login</Text>
 
-       
+       <View style = {styles.bla}></View>
         <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={keyboardVerticalOffset}>
-        <View style = {styles.bla}></View>
+        
         <TextInput
             onChangeText={ID => this.setState(ID)}
              value = {

@@ -103,10 +103,4 @@ const styles = StyleSheet.create({
     alignItems: "center"
     //justifyContent: 'center',
   },
-  containerpicture: {
-    //flex: 0.8,
-    backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  }
 });
