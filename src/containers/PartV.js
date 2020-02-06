@@ -12,7 +12,8 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
-  TextInput
+  TextInput,
+  RefreshControl,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import axios from "axios";
@@ -25,13 +26,13 @@ import Dialog, {
   SlideAnimation,
   ScaleAnimation
 } from "react-native-popup-dialog";
+import PTRView from "react-native-pull-to-refresh";
+import { fetchUpdateAsync } from "expo/build/Updates/Updates";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
+
+
 export const PartV = props => {
   const { navigation } = props;
-  // state = {
-  //   defaultAnimationDialog: false,
-  // };
-
 
   const [partInfo, setPartInfo] = useState({
     DateExpired: "loading",
@@ -47,6 +48,9 @@ export const PartV = props => {
   const [WithdrawCount,setWithdrawCount] =useState({
     CountUse : 0,
   })
+  const [RefreshState,setRefreshState] =useState({
+    ReState : false
+  })
   
   useEffect(() => {
     const fetching = async () => {
@@ -61,11 +65,14 @@ export const PartV = props => {
       }
     };
     fetching();
-  }, []);
+  },[]);
   const dateExpire = dayjs(partInfo.DateExpired).format("DD/MM/YYYY");
   const dateStart = dayjs(partInfo.DateStart).format("DD/MM/YYYY");
   const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 30
   const Count = `${WithdrawCount.CountUse}`
+  const dayjss = require('dayjs');
+  let now = dayjss().format("YYYY-MM-DD");
+
   return (
     <View style={styles.container}>
       <View style={styles.containertop}>
@@ -74,129 +81,126 @@ export const PartV = props => {
         </TouchableOpacity>
       </View>
       <View style={styles.containerbottom}>
-        <ScrollView
-          maximumZoomScale={5}
-          scrollEnabled={true}
-          minimumZoomScale={1}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          width={"100%"}
-        >
-          <Image
-            style={{
-              marginTop: 30,
-              width: 200,
-              height: 200,
-              alignSelf: "center"
-            }}
-            source={
-              { uri: partInfo.URLimage }
-            }
-          ></Image>
-          <View style={styles.textBackground}>
-            <Text style={styles.parttextHead}>Name : {partInfo.NameEquip}</Text>
-            <Text style={styles.parttext}>KKS : {partInfo.KKS}</Text>
-            <Text style={styles.parttext}>Date Start : {dateStart}</Text>
-            <Text style={styles.parttext}>Date Expired : {dateExpire}</Text>
-            <Text style={styles.parttext}>
-              Quantity : {partInfo.CountStock}
-            </Text>
-            <TouchableOpacity
-              style={styles.buttonstyle}
-              onPress={() => {
-
-                setAnimationDialog( {defaultAnimationDialog : true});
-              }}
-            >
-              <Text style={styles.buttonText}> Withdraw </Text>
-            </TouchableOpacity>
-          </View>
-          <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={keyboardVerticalOffset}>
-          <Dialog
-            onDismiss={() => {
-
-              setAnimationDialog( {defaultAnimationDialog : false});
-            }}
-            width={0.5}
-            
-            visible={AnimationDialog.defaultAnimationDialog}
-            rounded
-            actionsBordered
-            onTouchOutside={() => {
-              setAnimationDialog( {defaultAnimationDialog : false});
-            }}
-            dialogTitle={
-              <DialogTitle
-                title="Number of Withdraw"
-                style={{
-                  backgroundColor: "#F7F7F8"
-                }}
-                hasTitleBar={false}
-                align="left"
-              />
-            }
-            footer={
-              <DialogFooter>
-                <DialogButton
-                  text="CANCEL"
-                  bordered
-                  onPress={() => {
-                    setAnimationDialog({defaultAnimationDialog: false});
-                  }}
-                  key="button-1"
-                />
-                <DialogButton
-                  text="OK"
-                  bordered
-                  onPress={() => {
-                    console.log(WithdrawCount.CountUse)
-                    console.log(partInfo.CountStock-WithdrawCount.CountUse)
-                    setAnimationDialog({defaultAnimationDialog: false});
-                  }}
-                  key="button-2"
-                />
-              </DialogFooter>
-            }
-
-              
-            
+          <ScrollView
+            maximumZoomScale={5}
+            scrollEnabled={true}
+            minimumZoomScale={1}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            width={"100%"}
           >
-            <DialogContent
+            <Image
               style={{
-                backgroundColor: "#F7F7F8"
+                marginTop: 30,
+                width: 200,
+                height: 200,
+                alignSelf: "center"
               }}
-            > 
-            <Text>In inventory {partInfo.CountStock} piece </Text>
-            <TextInput
-            onChangeText={Num => setWithdrawCount({CountUse : parseInt(Num, 10)})}
-             value = {
-              this.Num
-             }
-             defaultValue = {Count}
-             clearTextOnFocus = {true}
-            style = {
-                {
-                    
-                    width: "25%",
-                    // borderColor: '#c0c0c0',
-                    borderWidth: 1,
-                    borderRadius: 10,
-                    // backgroundColor: '#c0c0c0',
-                    marginLeft: "15%",
-                    fontSize : 20
-                   
+              source={{ uri: partInfo.URLimage }}
+            ></Image>
+            <View style={styles.textBackground}>
+              <Text style={styles.parttextHead}>
+                Name : {partInfo.NameEquip}
+              </Text>
+              <Text style={styles.parttext}>KKS : {partInfo.KKS}</Text>
+              <Text style={styles.parttext}>Date Start : {dateStart}</Text>
+              <Text style={styles.parttext}>Date Expired : {dateExpire}</Text>
+              <Text style={styles.parttext}>
+                Quantity : {partInfo.CountStock}
+              </Text>
+              <TouchableOpacity
+                style={styles.buttonstyle}
+                onPress={() => {
+                  setAnimationDialog({ defaultAnimationDialog: true });
+                }}
+              >
+                <Text style={styles.buttonText}> Withdraw </Text>
+              </TouchableOpacity>
+            </View>
+            <KeyboardAvoidingView
+              behavior="position"
+              keyboardVerticalOffset={keyboardVerticalOffset}
+            >
+              <Dialog
+                onDismiss={() => {
+                  setAnimationDialog({ defaultAnimationDialog: false });
+                }}
+                width={0.5}
+                visible={AnimationDialog.defaultAnimationDialog}
+                rounded
+                actionsBordered
+                onTouchOutside={() => {
+                  setAnimationDialog({ defaultAnimationDialog: false });
+                }}
+                dialogTitle={
+                  <DialogTitle
+                    title="Number of Withdraw"
+                    style={{
+                      backgroundColor: "#F7F7F8"
+                    }}
+                    hasTitleBar={false}
+                    align="left"
+                  />
                 }
-            }
-            keyboardType='numeric'
-            />
-            </DialogContent>
-          </Dialog>
-          </KeyboardAvoidingView>
-        </ScrollView>
+                footer={
+                  <DialogFooter>
+                    <DialogButton
+                      text="CANCEL"
+                      bordered
+                      onPress={() => {
+                        setAnimationDialog({ defaultAnimationDialog: false });
+                      }}
+                      key="button-1"
+                    />
+                    <DialogButton
+                      text="OK"
+                      bordered
+                      onPress={() => {
+                        console.log(WithdrawCount.CountUse);
+                        console.log(
+                          partInfo.CountStock - WithdrawCount.CountUse
+                        );
+                        console.log(now);
+                        setAnimationDialog({ defaultAnimationDialog: false });
+                      }}
+                      key="button-2"
+                    />
+                  </DialogFooter>
+                }
+              >
+                <DialogContent
+                  style={{
+                    backgroundColor: "#F7F7F8"
+                  }}
+                >
+                  <Text>In inventory {partInfo.CountStock} piece </Text>
+                  <TextInput
+                    onChangeText={Num =>
+                      setWithdrawCount({ CountUse: parseInt(Num, 10) })
+                    }
+                    value={this.Num}
+                    defaultValue={Count}
+                    clearTextOnFocus={true}
+                    style={{
+                      width: "25%",
+                      // borderColor: '#c0c0c0',
+                      borderWidth: 1,
+                      borderRadius: 10,
+                      // backgroundColor: '#c0c0c0',
+                      marginLeft: "15%",
+                      fontSize: 20
+                    }}
+                    keyboardType="numeric"
+                  />
+                </DialogContent>
+              </Dialog>
+            </KeyboardAvoidingView>
+          </ScrollView>
       </View>
     </View>
   );
 };
+
 PartV.navigationOptions = { header: null };
 export default PartV;
 
