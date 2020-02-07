@@ -77,7 +77,33 @@ export const PartV = props => {
   const handleClick = () => {
     forceUpdate();
   };
+  const insertwithdraw = () => {
+    try {
+      let { success } =axios.post(`http://10.26.3.164:3000/insertwithdraw/`,{
+        IDEmp: '1379900073717',
+        KKS4_Equip_Withdraw: 'AA',  
+        Count_withdraw: `${WithdrawCount.CountUse}`,
+        Date_Withdraw : `${now}`
+      })
+      console.log({success})
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const updatewithdraw = () => {
+    try {
+      let { success } =axios.post(`http://10.26.3.164:3000/updatewithdraw/`, {
+        CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
+        KKS4: 'AA',
+        KKS1 : `10`})
+        
+      console.log({success})
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
+  
 
 
   return (
@@ -164,9 +190,8 @@ export const PartV = props => {
                     text="OK"
                     bordered
                     onPress={() => {
-                      console.log(WithdrawCount.CountUse);
-                      console.log(partInfo.CountStock - WithdrawCount.CountUse);
-                      console.log(now);
+                      insertwithdraw(),
+                      updatewithdraw(),
                       setAnimationDialog({ defaultAnimationDialog: false });
                     }}
                     key="button-2"
