@@ -79,7 +79,7 @@ export const PartV = props => {
   };
   const insertwithdraw = () => {
     try {
-      let { success } =axios.post(`http://10.26.3.164:3000/insertwithdraw/`,{
+      let { success } = axios.post(`http://35.240.203.149:5000/insertwithdraw/`,{
         IDEmp: '1379900073717',
         KKS4_Equip_Withdraw: 'AA',  
         Count_withdraw: `${WithdrawCount.CountUse}`,
@@ -92,7 +92,7 @@ export const PartV = props => {
   };
   const updatewithdraw = () => {
     try {
-      let { success } =axios.post(`http://10.26.3.164:3000/updatewithdraw/`, {
+      let { success } = axios.post(`http://35.240.203.149:5000/updatewithdraw/`, {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
         KKS4: 'AA',
         KKS1 : `10`})
