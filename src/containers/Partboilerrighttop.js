@@ -68,7 +68,7 @@ export default class Partboilerrighttop extends React.Component {
             < TouchableOpacity style = {{height : 23 ,width : 65}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10HAD10AA001LCV001'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA001LCV001'})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -78,7 +78,7 @@ export default class Partboilerrighttop extends React.Component {
             < TouchableOpacity style = {{height : 22 ,width : 65}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10HAD10CP003PI003'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAD10CP003PI003'})
             
               } >
                 </ TouchableOpacity>
@@ -89,7 +89,7 @@ export default class Partboilerrighttop extends React.Component {
             < TouchableOpacity style = {{height : 23 ,width : 65}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10HAD10CL004LI004'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAD10CL004LI004'})
               } >
                 </ TouchableOpacity>
                 </ View>

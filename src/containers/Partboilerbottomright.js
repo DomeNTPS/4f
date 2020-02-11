@@ -58,7 +58,7 @@ export default class Partboilerbottomleft extends React.Component {
             < TouchableOpacity style = {{height : 30 ,width : 75}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10HAC10CT002 TT 002'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAC10CT002TT002'})
               } >
                 </TouchableOpacity>
                 </View>
@@ -68,7 +68,7 @@ export default class Partboilerbottomleft extends React.Component {
             < TouchableOpacity style = {{height : 30 ,width : 75}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10HAC10CT001 TT 001'})
+                this.props.navigation.navigate("PartV",{KKS:'10HAC10CT001TT001'})
               } >
                 </TouchableOpacity>
                 </View>
@@ -78,7 +78,7 @@ export default class Partboilerbottomleft extends React.Component {
             < TouchableOpacity style = {{height : 30 ,width : 75}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartEllipse",{KKS:'10LAB10CT002 TT 002'})
+                this.props.navigation.navigate("PartV",{KKS:'10LAB10CT002TT002'})
               } >
                 </TouchableOpacity>
                 </View>
@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
     // backgroundColor: "#f00",
     height: 90,
     width: 123,
-    // alignSelf: "center",
     position: "absolute",
     marginTop: 163,
     marginLeft: 136,
@@ -121,14 +120,13 @@ const styles = StyleSheet.create({
   containerbottom2: {
     height: 30,
     width: 75,
-    // alignSelf: "flex-end",
     position: "absolute",
-    // backgroundColor: '#AB6',
+    backgroundColor: '#AB6',
     marginTop: 110,
     marginLeft: 300,
   },
   containerbottom3: {
-    // backgroundColor: '#cd0',
+    backgroundColor: '#cd0',
     position: "absolute",
     height: 30,
     width: 75,
@@ -136,26 +134,12 @@ const styles = StyleSheet.create({
     marginLeft: 300,
   },
   containerbottom4: {
-    // backgroundColor: '#cA0',
+    backgroundColor: '#cA0',
     position: "absolute",
     height: 30,
     width: 75,
     marginTop: 295,
     marginLeft: 255,
-  },
-  
-  containerpicture: {
-    //flex: 0.8,
-    backgroundColor: "#fff"
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  },
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
   },
   bla: {
     flex: 0.03,
