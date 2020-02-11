@@ -30,10 +30,12 @@ import PTRView from "react-native-pull-to-refresh";
 import { fetchUpdateAsync } from "expo/build/Updates/Updates";
 import useForceUpdate from "use-force-update";
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
-
+import config from '../config';
 
 export const PartV = props => {
   const { navigation } = props;
+
+  console.log(config.apiUrl)
 
   const [partInfo, setPartInfo] = useState({
     DateExpired: "loading",
@@ -58,7 +60,7 @@ export const PartV = props => {
       try {
         const kks = navigation.getParam("KKS", "some default value");
         let { data } = await axios.get(
-          `http://35.240.203.149:5000/running_equipment/${kks}`
+          `${config.apiUrl}/running_equipment/${kks}`
         );
         setPartInfo(data);
       } catch (e) {
@@ -79,7 +81,7 @@ export const PartV = props => {
   };
   const insertwithdraw = () => {
     try {
-      let { success } = axios.post(`http://35.240.203.149:5000/insertwithdraw/`,{
+      let { success } = axios.post(`${config.apiUrl}/insertwithdraw/`,{
         IDEmp: '1379900073717',
         KKS4_Equip_Withdraw: 'AA',  
         Count_withdraw: `${WithdrawCount.CountUse}`,
@@ -92,7 +94,7 @@ export const PartV = props => {
   };
   const updatewithdraw = () => {
     try {
-      let { success } = axios.post(`http://35.240.203.149:5000/updatewithdraw/`, {
+      let { success } = axios.post(`${config.apiUrl}/updatewithdraw/`, {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
         KKS4: 'AA',
         KKS1 : `10`})
@@ -102,8 +104,6 @@ export const PartV = props => {
       console.log(e);
     }
   };
-
-  
 
 
   return (
@@ -147,9 +147,9 @@ export const PartV = props => {
             >
               <Text style={styles.buttonText}> Withdraw </Text>
             </TouchableOpacity>
-            <Button
+            {/* <Button
               title="hi"
-              onClick={handleClick}/>
+              onClick={handleClick}/> */}
           </View>
           <KeyboardAvoidingView
             behavior="position"
