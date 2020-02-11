@@ -35,7 +35,7 @@ import config from '../config';
 export const PartV = props => {
   const { navigation } = props;
 
-  console.log(config.apiUrl)
+ 
   const [partInfo, setPartInfo] = useState({
     DateExpired: "loading",
     DateStart: "loading",
@@ -60,9 +60,10 @@ export const PartV = props => {
       try {
         const kks = navigation.getParam("KKS", "some default value");
         let { data } = await axios.get(
-          `${config.apiUrl}http://localhost:5000/running_equipment/${kks}`
+          `${config.apiUrl}/running_equipment/${kks}`
         );
         setPartInfo(data);
+        console.log(data)
       } catch (e) {
         console.log(e);
       }
@@ -81,16 +82,16 @@ export const PartV = props => {
   };
   const insertwithdraw = async () => {
     try {
-      await axios.post(`http://localhost:5000/insertwithdraw/`,{
+      await axios.post(`${config.apiUrl}/insertwithdraw/`,{
         IDEmp: '1379900073717',
-        KKS4_Equip_Withdraw: `${KKS4}`,  
+        KKS4_Equip_Withdraw: `${partInfo.KKS4}`,  
         Count_withdraw: `${WithdrawCount.CountUse}`,
         Date_Withdraw : `${now}`
       })
       await axios.post(`${config.apiUrl}/updatewithdraw/`, {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
-        KKS4: `${KKS4}`,
-        KKS1 : `${KKS1}`})
+        KKS4: `${partInfo.KKS4}`,
+        KKS1 : `${partInfo.KKS1}`})
       console.log('success')
     } catch (e) {
       console.log(e);
@@ -183,7 +184,6 @@ export const PartV = props => {
                     bordered
                     onPress={() => {
                       insertwithdraw(),
-                      updatewithdraw(),
                       setAnimationDialog({ defaultAnimationDialog: false });
                     }}
                     key="button-2"
