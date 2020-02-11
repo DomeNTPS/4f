@@ -35,15 +35,16 @@ import config from '../config';
 export const PartV = props => {
   const { navigation } = props;
 
-  console.log(config.apiUrl)
-
+ 
   const [partInfo, setPartInfo] = useState({
     DateExpired: "loading",
     DateStart: "loading",
     KKS: "loading",
     NameEquip: "loading",
     URLimage: "loading",
-    CountStock: "loading"
+    CountStock: "loading",
+    KKS1 : "loading",
+    KKS4 : "loading",
   });
   const [AnimationDialog,setAnimationDialog] = useState({
     defaultAnimationDialog: false
@@ -54,7 +55,6 @@ export const PartV = props => {
   const [RefreshState,setRefreshState] =useState({
     ReState : false
   })
-  
   useEffect(() => {
     const fetching = async () => {
       try {
@@ -63,6 +63,7 @@ export const PartV = props => {
           `${config.apiUrl}/running_equipment/${kks}`
         );
         setPartInfo(data);
+        console.log(data)
       } catch (e) {
         console.log(e);
       }
@@ -79,32 +80,24 @@ export const PartV = props => {
   const handleClick = () => {
     forceUpdate();
   };
-  const insertwithdraw = () => {
+  const insertwithdraw = async () => {
     try {
-      let { success } = axios.post(`${config.apiUrl}/insertwithdraw/`,{
+      await axios.post(`${config.apiUrl}/insertwithdraw/`,{
         IDEmp: '1379900073717',
-        KKS4_Equip_Withdraw: 'AA',  
+        KKS4_Equip_Withdraw: `${partInfo.KKS4}`,  
         Count_withdraw: `${WithdrawCount.CountUse}`,
         Date_Withdraw : `${now}`
       })
-      console.log({success})
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  const updatewithdraw = () => {
-    try {
-      let { success } = axios.post(`${config.apiUrl}/updatewithdraw/`, {
+      await axios.post(`${config.apiUrl}/updatewithdraw/`, {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
-        KKS4: 'AA',
-        KKS1 : `10`})
-        
-      console.log({success})
+        KKS4: `${partInfo.KKS4}`,
+        KKS1 : `${partInfo.KKS1}`})
+      console.log('success')
     } catch (e) {
       console.log(e);
     }
   };
-
+  
 
   return (
     <View style={styles.container}>
@@ -191,7 +184,6 @@ export const PartV = props => {
                     bordered
                     onPress={() => {
                       insertwithdraw(),
-                      updatewithdraw(),
                       setAnimationDialog({ defaultAnimationDialog: false });
                     }}
                     key="button-2"
