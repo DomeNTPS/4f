@@ -2,7 +2,7 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import Home from "./containers/Home";
 import Partboiler from "./containers/Partboiler";
-import Login from "./containers/Login";
+import {Login} from "./containers/Login";
 import ScanScreen from "./containers/ScanScreen";
 import Data from "./containers/Data";
 import Partboilerleft from "./containers/Partboilerleft";
