@@ -18,6 +18,9 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import axios from "axios";
 
 export const Login = props => {
+
+  Login.navigationOptions = { header: null };
+  
   const [loginInput, setLoginInput] = useState({
     ID: "1409800338149",
     Passwords: "123456789"
@@ -41,6 +44,9 @@ export const Login = props => {
     }
   };
   console.log(loginInfo)
+
+ 
+  
   return (
     <View style={styles.container}>
       <StatusBar barStyle="default"></StatusBar>
@@ -54,9 +60,8 @@ export const Login = props => {
           source={require("../../Image/Logo_kmitl.png")}
         />
       </View>
-      <View style={styles.blank}></View>
 
-      <Text style={{ marginLeft: "15%", fontSize: 20, color: "#000" }}>
+      <Text style={{ marginTop: 100,marginLeft: "18%", fontSize: 20, color: "#000" }}>
         Login
       </Text>
 
@@ -95,13 +100,13 @@ export const Login = props => {
             borderWidth: 1,
             borderRadius: 10,
             backgroundColor: "#c0c0c0",
-            marginLeft: "15%"
+            marginLeft: "15%",
+            marginTop: 5
           }}
         />
         <View style={styles.bla}></View>
         <TouchableOpacity
           style={styles.container2}
-          
           activeOpacity={0.8}
           onPress={() => handleLogin()}
           underlayColor="#fff"
@@ -111,6 +116,7 @@ export const Login = props => {
         <View style={styles.bla}></View>
 
         <TouchableOpacity
+          style={{marginTop: 5}}
           onPress={() => props.navigation.navigate("Home")}
           underlayColor="#fff"
         >
@@ -138,7 +144,7 @@ const styles = StyleSheet.create({
   containerPicture: {
     marginTop: "5%",
     alignSelf: "center",
-    height: "40%"
+    marginTop: 100
   },
   containerTextinput: {
     // backgroundColor: 'orange',
@@ -147,14 +153,25 @@ const styles = StyleSheet.create({
     borderColor: "white",
     width: "90%"
   },
-
+  containertop: {
+    height: 150,
+    width: "100%",
+    backgroundColor: "#fff",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    display: "flex",
+    paddingLeft: 32,
+    paddingRight: 10,
+    paddingTop: 50
+  },
   container2: {
     backgroundColor: "orange",
     alignSelf: "center",
-    //justifyContent: 'center',
     borderColor: "white",
     borderRadius: 10,
-    width: "30%"
+    width: "30%",
+    marginTop: 10
   },
 
   loginText: {
