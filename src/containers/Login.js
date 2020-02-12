@@ -116,7 +116,7 @@ export const Login = props => {
         <View style={styles.bla}></View>
 
         <TouchableOpacity
-          style={{marginTop: 5}}
+          style={{marginTop: 10}}
           onPress={() => props.navigation.navigate("Home")}
           underlayColor="#fff"
         >
