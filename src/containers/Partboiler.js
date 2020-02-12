@@ -38,7 +38,8 @@ export default class PartBoiler extends React.Component {
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerbottom")
-              } >
+              } 
+              underlayColor = "white" >
                 </TouchableOpacity>
                 </ View>
             < View style = {
@@ -101,7 +102,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: "20%",
     width: "14%",
-    // alignSelf: "center",
     position: "absolute",
     marginTop: "35%",
     marginLeft: "36%",
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
   containerbottom2: {
     height: "30%",
     width: "32%",
-    // alignSelf: "flex-end",
     position: "absolute",
     borderColor: '#AB6',
     borderWidth: 2,
@@ -117,7 +116,6 @@ const styles = StyleSheet.create({
     marginLeft: "70%",
   },
   containerbottom3: {
-    // alignSelf: "stretch",
     borderColor: '#cd0',
     borderWidth: 2,
     position: "absolute",
@@ -125,13 +123,6 @@ const styles = StyleSheet.create({
     width: 330,
     marginTop: 255,
     marginLeft: 60,
-  },
-  ImageIconStyle: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch"
   },
   bla: {
     flex: 0.03,
