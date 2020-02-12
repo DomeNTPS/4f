@@ -29,7 +29,7 @@ export default class Home extends React.Component {
               alignItems = "center"
               onPress={() => this.props.navigation.navigate("Partboiler")}
             >
-              <Text style={{ marginTop: 5, alignSelf: 'center', fontSize: 20,fontWeight:'bold' }}>Factory 01</Text>
+              <Text style={{ marginTop: 5, alignSelf: 'center', fontSize: 30,fontWeight:'bold' }}>Factory 01</Text>
               <Image
                 style = {
                   {
