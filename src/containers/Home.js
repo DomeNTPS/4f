@@ -24,13 +24,16 @@ export default class Home extends React.Component {
         </ContainerTop>
         <View style={styles.containerbottom}>
           <TouchableOpacity
+              style={{marginTop: 20,alignSelf:'center'}}
               title="Scan"
               alignItems = "center"
               onPress={() => this.props.navigation.navigate("Partboiler")}
             >
+              <Text style={{ marginTop: 5, alignSelf: 'center', fontSize: 20,fontWeight:'bold' }}>Factory 01</Text>
               <Image
                 style = {
                   {
+                    marginTop: 20,
                     width: 400,
                     height: 230
                   }
@@ -53,6 +56,5 @@ const styles = StyleSheet.create({
   },
   containerbottom: {
     flex: 1,
-    alignItems: "center"
   },
 });

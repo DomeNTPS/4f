@@ -243,18 +243,18 @@ const styles = StyleSheet.create({
   containerbottomE1: {
     backgroundColor: "#f00",
     height: 20,
-    width: 56,
+    width: 55,
     position: "absolute",
-    marginTop: 38,
-    marginLeft: 9,
+    marginTop: 56,
+    marginLeft: 30,
   },
   containerbottomE2: {
     height: 20,
     width: 56,
     position: "absolute",
     backgroundColor: '#AB6',
-    marginTop: 38,
-    marginLeft: 67,
+    marginTop: 56,
+    marginLeft: 85,
   },
   containerbottomE3: {
     backgroundColor: "#f00",
