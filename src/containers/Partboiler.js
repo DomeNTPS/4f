@@ -21,7 +21,7 @@ export default class PartBoiler extends React.Component {
       <View style={styles.container}>
         <ContainerTop navigation ={this.props.navigation}>
         </ContainerTop>
-        <View  style={styles.containerbottom}>
+        <View  style={styles.containerbottomall}>
         <ScrollView
             maximumZoomScale={3}
             scrollEnabled={true}
@@ -86,42 +86,43 @@ const styles = StyleSheet.create({
   },
   containerbottomall: {
   flex: 1,
+
   alignItems: "center",
   },
   containerbottom0: {
-    borderColor: "#ff0",
+    borderColor: "#000",
     borderWidth: 2,
-    height: "30%", 
-    width: "32%",
+    height: 170, 
+    width: 140,
     position: "absolute",
-    marginTop: "20%",
-    marginLeft: "3%",
+    marginTop: 50,
+    marginLeft: 5,
   },
    containerbottom1: {
     borderColor: "#f00",
     borderWidth: 2,
-    height: "20%",
-    width: "14%",
+    height: 160,
+    width: 140,
     position: "absolute",
-    marginTop: "35%",
-    marginLeft: "36%",
+    marginTop: 110,
+    marginLeft: 147,
   },
   containerbottom2: {
-    height: "30%",
-    width: "32%",
-    position: "absolute",
-    borderColor: '#AB6',
+    borderColor: '#1919ff',
     borderWidth: 2,
-    marginTop: "20%",
-    marginLeft: "70%",
+    height: 175,
+    width: 120,
+    position: "absolute",
+    marginTop: 63,
+    marginLeft: 290,
   },
   containerbottom3: {
     borderColor: '#cd0',
     borderWidth: 2,
+    height: 125,
+    width: 338,
     position: "absolute",
-    height: 100,
-    width: 330,
-    marginTop: 255,
+    marginTop: 270,
     marginLeft: 60,
   },
   bla: {

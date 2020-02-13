@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         //justifyContent: 'center',
       },
       containerbottom0: {
-        // backgroundColor: "#ff0",
+        // backgroundColor: "#000",
         borderColor: "orange",
         borderWidth: 2,
         height: "54.5%",
