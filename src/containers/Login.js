@@ -13,7 +13,14 @@ import {
   LayoutAnimation,
   KeyboardAvoidingView
 } from "react-native";
-
+import Dialog, {
+  DialogTitle,
+  DialogContent,
+  DialogFooter,
+  DialogButton,
+  SlideAnimation,
+  ScaleAnimation
+} from "react-native-popup-dialog";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import axios from "axios";
 
@@ -23,21 +30,29 @@ export const Login = props => {
     Passwords: "123456789"
   });
   const [loginInfo, setLoginInfo] = useState({
-    IDEmp: "",
-    KKS1_factory : "",
+    token: "Guestlogin",
     Position : "",
-    
+    KKS1 : "",
   });
+  const [AnimationDialog,setAnimationDialog] = useState({
+    defaultAnimationDialog: false
+  })
   const handleLogin = async () => {
     try {
-      const info = await axios.post(`http://10.26.9.158:5000/employee/`, {
+      const  info  = await axios.post(`http://10.26.14.213:5000/employee/`, {
         ID: `${loginInput.ID}`,
         Pass: `${loginInput.Passwords}`
       });
-      setLoginInfo(info.data)
-      //   navigation.navigate("Home", {KKS1: "10"});
+      // console.log(info.data)
+      console.log("------------------------")
+      setLoginInfo((prev)=>({...prev, token : info.data.token }))
+      setLoginInfo((prev)=>({...prev, Position : info.data.Position }))
+      setLoginInfo((prev)=>({...prev, KKS1 : info.data.KKS1 }))
+      setAnimationDialog((prev)=>({...prev, defaultAnimationDialog : info.data.defaultAnimationDialog }));
+      props.navigation.navigate("Home", {KKS1: info.data.KKS1});
     } catch (e) {
       console.log(e);
+      setAnimationDialog({ defaultAnimationDialog: true });
     }
   };
   console.log(loginInfo)
@@ -118,14 +133,48 @@ export const Login = props => {
         </TouchableOpacity>
         {/* </KeyboardAvoidingView> */}
       </View>
-
-      {/* {
-                     (this.state.loading)
-                         ?
-                         (<ActivityIndicator size="large" />)
-                         :
-                         null
-                 } */}
+      <Dialog
+              onDismiss={() => {
+                setAnimationDialog({ defaultAnimationDialog: false });
+              }}
+              width={0.5}
+              visible={AnimationDialog.defaultAnimationDialog}
+              rounded
+              actionsBordered
+              onTouchOutside={() => {
+                setAnimationDialog({ defaultAnimationDialog: false });
+              }}
+              dialogTitle={
+                <DialogTitle
+                  title="Log in Fail."
+                  style={{
+                    backgroundColor: "#F7F7F8"
+                  }}
+                  hasTitleBar={false}
+                  align="left"
+                />
+              }
+              footer={
+                <DialogFooter>
+                  <DialogButton
+                    text="OK"
+                    bordered
+                    onPress={() => {
+                      setAnimationDialog({ defaultAnimationDialog: false });
+                    }}
+                    key="button-2"
+                  />
+                </DialogFooter>
+              }
+            >
+              <DialogContent
+                style={{
+                  backgroundColor: "#F7F7F8"
+                }}
+              >
+                <Text>Plase Check Your ID or Password หรือติดต่อเจ้าหน้าที่</Text>
+              </DialogContent>
+            </Dialog>
     </View>
   );
 };
