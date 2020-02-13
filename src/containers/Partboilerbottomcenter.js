@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     marginLeft: 350,
   },
   containerbottomV1: {
-    // backgroundColor: "#ff0",
+    // backgroundColor: "#000",
     height: 20, 
     width: 15,
     position: "absolute",
