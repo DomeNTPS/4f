@@ -18,6 +18,10 @@ export default class Home extends React.Component {
     header: null
   }
   render() {
+    const kks1 =  this.props.navigation.getParam("KKS1", "some default value");
+    function remove_last_character(element) {
+      return element.slice(0,element.length - 1)
+    }
     return (
       <View style={styles.container}>
          <ContainerTop navigation ={this.props.navigation}>
@@ -29,7 +33,7 @@ export default class Home extends React.Component {
               alignItems = "center"
               onPress={() => this.props.navigation.navigate("Partboiler")}
             >
-              <Text style={{ marginTop: 5, alignSelf: 'center', fontSize: 30,fontWeight:'bold' }}>Factory 01</Text>
+              <Text style={{ marginTop: 5, alignSelf: 'center', fontSize: 30,fontWeight:'bold' }}>Factory {remove_last_character(kks1)}</Text>
               <Image
                 style = {
                   {
