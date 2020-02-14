@@ -96,7 +96,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV1
             } >
-            < TouchableOpacity style = {{height : 8 ,width : 16}}
+            < TouchableOpacity style = {{height : 10 ,width : 17}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA20AA002'})
@@ -106,7 +106,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV2
             } >
-            < TouchableOpacity style = {{height : 8 ,width : 16}}
+            < TouchableOpacity style = {{height : 10 ,width : 17}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA20AA003'})
@@ -116,7 +116,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV3
             } >
-            < TouchableOpacity style = {{height : 8 ,width : 16}}
+            < TouchableOpacity style = {{height : 10 ,width : 17}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA20AA001'})
@@ -126,7 +126,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV4
             } >
-            < TouchableOpacity style = {{height : 6 ,width : 14}}
+            < TouchableOpacity style = {{height : 10 ,width : 15}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA10AA005'})
@@ -136,7 +136,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV5
             } >
-            < TouchableOpacity style = {{height : 6 ,width : 14}}
+            < TouchableOpacity style = {{height : 10 ,width : 15}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA10AA006'})
@@ -146,7 +146,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV6
             } >
-            < TouchableOpacity style = {{height : 6 ,width : 14}}
+            < TouchableOpacity style = {{height : 10 ,width : 15}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA10AA003'})
@@ -156,7 +156,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV7
             } >
-            < TouchableOpacity style = {{height : 6 ,width : 14}}
+            < TouchableOpacity style = {{height : 10 ,width : 15}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA10AA004'})
@@ -166,7 +166,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV8
             } >
-            < TouchableOpacity style = {{height : 16 ,width : 8}}
+            < TouchableOpacity style = {{height : 20 ,width : 13}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA10AA001'})
@@ -176,7 +176,7 @@ export default class Partboilerlefttop extends React.Component {
                 < View style = {
               styles.containerbottomV9
             } >
-            < TouchableOpacity style = {{height : 14 ,width : 6}}
+            < TouchableOpacity style = {{height : 20 ,width : 13}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LBA10AA002'})
@@ -292,36 +292,36 @@ const styles = StyleSheet.create({
     marginLeft: 248,
   },
   containerbottomV6: {
-    height: 6,
-    width: 14,
+    height: 10,
+    width: 15,
     position: "absolute",
     backgroundColor: '#f00',
-    marginTop: 92,
-    marginLeft: 188,
+    marginTop: 87,
+    marginLeft: 190,
   },
   containerbottomV7: {
-    height: 6,
-    width: 14,
+    height: 10,
+    width: 15,
     position: "absolute",
     backgroundColor: '#AB6',
-    marginTop: 92,
-    marginLeft: 210,
+    marginTop: 87,
+    marginLeft: 208,
   },
   containerbottomV8: {
-    height: 16,
-    width: 8,
+    height: 20,
+    width: 13,
     position: "absolute",
     backgroundColor: '#f00',
-    marginTop: 110,
-    marginLeft: 226,
+    marginTop: 105,
+    marginLeft: 220,
   },
   containerbottomV9: {
-    height: 14,
-    width: 6,
+    height: 20,
+    width: 13,
     position: "absolute",
     backgroundColor: '#AB6',
-    marginTop: 111,
-    marginLeft: 258,
+    marginTop: 105,
+    marginLeft: 240,
   },
   bla: {
     flex: 0.03,
