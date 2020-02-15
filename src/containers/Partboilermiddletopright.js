@@ -32,38 +32,6 @@ export default class Partboilermiddletopright extends React.Component {
           >
             <Boilermiddletopright height={400
             } width={400} alignSelf = 'center' />
-            < View style = {
-              styles.containerbottom0
-            } >
-            < TouchableOpacity style = {{height : 315 ,width : 30}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("test")           
-              }              
-               >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom1
-            } >
-            < TouchableOpacity style = {{height : 315 ,width : 30}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("test")
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottom2
-            } >
-            < TouchableOpacity style = {{height : 315 ,width : 30}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("test")
-            
-              } >
-                </ TouchableOpacity>
-                </ View>
                 < View style = {
               styles.containerbottom3
             } >
@@ -123,67 +91,37 @@ const styles = StyleSheet.create({
   backgroundColor: "#fff",
   alignItems: "center",
   },
-  containerbottom0: {
-    // backgroundColor: "#ff0",
-    height: 315, 
-    width: 30,
-    position: "absolute",
-    marginTop: 10,
-    marginLeft: 80,
-  },
-   containerbottom1: {
-    // backgroundColor: "#f00",
-    height: 315,
-    width: 30,
-    // alignSelf: "center",
-    position: "absolute",
-    marginTop: 10,
-    marginLeft: 190,
-  },
-  containerbottom2: {
-    height: 315,
-    width: 30,
-    // alignSelf: "flex-end",
-    position: "absolute",
-    // backgroundColor: '#AB6',
-    marginTop: 10,
-    marginLeft: 290,
-  },
   containerbottom3: {
     // backgroundColor: "#f00",
-    height: 20,
-    width: 70,
-    // alignSelf: "center",
+    height: 25,
+    width: 80,
     position: "absolute",
-    marginTop: 340,
-    marginLeft: 115,
+    marginTop: 315,
+    marginLeft: 110,
   },
   containerbottom4: {
     height: 25,
-    width: 70,
-    // alignSelf: "flex-end",
+    width: 80,
     position: "absolute",
     // backgroundColor: '#AB6',
-    marginTop: 338,
-    marginLeft: 223,
+    marginTop: 315,
+    marginLeft: 200,
   },
    containerbottom5: {
-    height: 20,
-    width: 70,
-    // alignSelf: "flex-end",
+    height: 25,
+    width: 80,
     position: "absolute",
     // backgroundColor: '#AB6',
-    marginTop: 365,
-    marginLeft: 115,
+    marginTop: 339,
+    marginLeft: 110,
   },
   containerbottom6: {
-    height: 20,
-    width: 70,
-    // alignSelf: "flex-end",
+    height: 25,
+    width: 80,
     position: "absolute",
     // backgroundColor: '#f00',
-    marginTop: 365,
-    marginLeft: 223,
+    marginTop: 339,
+    marginLeft: 200,
   },
   bla: {
     flex: 0.03,
