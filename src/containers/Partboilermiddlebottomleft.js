@@ -37,7 +37,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
             < TouchableOpacity style = {{height : 53 ,width : 117}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("test",{KKS:'10LAB40CF001FT001'})  
+                this.props.navigation.navigate("PartV",{KKS:'10LAB40CF001FT001'})  
               }
                >            
                 </ TouchableOpacity>
@@ -122,18 +122,17 @@ const styles = StyleSheet.create({
   alignItems: "center",
   },
   containerbottom0: {
-    // backgroundColor: "#ff0",
+    backgroundColor: "#ff0",
     height: 53, 
     width: 117,
     position: "absolute",
-    marginTop: 300,
-    marginLeft: 70,
+    marginTop: 285,
+    marginLeft: 90,
   },
    containerbottom1: {
-    // backgroundColor: "#f00",
+    backgroundColor: "#f00",
     height: 40,
     width: 30,
-    // alignSelf: "center",
     position: "absolute",
     marginTop: 54,
     marginLeft: 220,
@@ -141,17 +140,15 @@ const styles = StyleSheet.create({
   containerbottom2: {
     height: 40,
     width: 30,
-    // alignSelf: "flex-end",
     position: "absolute",
-    // backgroundColor: '#AB6',
+    backgroundColor: '#AB6',
     marginTop: 110,
     marginLeft: 220,
   },
   containerbottom3: {
-    // backgroundColor: "#f00",
+    backgroundColor: "#f00",
     height: 40,
     width: 30,
-    // alignSelf: "center",
     position: "absolute",
     marginTop: 165,
     marginLeft: 220,
@@ -159,29 +156,26 @@ const styles = StyleSheet.create({
   containerbottom4: {
     height: 40,
     width: 30,
-    // alignSelf: "flex-end",
     position: "absolute",
-    // backgroundColor: '#AB6',
+    backgroundColor: '#AB6',
     marginTop: 220,
     marginLeft: 220,
   },
    containerbottom5: {
-    height: 40,
-    width: 30,
-    // alignSelf: "flex-end",
+    height: 45,
+    width: 35,
     position: "absolute",
-    // backgroundColor: '#AB6',
-    marginTop: 90,
-    marginLeft: 308,
+    backgroundColor: '#AB6',
+    marginTop: 110,
+    marginLeft: 270,
   },
   containerbottom6: {
-    height: 40,
-    width: 30,
-    // alignSelf: "flex-end",
+    height: 45,
+    width: 35,
     position: "absolute",
-    // backgroundColor: '#f00',
-    marginTop: 180,
-    marginLeft: 308,
+    backgroundColor: '#f00',
+    marginTop: 190,
+    marginLeft: 270,
   },
   bla: {
     flex: 0.03,
