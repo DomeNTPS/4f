@@ -38,7 +38,7 @@ export default class Partboilerright extends React.Component {
             < View style = {
               styles.containerbottom0
             } >
-            < TouchableOpacity style = {{height : 78 ,width : 156}}
+            < TouchableOpacity style = {{height : 110 ,width : 250}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerrighttop")
@@ -48,7 +48,7 @@ export default class Partboilerright extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 180 ,width : 145}}
+            < TouchableOpacity style = {{height : 130 ,width : 250}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerrightmid")
@@ -58,7 +58,7 @@ export default class Partboilerright extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 128 ,width : 183}}
+            < TouchableOpacity style = {{height : 145 ,width : 240}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("Partboilerrightbottom")
