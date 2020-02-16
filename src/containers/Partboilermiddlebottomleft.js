@@ -45,7 +45,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom1
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 40 ,width : 35}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40AA004'})
@@ -55,7 +55,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom2
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 40 ,width : 35}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40AA001'})
@@ -66,7 +66,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom3
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 40 ,width : 35}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40AA003'})
@@ -76,7 +76,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom4
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 40 ,width : 35}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40AA002'})
@@ -86,7 +86,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom5
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 45 ,width : 35}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40AA006'})
@@ -96,7 +96,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 < View style = {
               styles.containerbottom6
             } >
-            < TouchableOpacity style = {{height : 40 ,width : 30}}
+            < TouchableOpacity style = {{height : 45 ,width : 35}}
             onPress = {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40AA005'})
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   alignItems: "center",
   },
   containerbottom0: {
-    backgroundColor: "#ff0",
+    // backgroundColor: "#ff0",
     height: 53, 
     width: 117,
     position: "absolute",
@@ -130,50 +130,50 @@ const styles = StyleSheet.create({
     marginLeft: 90,
   },
    containerbottom1: {
-    backgroundColor: "#f00",
+    // backgroundColor: "#f00",
     height: 40,
-    width: 30,
+    width: 35,
     position: "absolute",
-    marginTop: 54,
-    marginLeft: 220,
+    marginTop: 77,
+    marginLeft: 207,
   },
   containerbottom2: {
     height: 40,
-    width: 30,
+    width: 35,
     position: "absolute",
-    backgroundColor: '#AB6',
-    marginTop: 110,
-    marginLeft: 220,
+    // backgroundColor: '#AB6',
+    marginTop: 123,
+    marginLeft: 207,
   },
   containerbottom3: {
-    backgroundColor: "#f00",
+    // backgroundColor: "#f00",
     height: 40,
-    width: 30,
+    width: 35,
     position: "absolute",
-    marginTop: 165,
-    marginLeft: 220,
+    marginTop: 170,
+    marginLeft: 207,
   },
   containerbottom4: {
     height: 40,
-    width: 30,
+    width: 35,
     position: "absolute",
-    backgroundColor: '#AB6',
+    // backgroundColor: '#AB6',
     marginTop: 220,
-    marginLeft: 220,
+    marginLeft: 207,
   },
    containerbottom5: {
     height: 45,
     width: 35,
     position: "absolute",
-    backgroundColor: '#AB6',
-    marginTop: 110,
+    // backgroundColor: '#AB6',
+    marginTop: 108,
     marginLeft: 270,
   },
   containerbottom6: {
     height: 45,
     width: 35,
     position: "absolute",
-    backgroundColor: '#f00',
+    // backgroundColor: '#f00',
     marginTop: 190,
     marginLeft: 270,
   },
