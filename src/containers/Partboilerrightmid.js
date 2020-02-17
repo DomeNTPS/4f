@@ -193,46 +193,6 @@ export default class Partboilerrightmid extends React.Component {
               } >
                 </ TouchableOpacity>
                 </ View>
-                {/* < View style = {
-              styles.containerbottomV13
-            } >
-            < TouchableOpacity style = {{height : 9 ,width : 18}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA009'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV14
-            } >
-            < TouchableOpacity style = {{height : 9 ,width : 18}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA010'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV15
-            } >
-            < TouchableOpacity style = {{height : 9 ,width : 18}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA007'})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV16
-            } >
-            < TouchableOpacity style = {{height : 9 ,width : 18}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA008'})
-              } >
-                </ TouchableOpacity>
-                </ View> */}
                
           </ScrollView>
         </View>
