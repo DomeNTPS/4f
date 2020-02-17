@@ -92,7 +92,13 @@ export const PartV = props => {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
         KKS4: `${partInfo.KKS4}`,
         KKS1 : `${partInfo.KKS1}`})
+      const kks = navigation.getParam("KKS", "some default value");
+      let { data } = await axios.get(
+          `${config.apiUrl}/running_equipment/${kks}`
+        );
+      setPartInfo(data);
       console.log('success')
+
     } catch (e) {
       console.log(e);
     }

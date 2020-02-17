@@ -11,7 +11,7 @@ import {
   Platform,
   StatusBar,
   LayoutAnimation,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
 } from "react-native";
 import Dialog, {
   DialogTitle,
@@ -23,11 +23,16 @@ import Dialog, {
 } from "react-native-popup-dialog";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import axios from "axios";
+// import { writeStorage, useLocalStorage } from "@rehooks/local-storage";
 
 export const Login = props => {
 
   Login.navigationOptions = { header: null };
-  
+
+  // const locToken = window.localStorage.getItem(loginInfo.token)
+  // const [tkn, setTkn] = useState(locToken)
+  // let tkn = loginInfo.token;
+
   const [loginInput, setLoginInput] = useState({
     ID: "1409800338149",
     Passwords: "123456789"
@@ -42,13 +47,13 @@ export const Login = props => {
   })
   const handleLogin = async () => {
     try {
-      const  info  = await axios.post(`http://10.26.14.213:5000/employee/`, {
+      const info = await axios.post(`http://10.26.5.120:5000/employee/`, {
         ID: `${loginInput.ID}`,
         Pass: `${loginInput.Passwords}`
       });
       // console.log(info.data)
       console.log("------------------------")
-      setLoginInfo((prev)=>({...prev, token : info.data.token }))
+      setLoginInfo((prev) => ({...prev,token: info.data.token}))
       setLoginInfo((prev)=>({...prev, Position : info.data.Position }))
       setLoginInfo((prev)=>({...prev, KKS1 : info.data.KKS1 }))
       setAnimationDialog((prev)=>({...prev, defaultAnimationDialog : info.data.defaultAnimationDialog }));
@@ -59,12 +64,12 @@ export const Login = props => {
     }
   };
   console.log(loginInfo)
-
+  // console.log(locToken)
  
   
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="default"></StatusBar>
+      <StatusBar barStyle="dark-content"></StatusBar>
       <View style={styles.blank}></View>
       <View style={styles.containerPicture}>
         <Image
@@ -132,8 +137,9 @@ export const Login = props => {
 
         <TouchableOpacity
           style={{marginTop: 10}}
-          onPress={() => props.navigation.navigate("Home")}
+          onPress={() => {props.navigation.navigate("Home") ,console.log(loginInfo.token),() => writeStorage(tkns,tkn)}}
           underlayColor="#fff"
+          
         >
           <Text style={styles.GuestText}> Guest Login </Text>
         </TouchableOpacity>
