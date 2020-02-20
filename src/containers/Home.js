@@ -19,7 +19,7 @@ export default class Home extends React.Component {
   }
   
   render() {
-    const kks1 =  this.props.navigation.getParam("KKS1", "some default value");
+    const kks1 =  this.props.navigation.getParam("KKS1", "0");
     function remove_last_character(element) {
       return element.slice(0,element.length - 1)
     }

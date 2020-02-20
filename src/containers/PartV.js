@@ -51,16 +51,13 @@ export const PartV = props => {
     token: "loading"
   });
   const [hiddenbottom, sethiddenbottom] = useState({
-    value: false
+    value: true
   })
   const [AnimationDialog,setAnimationDialog] = useState({
     defaultAnimationDialog: false
   })
   const [WithdrawCount,setWithdrawCount] =useState({
     CountUse : 0,
-  })
-  const [RefreshState,setRefreshState] =useState({
-    ReState : false
   })
   useEffect(() => {
     const fetching = async () => {
@@ -75,7 +72,7 @@ export const PartV = props => {
           // We have token!!
           console.log("token: ", token);
           setTOKEN(token)
-          sethiddenbottom({value : false})
+          sethiddenbottom({value: false})
         }else{
           console.log('dont have token')
           // sethiddenbottom(true)
@@ -156,7 +153,11 @@ export const PartV = props => {
               Quantity : {partInfo.CountStock}
             </Text>
             <TouchableOpacity
-              visible={hiddenbottom.value}
+              // visible ={true}
+              disabled = {
+                hiddenbottom.value
+              }
+              
               style={styles.buttonstyle}
               onPress={() => {
                 setAnimationDialog({ defaultAnimationDialog: true });
@@ -164,9 +165,6 @@ export const PartV = props => {
             >
               <Text style={styles.buttonText}> Withdraw </Text>
             </TouchableOpacity>
-            {/* <Button
-              title="hi"
-              onClick={handleClick}/> */}
           </View>
           <KeyboardAvoidingView
             behavior="position"

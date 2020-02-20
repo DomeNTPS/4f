@@ -39,7 +39,7 @@ export default class Partboilermiddlebottomleft extends React.Component {
                 () =>
                 this.props.navigation.navigate("PartV",{KKS:'10LAB40CF001FT001'})  
               }
-               >            
+               >          
                 </ TouchableOpacity>
                 </ View>
                 < View style = {
