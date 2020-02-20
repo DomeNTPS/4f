@@ -13,8 +13,6 @@ import {
   AsyncStorage
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import ContainerTopForHome from '../Layout/containtopforhome';
-import Cookies from "universal-cookie";
 export default class Home extends React.Component {
   static navigationOptions = {
     header: null
