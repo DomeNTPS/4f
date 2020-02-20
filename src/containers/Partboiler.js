@@ -12,8 +12,6 @@ import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/Boiler New/Boiler.svg";
 import ContainerTop from '../Layout/containtop';
-// import { useLocalStorage } from "@rehooks/local-storage";
-// import { tkns } from "../../src/containers/Login"
 export default class PartBoiler extends React.Component {
   static navigationOptions = {
     header: null
@@ -74,7 +72,7 @@ export default class PartBoiler extends React.Component {
               } >
                 </ TouchableOpacity>
                 </ View>
-                 {/* <h1>{tknss}</h1> */}
+                <Text>  </Text>
         </ScrollView>
          </View>
       </View>
@@ -82,8 +80,7 @@ export default class PartBoiler extends React.Component {
   }
 }
 
-// console.log(tknss)
-// const [tknss] = useLocalStorage(tkns);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

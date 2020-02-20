@@ -13,10 +13,12 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ContainerTop from '../Layout/containtop';
+import Cookies from "universal-cookie";
 export default class Home extends React.Component {
   static navigationOptions = {
     header: null
   }
+  
   render() {
     const kks1 =  this.props.navigation.getParam("KKS1", "some default value");
     function remove_last_character(element) {
