@@ -12,6 +12,7 @@ import {
   StatusBar,
   LayoutAnimation,
   KeyboardAvoidingView,
+  AsyncStorage
 } from "react-native";
 import Dialog, {
   DialogTitle,
@@ -33,7 +34,7 @@ export const Login = props => {
     Passwords: "123456789"
   });
   const [loginInfo, setLoginInfo] = useState({
-    token: "Guestlogin",
+    token: "",
     Position : "",
     KKS1 : "",
   });
@@ -42,7 +43,7 @@ export const Login = props => {
   })
   const handleLogin = async () => {
     try {
-      const info = await axios.post(`http://10.26.5.76:5000/employee/`, {
+      const info = await axios.post(`http://10.26.14.160:5000/employee/`, {
         ID: `${loginInput.ID}`,
         Pass: `${loginInput.Passwords}`
       });
@@ -50,6 +51,7 @@ export const Login = props => {
       setLoginInfo((prev)=>({...prev, Position : info.data.Position }))
       setLoginInfo((prev)=>({...prev, KKS1 : info.data.KKS1 }))
       setAnimationDialog((prev)=>({...prev, defaultAnimationDialog : info.data.defaultAnimationDialog }));
+      await AsyncStorage.setItem('token', info.data.token);
       props.navigation.navigate("Home", {KKS1: info.data.KKS1});
     } catch (e) {
       console.log(e);
@@ -128,7 +130,11 @@ export const Login = props => {
 
         <TouchableOpacity
           style={{marginTop: 10}}
-          onPress={() => {props.navigation.navigate("Home") ,console.log(loginInfo.token)}}
+          onPress = {
+            () => {
+              props.navigation.navigate("Home")
+            }
+          }
           underlayColor="#fff"          
         >
           <Text style={styles.GuestText}> Guest Login </Text>

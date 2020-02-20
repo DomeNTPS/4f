@@ -13,6 +13,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   TextInput,
+  AsyncStorage,
   RefreshControl,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -46,6 +47,12 @@ export const PartV = props => {
     KKS1 : "loading",
     KKS4 : "loading",
   });
+  const [TOKEN, setTOKEN] = useState({
+    token: "loading"
+  });
+  const [hiddenbottom, sethiddenbottom] = useState({
+    value: false
+  })
   const [AnimationDialog,setAnimationDialog] = useState({
     defaultAnimationDialog: false
   })
@@ -63,6 +70,16 @@ export const PartV = props => {
           `${config.apiUrl}/running_equipment/${kks}`
         );
         setPartInfo(data);
+        const token = await AsyncStorage.getItem('token');
+        if (token !== null) {
+          // We have token!!
+          console.log("token: ", token);
+          setTOKEN(token)
+          sethiddenbottom({value : false})
+        }else{
+          console.log('dont have token')
+          // sethiddenbottom(true)
+        }
         console.log(data)
       } catch (e) {
         console.log(e);
@@ -139,6 +156,7 @@ export const PartV = props => {
               Quantity : {partInfo.CountStock}
             </Text>
             <TouchableOpacity
+              visible={hiddenbottom.value}
               style={styles.buttonstyle}
               onPress={() => {
                 setAnimationDialog({ defaultAnimationDialog: true });
