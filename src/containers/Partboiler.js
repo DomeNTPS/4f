@@ -12,11 +12,14 @@ import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 import ImageZoom from "react-native-image-pan-zoom";
 import Boiler from "../../Image/Boiler New/Boiler.svg";
 import ContainerTop from '../Layout/containtop';
+
 export default class PartBoiler extends React.Component {
   static navigationOptions = {
     header: null
   }
+  
   render() {
+    const kks1 = this.props.navigation.getParam("KKS1", "dont have value");
     return (
       <View style={styles.container}>
         <ContainerTop navigation ={this.props.navigation}>
@@ -37,7 +40,7 @@ export default class PartBoiler extends React.Component {
             <TouchableOpacity style = {{height : 100 ,width : 330}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerbottom")
+                this.props.navigation.navigate("Partboilerbottom",{KKS1: kks1})
               } 
               underlayColor = "white" >
                 </TouchableOpacity>
@@ -48,7 +51,7 @@ export default class PartBoiler extends React.Component {
             <TouchableOpacity style = {{height : 200 ,width : 149}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerleft")
+                this.props.navigation.navigate("Partboilerleft",{KKS1: kks1})
               } >
                 </TouchableOpacity>
                 </ View>
@@ -58,7 +61,7 @@ export default class PartBoiler extends React.Component {
             < TouchableOpacity style = {{height : 157 ,width : 130}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermiddle")
+                this.props.navigation.navigate("Partboilermiddle",{KKS1: kks1})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -68,11 +71,11 @@ export default class PartBoiler extends React.Component {
             < TouchableOpacity style = {{height : 153 ,width : 120}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerright")
+                this.props.navigation.navigate("Partboilerright",{KKS1: kks1})
               } >
                 </ TouchableOpacity>
                 </ View>
-                <Text>  </Text>
+                <Text> {kks1} </Text>
         </ScrollView>
          </View>
       </View>

@@ -19,7 +19,7 @@ export default class Home extends React.Component {
   }
   
   render() {
-    const kks1 =  this.props.navigation.getParam("KKS1", "0");
+    const kks1 =  this.props.navigation.getParam("KKS1", "10");
     function remove_last_character(element) {
       return element.slice(0,element.length - 1)
     }
@@ -64,7 +64,7 @@ export default class Home extends React.Component {
               title="Scan"
               alignItems = "center"
               onPress = {
-                () => this.props.navigation.navigate("Partboiler")
+                () => this.props.navigation.navigate("Partboiler",{KKS1: kks1})
               }
             >
               <Text style={{ marginTop: 5, alignSelf: 'center', fontSize: 30,fontWeight:'bold' }}>Factory {remove_last_character(kks1)}</Text>

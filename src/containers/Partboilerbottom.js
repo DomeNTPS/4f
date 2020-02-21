@@ -21,6 +21,7 @@ export default class Partboilerbottom extends React.Component {
     header: null
   }
   render() {
+    const kks1 = this.props.navigation.getParam("KKS1", "dont have value");
     return (
       <View style={styles.container}>
         <ContainerTop navigation ={this.props.navigation}>
@@ -41,7 +42,7 @@ export default class Partboilerbottom extends React.Component {
             < TouchableOpacity style = {{height : 60 ,width : 160}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerbottomleft")
+                this.props.navigation.navigate("Partboilerbottomleft",{KKS1: kks1,KKS2:"LAB",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </View>
@@ -51,7 +52,7 @@ export default class Partboilerbottom extends React.Component {
             < TouchableOpacity style = {{height : 50 ,width : 180}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerbottomcenter")
+                this.props.navigation.navigate("Partboilerbottomcenter",{KKS1: kks1,KKS2:"LAB",KKS3 :"10"})
               } >
                 </TouchableOpacity>
                 </ View>
@@ -61,11 +62,11 @@ export default class Partboilerbottom extends React.Component {
             < TouchableOpacity style = {{height : 97 ,width : 75}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerbottomright")
+                this.props.navigation.navigate("Partboilerbottomright",{KKS1: kks1,KKS2:"HAC",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </ View>
-                
+                <Text> {kks1} </Text>
           </ScrollView>
         </View>
       </View>
