@@ -83,6 +83,7 @@ export const PartV = props => {
       }
     };
     fetching();
+
   },[]);
   const dateExpire = dayjs(partInfo.DateExpired).format("DD/MM/YYYY");
   const dateStart = dayjs(partInfo.DateStart).format("DD/MM/YYYY");
@@ -96,8 +97,8 @@ export const PartV = props => {
   };
   const insertwithdraw = async () => {
     try {
-      await axios.post(`${config.apiUrl}/insertwithdraw/`,{
-        IDEmp: '1379900073717',
+      await axios.post(`http://10.26.14.160:5000/insertwithdraw/`,{
+        IDEmp: `${TOKEN.token}`,
         KKS4_Equip_Withdraw: `${partInfo.KKS4}`,  
         Count_withdraw: `${WithdrawCount.CountUse}`,
         Date_Withdraw : `${now}`
