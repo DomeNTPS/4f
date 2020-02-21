@@ -67,11 +67,13 @@ export const PartV = props => {
           `${config.apiUrl}/running_equipment/${kks}`
         );
         setPartInfo(data);
-        const token = await AsyncStorage.getItem('token');
-        if (token !== null) {
+        const tokenfromstore = await AsyncStorage.getItem('token');
+        if (tokenfromstore !== null) {
           // We have token!!
-          console.log("token: ", token);
-          setTOKEN(token)
+          console.log("token: ", tokenfromstore);
+          setTOKEN({
+            token: `${tokenfromstore}`
+          })
           sethiddenbottom({value: false})
         }else{
           console.log('dont have token')
@@ -97,8 +99,8 @@ export const PartV = props => {
   };
   const insertwithdraw = async () => {
     try {
-      await axios.post(`http://10.26.14.160:5000/insertwithdraw/`,{
-        IDEmp: `${TOKEN.token}`,
+      await axios.post(`${config.apiUrl}/insertwithdraw/`, {
+        token: `${TOKEN.token}`,
         KKS4_Equip_Withdraw: `${partInfo.KKS4}`,  
         Count_withdraw: `${WithdrawCount.CountUse}`,
         Date_Withdraw : `${now}`
