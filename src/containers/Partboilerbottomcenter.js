@@ -40,7 +40,7 @@ export default class Partboilerbottomcenter extends React.Component {
             < TouchableOpacity style = {{height : 30 ,width : 50}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10LAB10CP003PI002'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}CP003PI002`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -50,7 +50,7 @@ export default class Partboilerbottomcenter extends React.Component {
             < TouchableOpacity style = {{height : 30 ,width : 50}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}CP003PI002`})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}CT002TT002`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: 50,
     position: "absolute",
-    // backgroundColor: '#AB6',
+    backgroundColor: '#AB6',
     marginTop: 190,
     marginLeft: 213,
   },
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: 50,
     position: "absolute",
-    // backgroundColor: '#AB6',
+    backgroundColor: '#A06',
     marginTop: 237,
     marginLeft: 350,
   },

@@ -22,6 +22,7 @@ export default class Partboilerleft extends React.Component {
     header: null
   }
   render() {
+    const kks1 = this.props.navigation.getParam("KKS1", "dont have value");
     return (
       <View style={styles.container}>
         <ContainerTop navigation ={this.props.navigation}>
@@ -42,7 +43,7 @@ export default class Partboilerleft extends React.Component {
             < TouchableOpacity style = {{height : 144 ,width : 370}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerlefttop")
+                this.props.navigation.navigate("Partboilerlefttop",{KKS1: kks1,KKS2:"LBA",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -52,7 +53,7 @@ export default class Partboilerleft extends React.Component {
             < TouchableOpacity style = {{height : 248 ,width : 274}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerleftbottom")
+                this.props.navigation.navigate("Partboilerleftbottom",{KKS1: kks1,KKS2:"HAH",KKS3 :"30"})
               } >
                 </ TouchableOpacity>
                 </ View>
