@@ -24,6 +24,7 @@ import Dialog, {
 } from "react-native-popup-dialog";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import axios from "axios";
+import config from '../config';
 
 export const Login = props => {
 
@@ -43,7 +44,7 @@ export const Login = props => {
   })
   const handleLogin = async () => {
     try {
-      const info = await axios.post(`http://10.26.14.160:5000/employee/`, {
+      const info = await axios.post(`${config.apiUrl}/employee/`, {
         ID: `${loginInput.ID}`,
         Pass: `${loginInput.Passwords}`
       });
