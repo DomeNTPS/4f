@@ -82,7 +82,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA021'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA021`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -92,7 +92,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA022'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA022`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -102,7 +102,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA019'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA019`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -112,7 +112,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA020'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA020`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -122,7 +122,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA017'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA017`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -132,7 +132,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA018'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA018`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -142,7 +142,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA015'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA015`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -152,7 +152,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA016'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA016`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -162,7 +162,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA013'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA013`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -172,7 +172,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA014'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA014`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -182,7 +182,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA011'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA011`})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -192,7 +192,7 @@ export default class Partboilerrightmid extends React.Component {
             < TouchableOpacity style = {{height : 15 ,width : 25}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("PartV",{KKS:'10HAD10AA012'})
+                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA012`})
               } >
                 </ TouchableOpacity>
                 </ View>
