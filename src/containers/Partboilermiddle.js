@@ -22,6 +22,7 @@ export default class Partboilermid extends React.Component {
     header: null
   }
   render() {
+    const kks1 = this.props.navigation.getParam("KKS1", "dont have value");
     return (
       <View style={styles.container}>
          <ContainerTop navigation ={this.props.navigation}>
@@ -42,7 +43,7 @@ export default class Partboilermid extends React.Component {
             < TouchableOpacity style = {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermiddletopleft")
+                this.props.navigation.navigate("Partboilermiddletopleft",{KKS1: kks1,KKS2:"HAH",KKS3 :"20"})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -52,7 +53,7 @@ export default class Partboilermid extends React.Component {
             < TouchableOpacity style = {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermiddletopright")
+                this.props.navigation.navigate("Partboilermiddletopright",{KKS1: kks1,KKS2:"HAH",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -62,7 +63,7 @@ export default class Partboilermid extends React.Component {
             < TouchableOpacity style =  {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermiddlebottomleft")
+                this.props.navigation.navigate("Partboilermiddlebottomleft",{KKS1: kks1,KKS2:"LAB",KKS3 :"40"})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -72,7 +73,7 @@ export default class Partboilermid extends React.Component {
             < TouchableOpacity style =  {{height : "100%" ,width : "100%"}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilermiddlebottomright")
+                this.props.navigation.navigate("Partboilermiddlebottomright",{KKS1: kks1,KKS2:"LAB",KKS3 :"30"})
               } >
                 </ TouchableOpacity>
                 </ View>
