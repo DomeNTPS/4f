@@ -21,6 +21,7 @@ export default class Partboilerright extends React.Component {
     header: null
   }
   render() {
+    const kks1 = this.props.navigation.getParam("KKS1", "dont have value");
     return (
       <View style={styles.container}>
         <ContainerTop navigation ={this.props.navigation}>
@@ -41,7 +42,7 @@ export default class Partboilerright extends React.Component {
             < TouchableOpacity style = {{height : 110 ,width : 250}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerrighttop")
+                this.props.navigation.navigate("Partboilerrighttop",{KKS1: kks1,KKS2:"HAD",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -51,7 +52,7 @@ export default class Partboilerright extends React.Component {
             < TouchableOpacity style = {{height : 130 ,width : 250}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerrightmid")
+                this.props.navigation.navigate("Partboilerrightmid",{KKS1: kks1,KKS2:"HAD",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </ View>
@@ -61,7 +62,7 @@ export default class Partboilerright extends React.Component {
             < TouchableOpacity style = {{height : 145 ,width : 240}}
             onPress = {
                 () =>
-                this.props.navigation.navigate("Partboilerrightbottom")
+                this.props.navigation.navigate("Partboilerrightbottom",{KKS1: kks1,KKS2:"HAD",KKS3 :"10"})
               } >
                 </ TouchableOpacity>
                 </ View>
