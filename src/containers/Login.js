@@ -12,7 +12,8 @@ import {
   StatusBar,
   LayoutAnimation,
   KeyboardAvoidingView,
-  AsyncStorage
+  AsyncStorage,
+  TouchableOpacity
 } from 'react-native'
 import Dialog, {
   DialogTitle,
@@ -22,7 +23,7 @@ import Dialog, {
   SlideAnimation,
   ScaleAnimation
 } from 'react-native-popup-dialog'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+// import { TouchableOpacity } from 'react-native-gesture-handler'
 import axios from 'axios'
 import config from '../config'
 
@@ -120,6 +121,7 @@ export const Login = (props) => {
             }}
           />
           <View style={styles.bla}></View>
+
           <TouchableOpacity
             style={styles.container2}
             activeOpacity={0.8}
@@ -128,10 +130,11 @@ export const Login = (props) => {
           >
             <Text style={styles.loginText}> Submit </Text>
           </TouchableOpacity>
+
           <View style={styles.bla}></View>
 
           <TouchableOpacity
-            style={{ marginTop: 10 }}
+            style={{ marginTop: 10, width: '50%', alignSelf: 'center' }}
             onPress={() => {
               props.navigation.navigate('Home')
             }}

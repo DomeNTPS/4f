@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions } from 'react-native'
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
-import ImageZoom from 'react-native-image-pan-zoom'
+ import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
+
+ 
 import Boilerleft from '../../Image/Boiler New/Boilerleft.svg'
 import ContainerTop from '../Layout/containtop'
 

@@ -1,7 +1,5 @@
 import React from 'react'
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image } from 'react-native'
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
-import ImageZoom from 'react-native-image-pan-zoom'
+import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, ScrollView, TouchableOpacity } from 'react-native'
 import Boiler from '../../Image/Boiler New/Boiler.svg'
 import ContainerTop from '../Layout/containtop'
 
@@ -45,7 +43,6 @@ export default class PartBoiler extends React.Component {
                 onPress={() => this.props.navigation.navigate('Partboilerright', { KKS1: kks1 })}
               ></TouchableOpacity>
             </View>
-            <Text> {kks1} </Text>
           </ScrollView>
         </View>
       </View>

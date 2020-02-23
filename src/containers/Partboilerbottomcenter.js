@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions } from 'react-native'
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
-import ImageZoom from 'react-native-image-pan-zoom'
+import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
+
+ 
 import Boiler from '../../Image/Boiler New/Boilerbottommid.svg'
 import ContainerTop from '../Layout/containtop'
 export default class Partboilerbottomcenter extends React.Component {
@@ -94,12 +94,6 @@ export default class Partboilerbottomcenter extends React.Component {
                 onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA013` })}
               ></TouchableOpacity>
             </View>
-            <Text>
-              {' '}
-              {kks1}
-              {kks2}
-              {kks3}{' '}
-            </Text>
           </ScrollView>
         </View>
       </View>
