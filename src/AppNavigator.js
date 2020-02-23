@@ -48,7 +48,13 @@ const AppNavigator = createStackNavigator({
   Partboilerbottomright: { screen: Partboilerbottomright },
   PartV:{screen:PartV},
   PartEllipse:{screen:PartEllipse},
-});
+},
+{
+  defaultNavigationOptions: {
+    header: null
+  },
+}
+);
 
 const App = createAppContainer(AppNavigator);
 

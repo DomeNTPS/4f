@@ -1,30 +1,17 @@
-import React from "react";
-import {
-  StyleSheet,
-  Button,
-  View,
-  SafeAreaView,
-  Text,
-  Alert,
-  Image,
-  Dimensions
-} from "react-native";
-import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
-import ImageZoom from "react-native-image-pan-zoom";
-import Boiler from "../../Image/Boiler New/Boilerbottommid.svg";
-import ContainerTop from '../Layout/containtop';
+import React from 'react'
+import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions } from 'react-native'
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
+import ImageZoom from 'react-native-image-pan-zoom'
+import Boiler from '../../Image/Boiler New/Boilerbottommid.svg'
+import ContainerTop from '../Layout/containtop'
 export default class Partboilerbottomcenter extends React.Component {
-  static navigationOptions = {
-    header: null
-  }
   render() {
-    const kks1 = this.props.navigation.getParam("KKS1","dont have value");
-    const kks2 = this.props.navigation.getParam("KKS2","dont have value");
-    const kks3 = this.props.navigation.getParam("KKS3","dont have value");
+    const kks1 = this.props.navigation.getParam('KKS1', 'dont have value')
+    const kks2 = this.props.navigation.getParam('KKS2', 'dont have value')
+    const kks3 = this.props.navigation.getParam('KKS3', 'dont have value')
     return (
       <View style={styles.container}>
-        <ContainerTop navigation ={this.props.navigation}>
-        </ContainerTop>
+        <ContainerTop navigation={this.props.navigation}></ContainerTop>
         <View style={styles.containerbottomall}>
           <ScrollView
             maximumZoomScale={3}
@@ -33,243 +20,199 @@ export default class Partboilerbottomcenter extends React.Component {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
           >
-            <Boiler height={450} width={410} alignSelf = 'center' />
-            < View style = {
-              styles.containerbottomE1
-            } >
-            < TouchableOpacity style = {{height : 30 ,width : 50}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}CP003PI002`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomE2
-            } >
-            < TouchableOpacity style = {{height : 30 ,width : 50}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}CT002TT002`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV1
-            } >
-            < TouchableOpacity style = {{height : 20 ,width : 15}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA011`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-            < View style = {
-              styles.containerbottomV2
-            } >
-            < TouchableOpacity style = {{height : 20 ,width : 15}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA010`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                
-                < View style = {
-              styles.containerbottomV3
-            } >
-            < TouchableOpacity style = {{height : 15 ,width : 20}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA009`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV4
-            } >
-            < TouchableOpacity style = {{height : 15 ,width : 20}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA012`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV5
-            } >
-            < TouchableOpacity style = {{height : 15 ,width : 20}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA006`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV6
-            } >
-            < TouchableOpacity style = {{height : 15 ,width : 20}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA007`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV7
-            } >
-            < TouchableOpacity style = {{height : 15 ,width : 20}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA001`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV8
-            } >
-            < TouchableOpacity style = {{height : 15 ,width : 20}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA008`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV9
-            } >
-            < TouchableOpacity style = {{height : 19 ,width : 15}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA014`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                < View style = {
-              styles.containerbottomV10
-            } >
-            < TouchableOpacity style = {{height : 19 ,width : 15}}
-            onPress = {
-                () =>
-                this.props.navigation.navigate("PartV",{KKS:`${kks1}${kks2}${kks3}AA013`})
-              } >
-                </ TouchableOpacity>
-                </ View>
-                <Text> {kks1}{kks2}{kks3} </Text>
+            <Boiler height={450} width={410} alignSelf="center" />
+            <View style={styles.containerbottomE1}>
+              <TouchableOpacity
+                style={{ height: 30, width: 50 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}CP003PI002` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomE2}>
+              <TouchableOpacity
+                style={{ height: 30, width: 50 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}CT002TT002` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV1}>
+              <TouchableOpacity
+                style={{ height: 20, width: 15 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA011` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV2}>
+              <TouchableOpacity
+                style={{ height: 20, width: 15 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA010` })}
+              ></TouchableOpacity>
+            </View>
+
+            <View style={styles.containerbottomV3}>
+              <TouchableOpacity
+                style={{ height: 15, width: 20 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA009` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV4}>
+              <TouchableOpacity
+                style={{ height: 15, width: 20 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA012` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV5}>
+              <TouchableOpacity
+                style={{ height: 15, width: 20 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA006` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV6}>
+              <TouchableOpacity
+                style={{ height: 15, width: 20 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA007` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV7}>
+              <TouchableOpacity
+                style={{ height: 15, width: 20 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA001` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV8}>
+              <TouchableOpacity
+                style={{ height: 15, width: 20 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA008` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV9}>
+              <TouchableOpacity
+                style={{ height: 19, width: 15 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA014` })}
+              ></TouchableOpacity>
+            </View>
+            <View style={styles.containerbottomV10}>
+              <TouchableOpacity
+                style={{ height: 19, width: 15 }}
+                onPress={() => this.props.navigation.navigate('PartV', { KKS: `${kks1}${kks2}${kks3}AA013` })}
+              ></TouchableOpacity>
+            </View>
+            <Text>
+              {' '}
+              {kks1}
+              {kks2}
+              {kks3}{' '}
+            </Text>
           </ScrollView>
         </View>
       </View>
-    );
+    )
   }
 }
 
-const win = Dimensions.get('screen');
+const win = Dimensions.get('screen')
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: '#fff'
   },
   containerbottomall: {
-  flex: 0.75,
-  backgroundColor: "#fff",
-  alignItems: "center",
+    flex: 0.75,
+    backgroundColor: '#fff',
+    alignItems: 'center'
   },
   containerbottomE1: {
     height: 30,
     width: 50,
-    position: "absolute",
+    position: 'absolute',
     // backgroundColor: '#AB6',
     marginTop: 190,
-    marginLeft: 213,
+    marginLeft: 213
   },
   containerbottomE2: {
     height: 30,
     width: 50,
-    position: "absolute",
+    position: 'absolute',
     // backgroundColor: '#A06',
     marginTop: 237,
-    marginLeft: 350,
+    marginLeft: 350
   },
   containerbottomV1: {
     // backgroundColor: "#000",
-    height: 20, 
+    height: 20,
     width: 15,
-    position: "absolute",
+    position: 'absolute',
     marginTop: 175,
-    marginLeft: 157,
+    marginLeft: 157
   },
-   containerbottomV2: {
+  containerbottomV2: {
     // backgroundColor: "#f00",
     height: 20,
     width: 15,
-    position: "absolute",
+    position: 'absolute',
     marginTop: 195,
-    marginLeft: 157,
+    marginLeft: 157
   },
-  
+
   containerbottomV3: {
     // backgroundColor: '#cd0',
-    position: "absolute",
+    position: 'absolute',
     height: 15,
     width: 20,
     marginTop: 210,
-    marginLeft: 135,
+    marginLeft: 135
   },
-    containerbottomV4: {
+  containerbottomV4: {
     // backgroundColor: '#cdA',
-    position: "absolute",
+    position: 'absolute',
     height: 15,
     width: 20,
     marginTop: 210,
-    marginLeft: 175,
-  }, 
-    containerbottomV5: {
+    marginLeft: 175
+  },
+  containerbottomV5: {
     // backgroundColor: '#AAA',
-    position: "absolute",
+    position: 'absolute',
     height: 15,
     width: 20,
     marginTop: 255,
-    marginLeft: 116,
-  }, 
-    containerbottomV6: {
+    marginLeft: 116
+  },
+  containerbottomV6: {
     // backgroundColor: '#A0A',
-    position: "absolute",
+    position: 'absolute',
     height: 15,
     width: 20,
     marginTop: 255,
-    marginLeft: 136,
+    marginLeft: 136
   },
   containerbottomV7: {
     // backgroundColor: '#ABA',
-    position: "absolute",
+    position: 'absolute',
     height: 15,
     width: 20,
     marginTop: 255,
-    marginLeft: 156.5,
+    marginLeft: 156.5
   },
   containerbottomV8: {
     // backgroundColor: '#ADB',
-    position: "absolute",
+    position: 'absolute',
     height: 15,
     width: 20,
     marginTop: 255,
-    marginLeft: 176.5,
+    marginLeft: 176.5
   },
   containerbottomV9: {
     // backgroundColor: '#DBA',
-    position: "absolute",
+    position: 'absolute',
     height: 19,
     width: 15,
     marginTop: 222,
-    marginLeft: 230,
+    marginLeft: 230
   },
   containerbottomV10: {
     // backgroundColor: '#AFA',
-    position: "absolute",
+    position: 'absolute',
     height: 19,
     width: 15,
     marginTop: 242.5,
-    marginLeft: 230,
-  },
-  
-});
+    marginLeft: 230
+  }
+})
