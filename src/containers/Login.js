@@ -77,7 +77,7 @@ export const Login = (props) => {
           />
         </View>
 
-        <Text style={{ marginTop: 330, marginLeft: '18%', fontSize: 20, color: '#000' }}>Login</Text>
+        <Text style={{ marginTop: 370, marginLeft: '18%', fontSize: 20, color: '#000' }}>Login</Text>
 
         <View style={styles.bla}></View>
 
