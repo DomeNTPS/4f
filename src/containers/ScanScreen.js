@@ -7,6 +7,8 @@ import { BarCodeScanner } from 'expo-barcode-scanner'
 import { NavigationEvents } from 'react-navigation'
 
 export default class ScanScreen extends React.Component {
+
+  
   state = {
     hasCameraPermission: null,
     scanned: false
@@ -23,7 +25,7 @@ export default class ScanScreen extends React.Component {
 
   render() {
     const { hasCameraPermission, scanned } = this.state
-
+    const kks1 = this.props.navigation.getParam('KKS1', 'dont have value')
     if (hasCameraPermission === null) {
       return <Text>Requesting for camera permission</Text>
     }
@@ -50,7 +52,7 @@ export default class ScanScreen extends React.Component {
 
   handleBarCodeScanned = ({ type, data }) => {
     this.setState({ scanned: true })
-    this.props.navigation.navigate('PartV', { KKS: `${data}` })
+    this.props.navigation.navigate('PartV', { KKS: `${kks1}${data}` })
     // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   }
 }

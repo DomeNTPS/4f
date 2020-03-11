@@ -36,7 +36,7 @@ export default class Home extends React.Component {
           <TouchableOpacity onPress={() => logout()}>
             <Text style={{ fontSize: 25 }}>Log out</Text>
           </TouchableOpacity>
-          <TouchableOpacity title="Scan" onPress={() => navigation.navigate('ScanScreen')}>
+          <TouchableOpacity title="Scan" onPress={() => this.props.navigation.navigate('ScanScreen', { KKS1: kks1 })}>
             <Image
               style={{
                 paddingRight: 20,

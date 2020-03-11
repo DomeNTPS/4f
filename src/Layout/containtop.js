@@ -31,7 +31,7 @@ const ContainerTop = ({
             </TouchableOpacity>
             <TouchableOpacity
             title="Scan"
-            onPress={() => navigation.navigate("ScanScreen")}
+            onPress={() => navigation.navigate("ScanScreen",{ KKS1: kks1 })}
             >
             <Image
               style={{
