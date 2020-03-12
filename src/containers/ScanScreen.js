@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, View, StyleSheet, Button } from 'react-native'
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native'
 import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions'
 import { BarCodeScanner } from 'expo-barcode-scanner'
@@ -34,11 +34,13 @@ export default class ScanScreen extends React.Component {
     }
     return (
       <View style={styles.container}>
-        <ContainerTop navigation={this.props.navigation}></ContainerTop>
         <BarCodeScanner
           onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
           style={StyleSheet.absoluteFill}
         />
+        <Button title="back" onPress={this.props.navigation.goBack} style={{alignSelf:'center', marginTop:100}}>
+          <Text style={{ fontSize: 25 }}>Back</Text>
+        </Button>
 
         {scanned && <Button title={'Tap to Scan Again'} onPress={() => this.setState({ scanned: false })} />}
       </View>
