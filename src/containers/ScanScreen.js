@@ -33,17 +33,11 @@ export default class ScanScreen extends React.Component {
       return <Text>No access to camera</Text>
     }
     return (
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'column',
-          justifyContent: 'flex-end'
-        }}
-      >
+      <View style={styles.container}>
         <ContainerTop navigation={this.props.navigation}></ContainerTop>
         <BarCodeScanner
           onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
-          style={StyleSheet.absoluteFillObject}
+          style={StyleSheet.absoluteFill}
         />
 
         {scanned && <Button title={'Tap to Scan Again'} onPress={() => this.setState({ scanned: false })} />}
@@ -57,3 +51,11 @@ export default class ScanScreen extends React.Component {
     // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // backgroundColor: '#fff'
+    //justifyContent: 'center',
+  },
+})
