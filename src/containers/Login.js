@@ -28,6 +28,24 @@ import axios from 'axios'
 import config from '../config'
 
 export const Login = (props) => {
+
+  const chacktoken = async () => {
+    if (AsyncStorage.getItem(`token`) !== undefined) {
+      props.navigation.navigate('Home')
+    }
+  }
+
+  useEffect(() => {
+    const fetching = async () => {
+      try {
+        chacktoken()
+      } catch (e) {
+        console.log(e)
+      }
+    }
+    fetching()
+  }, [])
+
   const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 0
 
   Login.navigationOptions = { header: null }
