@@ -21,15 +21,16 @@ export default class Home extends React.Component {
     }
     const logout = async () => {
       try {
-        //    await AsyncStorage.clear
-        this.props.navigation.navigate('Login')
+          //  await AsyncStorage.clear
         await AsyncStorage.removeItem('token')
 
+        this.props.navigation.navigate('Login')
         console.log('remove ')
       } catch (e) {
         console.log(e)
       }
     }
+    console.log(AsyncStorage.getItem(`token`))
     return (
       <View style={styles.container}>
         <View style={styles.containertop}>

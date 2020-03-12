@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Text, View, StyleSheet, Button } from 'react-native'
 import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions'
-
 import { BarCodeScanner } from 'expo-barcode-scanner'
 import { NavigationEvents } from 'react-navigation'
+import ContainerTop from '../Layout/containtop'
 
 export default class ScanScreen extends React.Component {
 
@@ -40,6 +40,7 @@ export default class ScanScreen extends React.Component {
           justifyContent: 'flex-end'
         }}
       >
+        <ContainerTop navigation={this.props.navigation}></ContainerTop>
         <BarCodeScanner
           onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
           style={StyleSheet.absoluteFillObject}

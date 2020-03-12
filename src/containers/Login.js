@@ -23,14 +23,15 @@ import Dialog, {
   SlideAnimation,
   ScaleAnimation
 } from 'react-native-popup-dialog'
-// import { TouchableOpacity } from 'react-native-gesture-handler'
 import axios from 'axios'
 import config from '../config'
 
 export const Login = (props) => {
-
+  
   const chacktoken = async () => {
-    if (AsyncStorage.getItem(`token`) !== undefined) {
+    const tokenfromstore = await AsyncStorage.getItem('token')
+    if (tokenfromstore !== null) {
+      console.log(tokenfromstore)
       props.navigation.navigate('Home')
     }
   }
@@ -74,6 +75,7 @@ export const Login = (props) => {
       setAnimationDialog((prev) => ({ ...prev, defaultAnimationDialog: info.data.defaultAnimationDialog }))
       await AsyncStorage.setItem('token', info.data.token)
       props.navigation.navigate('Home', { KKS1: info.data.KKS1 })
+      console.log(AsyncStorage.getItem(`token`))
     } catch (e) {
       console.log(e)
       setAnimationDialog({ defaultAnimationDialog: true })
