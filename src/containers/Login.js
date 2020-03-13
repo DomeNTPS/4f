@@ -198,11 +198,10 @@ export const Login = (props) => {
           </DialogFooter>
         }
       >
-        <DialogContent
-          style={{
+        <DialogContent>
+          <View style={{
             backgroundColor: '#F7F7F8'
-          }}
-        >
+          }}></View>
           <Text>Plase Check Your ID or Password หรือติดต่อเจ้าหน้าที่</Text>
         </DialogContent>
       </Dialog>
