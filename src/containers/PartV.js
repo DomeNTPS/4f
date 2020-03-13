@@ -97,6 +97,7 @@ export const PartV = (props) => {
     try {
       await axios.post(`${config.apiUrl}/insertwithdraw/`, {
         token: `${TOKEN.token}`,
+        KKS_Equip_Withdraw: `${partInfo.KKS}`,
         KKS4_Equip_Withdraw: `${partInfo.KKS4}`,
         KKS1_Factory_withdraw: `${partInfo.KKS1}`,
         Count_withdraw: `${WithdrawCount.CountUse}`,
