@@ -88,7 +88,7 @@ export const PartV = (props) => {
   const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 30
   const Count = `${WithdrawCount.CountUse}`
   const dayjss = require('dayjs')
-  let now = dayjss().format('YYYY-MM-DD')
+  let now = dayjss().format('YYYY-MM-DDTHH:mm:ssZ[Z]')
   const forceUpdate = useForceUpdate()
   const handleClick = () => {
     forceUpdate()
