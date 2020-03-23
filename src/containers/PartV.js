@@ -88,20 +88,26 @@ export const PartV = (props) => {
   const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 30
   const Count = `${WithdrawCount.CountUse}`
   const dayjss = require('dayjs')
-  let now = dayjss().format('YYYY-MM-DDTHH:mm:ssZ[Z]')
+  let now = dayjss().format('YYYY-MM-DD')
   const forceUpdate = useForceUpdate()
   const handleClick = () => {
     forceUpdate()
   }
   const insertwithdraw = async () => {
     try {
+      await axios.post(`${config.apiUrl}/insertlog/`, {
+        token: `${TOKEN.token}`,
+        Process :'WithdrawEquipment',
+        KKS1: `${partInfo.KKS1}`,
+        KKS4: `${partInfo.KKS4}`,
+        Countlog: `${WithdrawCount.CountUse}`,
+        Datelog: `${now}`
+      })
       await axios.post(`${config.apiUrl}/insertwithdraw/`, {
         token: `${TOKEN.token}`,
-        KKS_Equip_Withdraw: `${partInfo.KKS}`,
-        KKS4_Equip_Withdraw: `${partInfo.KKS4}`,
         KKS1_Factory_withdraw: `${partInfo.KKS1}`,
+        KKS4_Equip_Withdraw: `${partInfo.KKS4}`,
         Count_withdraw: `${WithdrawCount.CountUse}`,
-        Date_Withdraw: `${now}`
       })
       await axios.post(`${config.apiUrl}/updatewithdraw/`, {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
