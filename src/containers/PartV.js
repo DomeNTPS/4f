@@ -106,7 +106,7 @@ export const PartV = (props) => {
         token: `${TOKEN.token}`,
         KKS1: `${partInfo.KKS1}`,
         KKS4: `${partInfo.KKS4}`,
-        Count_withdraw: `${WithdrawCount.CountUse}`,
+        Count_withdraw: WithdrawCount.CountUse,
       })
       await axios.post(`${config.apiUrl}/updateinventory/`, {
         CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
