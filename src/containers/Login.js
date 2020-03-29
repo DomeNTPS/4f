@@ -11,6 +11,8 @@ import {
   Platform,
   StatusBar,
   LayoutAnimation,
+  Keyboard,
+  TouchableWithoutFeedback,
   KeyboardAvoidingView,
   AsyncStorage,
   TouchableOpacity
@@ -87,83 +89,85 @@ export const Login = (props) => {
     <View style={styles.container}>
       <StatusBar barStyle="dark-content"></StatusBar>
       <View style={styles.blank}></View>
-      <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={keyboardVerticalOffset}>
-        <View style={styles.containerPicture}>
-          <Image
-            style={{
-              width: 200,
-              height: 200
-            }}
-            source={require('../../Image/Logo_kmitl.png')}
-          />
-        </View>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={keyboardVerticalOffset}>
+          <View style={styles.containerPicture}>
+            <Image
+              style={{
+                width: 200,
+                height: 200
+              }}
+              source={require('../../Image/Logo_kmitl.png')}
+            />
+          </View>
 
-        <Text style={{ marginTop: 370, marginLeft: '18%', fontSize: 20, color: '#000' }}>Login</Text>
-
-        <View style={styles.bla}></View>
-
-        <View style={styles.containerTextinput}>
-          <TextInput
-            // ใส่ค่าแค่จุดID
-            onChangeText={(IDlogin) => setLoginInput((prev) => ({ ...prev, ID: IDlogin }))}
-            value={this.IDlogin}
-            autoCapitalize="none"
-            placeholder="Username"
-            style={{
-              height: 40,
-              width: '70%',
-              borderColor: '#c0c0c0',
-              borderWidth: 1,
-              borderRadius: 10,
-              backgroundColor: '#c0c0c0',
-              marginLeft: '15%',
-              marginTop: 10
-            }}
-          />
-
-          <View style={{ flex: 0.1 }}></View>
-
-          <TextInput
-            onChangeText={(Pass) => setLoginInput((prev) => ({ ...prev, Passwords: Pass }))}
-            value2={this.Pass}
-            autoCapitalize="none"
-            placeholder="Password"
-            secureTextEntry
-            style={{
-              height: 40,
-              width: '70%',
-              borderColor: '#c0c0c0',
-              borderWidth: 1,
-              borderRadius: 10,
-              backgroundColor: '#c0c0c0',
-              marginLeft: '15%',
-              marginTop: 5
-            }}
-          />
-          <View style={styles.bla}></View>
-
-          <TouchableOpacity
-            style={styles.container2}
-            activeOpacity={0.8}
-            onPress={() => handleLogin()}
-            underlayColor="#fff"
-          >
-            <Text style={styles.loginText}> Submit </Text>
-          </TouchableOpacity>
+          <Text style={{ marginTop: 370, marginLeft: '18%', fontSize: 20, color: '#000' }}>Login</Text>
 
           <View style={styles.bla}></View>
 
-          <TouchableOpacity
-            style={{ marginTop: 10, width: '50%', alignSelf: 'center' }}
-            onPress={() => {
-              props.navigation.navigate('Home')
-            }}
-            underlayColor="#fff"
-          >
-            <Text style={styles.GuestText}> Guest Login </Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAvoidingView>
+          <View style={styles.containerTextinput}>
+            <TextInput
+              // ใส่ค่าแค่จุดID
+              onChangeText={(IDlogin) => setLoginInput((prev) => ({ ...prev, ID: IDlogin }))}
+              value={this.IDlogin}
+              autoCapitalize="none"
+              placeholder="Username"
+              style={{
+                height: 40,
+                width: '70%',
+                borderColor: '#c0c0c0',
+                borderWidth: 1,
+                borderRadius: 10,
+                backgroundColor: '#c0c0c0',
+                marginLeft: '15%',
+                marginTop: 10
+              }}
+            />
+
+            <View style={{ flex: 0.1 }}></View>
+
+            <TextInput
+              onChangeText={(Pass) => setLoginInput((prev) => ({ ...prev, Passwords: Pass }))}
+              value2={this.Pass}
+              autoCapitalize="none"
+              placeholder="Password"
+              secureTextEntry
+              style={{
+                height: 40,
+                width: '70%',
+                borderColor: '#c0c0c0',
+                borderWidth: 1,
+                borderRadius: 10,
+                backgroundColor: '#c0c0c0',
+                marginLeft: '15%',
+                marginTop: 5
+              }}
+            />
+            <View style={styles.bla}></View>
+
+            <TouchableOpacity
+              style={styles.container2}
+              activeOpacity={0.8}
+              onPress={() => handleLogin()}
+              underlayColor="#fff"
+            >
+              <Text style={styles.loginText}> Submit </Text>
+            </TouchableOpacity>
+
+            <View style={styles.bla}></View>
+
+            <TouchableOpacity
+              style={{ marginTop: 10, width: '50%', alignSelf: 'center' }}
+              onPress={() => {
+                props.navigation.navigate('Home')
+              }}
+              underlayColor="#fff"
+            >
+              <Text style={styles.GuestText}> Guest Login </Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
       <Dialog
         onDismiss={() => {
           setAnimationDialog({ defaultAnimationDialog: false })
@@ -199,9 +203,11 @@ export const Login = (props) => {
         }
       >
         <DialogContent>
-          <View style={{
-            backgroundColor: '#F7F7F8'
-          }}></View>
+          <View
+            style={{
+              backgroundColor: '#F7F7F8'
+            }}
+          ></View>
           <Text>Plase Check Your ID or Password หรือติดต่อเจ้าหน้าที่</Text>
         </DialogContent>
       </Dialog>
