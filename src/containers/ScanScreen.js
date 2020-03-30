@@ -22,6 +22,7 @@ export default class ScanScreen extends React.Component {
     const { status } = await Permissions.askAsync(Permissions.CAMERA)
     this.setState({ hasCameraPermission: status === 'granted' })
   }
+  
 
   render() {
     const { hasCameraPermission, scanned } = this.state
@@ -32,10 +33,17 @@ export default class ScanScreen extends React.Component {
     if (hasCameraPermission === false) {
       return <Text>No access to camera</Text>
     }
+    handleBarCodeScanned = ({ type, data }) => {
+      console.log(kks1)
+      this.setState({ scanned: true })
+      this.props.navigation.navigate('PartV', { KKS: `${kks1}${data}` })
+      // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    }
+    
     return (
       <View style={styles.container}>
         <BarCodeScanner
-          onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
+          onBarCodeScanned={handleBarCodeScanned}
           style={StyleSheet.absoluteFill}
         />
         <Button title="back" onPress={this.props.navigation.goBack} style={{alignSelf:'center', marginTop:100}}>
@@ -47,11 +55,7 @@ export default class ScanScreen extends React.Component {
     )
   }
 
-  handleBarCodeScanned = ({ type, data }) => {
-    this.setState({ scanned: true })
-    this.props.navigation.navigate('PartV', { KKS: `${kks1}${data}` })
-    // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-  }
+  
 }
 
 const styles = StyleSheet.create({
