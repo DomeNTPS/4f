@@ -191,6 +191,7 @@ export const Login = (props) => {
         }
         footer={
           <DialogFooter>
+            <View />
             <DialogButton
               text="OK"
               bordered
