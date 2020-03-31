@@ -5,6 +5,7 @@ import * as Permissions from 'expo-permissions'
 import { BarCodeScanner } from 'expo-barcode-scanner'
 import { NavigationEvents } from 'react-navigation'
 import ContainerTop from '../Layout/containtop'
+import ContainerTopCamera from '../Layout/containertopcamera'
 
 export default class ScanScreen extends React.Component {
 
@@ -42,14 +43,8 @@ export default class ScanScreen extends React.Component {
     
     return (
       <View style={styles.container}>
-        <BarCodeScanner
-          onBarCodeScanned={handleBarCodeScanned}
-          style={StyleSheet.absoluteFill}
-        />
-        <Button title="back" onPress={this.props.navigation.goBack} style={{alignSelf:'center', marginTop:100}}>
-          <Text style={{ fontSize: 25 }}>Back</Text>
-        </Button>
-
+        <BarCodeScanner onBarCodeScanned={handleBarCodeScanned} style={StyleSheet.absoluteFill} />
+        <ContainerTopCamera navigation={this.props.navigation}></ContainerTopCamera>
         {scanned && <Button title={'Tap to Scan Again'} onPress={() => this.setState({ scanned: false })} />}
       </View>
     )
@@ -63,5 +58,10 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: '#fff'
     //justifyContent: 'center',
+  },
+  backbut:{
+    display: 'flex',
+    justifyContent: 'flex-start',
+    marginTop: 100
   },
 })
