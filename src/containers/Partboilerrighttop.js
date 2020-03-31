@@ -1,5 +1,5 @@
 import React from 'react'
- import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Button, View, SafeAreaView, Text, Alert, Image, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
 
  
 import Boilerrighttop from '../../Image/Boiler New/Boilerrighttop.svg'
