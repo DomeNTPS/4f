@@ -34,7 +34,20 @@ import config from '../config'
 
 export default class Submit extends React.Component {
     render() {
-        
+        ;<View style={styles.container}>
+          <ContainerTop navigation={this.props.navigation}></ContainerTop>
+        </View>
 
     }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+    //justifyContent: 'center',
+  },
+  containerbottom: {
+    flex: 1
+  },
+})
