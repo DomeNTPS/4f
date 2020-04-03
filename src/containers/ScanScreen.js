@@ -45,7 +45,13 @@ export default class ScanScreen extends React.Component {
       <View style={styles.container}>
         <BarCodeScanner onBarCodeScanned={handleBarCodeScanned} style={StyleSheet.absoluteFill} />
         <ContainerTopCamera navigation={this.props.navigation}></ContainerTopCamera>
-        {scanned && <Button title={'Tap to Scan Again'} onPress={() => this.setState({ scanned: false })} />}
+        {/* {scanned && (
+          <Button
+            title={'Tap to Scan Again'}
+            style={{ backgroundColor: '#fff', color: '#fff' }}
+            onPress={() => this.setState({ scanned: false })}
+          />
+        )} */}
       </View>
     )
   }
@@ -63,5 +69,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-start',
     marginTop: 100
+  },
+  buttstyle:{
+    backgroundColor: '#fff',
+    color: '#fff'
   },
 })

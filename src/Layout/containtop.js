@@ -20,9 +20,11 @@ const styles = StyleSheet.create({
         paddingTop: 50
     },
 })
+
 const ContainerTop = ({
         navigation
     }) => {
+      const kks1 = navigation.getParam('KKS1', '10')
     return (
         <View style={styles.containertop}>
             <TouchableOpacity
