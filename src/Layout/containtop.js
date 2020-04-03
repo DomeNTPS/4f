@@ -4,7 +4,7 @@ import {
     TouchableOpacity,
     ScrollView
 } from "react-native-gesture-handler";
-
+import Submit from '../containers/Submit'
 
 const styles = StyleSheet.create({
     containertop: {
@@ -31,6 +31,9 @@ const ContainerTop = ({
             onPress={navigation.goBack}>
             <Text style={{fontSize: 25}}>Back</Text>
             </TouchableOpacity>
+            
+            <Submit/>
+
             <TouchableOpacity
             title="Scan"
             onPress={() => navigation.navigate("ScanScreen",{ KKS1: kks1 })}

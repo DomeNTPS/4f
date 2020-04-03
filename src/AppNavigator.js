@@ -22,6 +22,7 @@ import Partboilerbottomleft from './containers/Partboilerbottomleft'
 import Partboilerbottomcenter from './containers/Partboilerbottomcenter'
 import Partboilerbottomright from './containers/Partboilerbottomright'
 import PartV from './containers/PartV'
+import Submit from './containers/Submit'
 
 const AppNavigator = createStackNavigator(
   {
@@ -47,6 +48,7 @@ const AppNavigator = createStackNavigator(
     Partboilerbottomcenter: { screen: Partboilerbottomcenter },
     Partboilerbottomright: { screen: Partboilerbottomright },
     PartV: { screen: PartV },
+    Submit: { screen: Submit },
   },
   {
     defaultNavigationOptions: {
