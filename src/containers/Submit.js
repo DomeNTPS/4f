@@ -76,7 +76,7 @@ export const Submit = (props) => {
     fetching()
   }, [])
     return (
-      <View style={styles.container}>
+      <>
         <TouchableOpacity
           // visible ={true}
           disabled={hiddenbottom.value}
@@ -91,7 +91,7 @@ export const Submit = (props) => {
           onDismiss={() => {
             setconfirmDialog({ defaultAnimationDialog: false })
           }}
-          width={0.5}
+          width={0.8}
           visible={confirmDialog.defaultAnimationDialog}
           rounded
           actionsBordered
@@ -132,11 +132,10 @@ export const Submit = (props) => {
         >
           <DialogContent
             style={{
-              backgroundColor: '#F7F7F8'
+              backgroundColor: '#F7F7F8',
             }}
           >
-            <Text>In inventory piece </Text>
-            <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
+            <Table borderStyle={{ borderWidth: 2, borderColor: 'orange' }}>
               <Row data={withdrawInfo.tableHead} style={styles.head} textStyle={styles.text} />
               <Rows data={withdrawInfo.data} textStyle={styles.text} />
             </Table>
@@ -158,7 +157,7 @@ export const Submit = (props) => {
                 /> */}
           </DialogContent>
         </Dialog>
-      </View>
+      </>
     )
 }
 
@@ -168,8 +167,9 @@ export default Submit
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
-    //justifyContent: 'center',
+    backgroundColor: '#fff',
+    display: 'flex',
+    justifyContent: 'center'
   },
   containerbottom: {
     flex: 1
@@ -177,11 +177,8 @@ const styles = StyleSheet.create({
   buttonstyle: {
     backgroundColor: 'white',
     shadowColor: '#0000',
-    borderRadius: 10,
-    width: 100,
-    // marginLeft: 50
-    justifyContent: 'center'
-    
-    
-  }
+    borderRadius: 10
+  },
+  head: { height: 40, backgroundColor: 'orange' },
+  text: { margin: 6 }
 })
