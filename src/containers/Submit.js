@@ -31,7 +31,7 @@ import PTRView from 'react-native-pull-to-refresh'
 import { fetchUpdateAsync } from 'expo/build/Updates/Updates'
 import useForceUpdate from 'use-force-update'
 import config from '../config'
-
+import { Table, Row, Rows } from 'react-native-table-component'
 export const Submit = (props) => {
   const {
     navigation
@@ -46,11 +46,10 @@ export const Submit = (props) => {
     value: true
   })
   const [withdrawInfo, setwithdrawInfo] = useState({
-    columns:[
-      {title : "Equipment" , field : "NameEquip"},
-      {title : "CountWithdraw" , field : "Count_withdraw"},
+    tableHead: ['Equipment',
+     'CountWithdraw' 
     ],
-    data :[]
+    data: []
   })
   useEffect(() => {
     const fetching = async () => {
@@ -58,10 +57,10 @@ export const Submit = (props) => {
         const tokenfromstore = await AsyncStorage.getItem('token')
         if (tokenfromstore !== null) {
           let allitemwithdraw = await axios.get(`${config.apiUrl}/itemcheck/withdraw/${tokenfromstore}`)
-          // We have token!!
-          setwithdrawInfo(prev =>({...prev , data : allitemwithdraw.data}))
-          console.log(allitemwithdraw.data)
-          console.log('token: ', tokenfromstore)
+          let allitemwithdrawinArray = allitemwithdraw.data.map(({ Count_withdraw, NameEquip }) => [NameEquip, Count_withdraw])
+          // console.log(allitemwithdrawinArray)
+          setwithdrawInfo((prev) => ({ ...prev, data: allitemwithdrawinArray }))
+          // console.log('token: ', tokenfromstore)
           setTOKEN({
             token: `${tokenfromstore}`
           })
@@ -76,68 +75,72 @@ export const Submit = (props) => {
     }
     fetching()
   }, [])
-    return ( 
+    return (
       <View style={styles.container}>
-      <TouchableOpacity
-              // visible ={true}
-              disabled={hiddenbottom.value}
-              style={styles.buttonstyle}
-              onPress={() => {
-                setconfirmDialog({ defaultAnimationDialog: true })
+        <TouchableOpacity
+          // visible ={true}
+          disabled={hiddenbottom.value}
+          style={styles.buttonstyle}
+          onPress={() => {
+            setconfirmDialog({ defaultAnimationDialog: true })
+          }}
+        >
+          <Text style={styles.buttonText}> Confirm fix </Text>
+        </TouchableOpacity>
+        <Dialog
+          onDismiss={() => {
+            setconfirmDialog({ defaultAnimationDialog: false })
+          }}
+          width={0.5}
+          visible={confirmDialog.defaultAnimationDialog}
+          rounded
+          actionsBordered
+          onTouchOutside={() => {
+            setconfirmDialog({ defaultAnimationDialog: false })
+          }}
+          dialogTitle={
+            <DialogTitle
+              title="Table of Withdraw"
+              style={{
+                backgroundColor: '#F7F7F8'
               }}
-            >
-              <Text style={styles.buttonText}> Confirm fix </Text>
-      </TouchableOpacity>
-      <Dialog
-              onDismiss={() => {
-                setconfirmDialog({ defaultAnimationDialog: false })
-              }}
-              width={0.5}
-              visible={confirmDialog.defaultAnimationDialog}
-              rounded
-              actionsBordered
-              onTouchOutside={() => {
-                setconfirmDialog({ defaultAnimationDialog: false })
-              }}
-              dialogTitle={
-                <DialogTitle
-                  title="Table of Withdraw"
-                  style={{
-                    backgroundColor: '#F7F7F8'
-                  }}
-                  hasTitleBar={false}
-                  align="left"
-                />
-              }
-              footer={
-                <DialogFooter>
-                  <DialogButton
-                    text="CANCEL"
-                    bordered
-                    onPress={() => {
-                      setconfirmDialog({ defaultAnimationDialog: false })
-                    }}
-                    key="button-1"
-                  />
-                  <DialogButton
-                    text="OK"
-                    bordered
-                    onPress={() => {
-                      // insertwithdraw(),
-                       setconfirmDialog({ defaultAnimationDialog: false })
-                    }}
-                    key="button-2"
-                  />
-                </DialogFooter>
-              }
-            >
-              <DialogContent
-                style={{
-                  backgroundColor: '#F7F7F8'
+              hasTitleBar={false}
+              align="left"
+            />
+          }
+          footer={
+            <DialogFooter>
+              <DialogButton
+                text="CANCEL"
+                bordered
+                onPress={() => {
+                  setconfirmDialog({ defaultAnimationDialog: false })
                 }}
-              >
-                <Text>In inventory piece </Text>
-                {/* <TextInput
+                key="button-1"
+              />
+              <DialogButton
+                text="OK"
+                bordered
+                onPress={() => {
+                  // insertwithdraw(),
+                  setconfirmDialog({ defaultAnimationDialog: false })
+                }}
+                key="button-2"
+              />
+            </DialogFooter>
+          }
+        >
+          <DialogContent
+            style={{
+              backgroundColor: '#F7F7F8'
+            }}
+          >
+            <Text>In inventory piece </Text>
+            <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
+              <Row data={withdrawInfo.tableHead} style={styles.head} textStyle={styles.text} />
+              <Rows data={withdrawInfo.data} textStyle={styles.text} />
+            </Table>
+            {/* <TextInput
                   onChangeText={(Num) => setWithdrawCount({ CountUse: parseInt(Num, 10) })}
                   value={this.Num}
                   defaultValue={Count}
@@ -153,9 +156,9 @@ export const Submit = (props) => {
                   }}
                   keyboardType="numeric"
                 /> */}
-              </DialogContent>
-            </Dialog>
-            </View>
+          </DialogContent>
+        </Dialog>
+      </View>
     )
 }
 
