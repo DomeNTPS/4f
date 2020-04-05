@@ -32,6 +32,9 @@ import { fetchUpdateAsync } from 'expo/build/Updates/Updates'
 import useForceUpdate from 'use-force-update'
 import config from '../config'
 import { Table, Row, Rows } from 'react-native-table-component'
+import SearchableDropdown from 'react-native-searchable-dropdown'
+
+
 export const Submit = (props) => {
   const {
     navigation
@@ -51,6 +54,10 @@ export const Submit = (props) => {
     ],
     data: []
   })
+  const [KKSInfo, setKKSInfo] = useState({
+    item: []
+  })
+const [KKSSelect, setKKSselect] = React.useState([]);
   useEffect(() => {
     const fetching = async () => {
       try {
@@ -60,7 +67,10 @@ export const Submit = (props) => {
           let allitemwithdrawinArray = allitemwithdraw.data.map(({ Count_withdraw, NameEquip }) => [NameEquip, Count_withdraw])
           // console.log(allitemwithdrawinArray)
           setwithdrawInfo((prev) => ({ ...prev, data: allitemwithdrawinArray }))
-          // console.log('token: ', tokenfromstore)
+          let allKKS = await axios.get(`${config.apiUrl}/changeRunningEquip/setKKS/${tokenfromstore}`)
+          let allKKSaddId =allKKS.data.map(({KKS},index)=>({id : index ,name : KKS}))
+          // console.log(allKKSaddId)
+          setKKSInfo((prev) => ({ ...prev, item: allKKSaddId }))
           setTOKEN({
             token: `${tokenfromstore}`
           })
@@ -75,6 +85,10 @@ export const Submit = (props) => {
     }
     fetching()
   }, [])
+  const handleChangeNameEquip = async () => {
+    setKKSselect(event.target.value);
+    console.log(event.target.value)
+  };
     return (
       <>
         <TouchableOpacity
@@ -132,13 +146,46 @@ export const Submit = (props) => {
         >
           <DialogContent
             style={{
-              backgroundColor: '#F7F7F8',
+              backgroundColor: '#F7F7F8'
             }}
           >
             <Table borderStyle={{ borderWidth: 2, borderColor: 'orange' }}>
               <Row data={withdrawInfo.tableHead} style={styles.head} textStyle={styles.text} />
               <Rows data={withdrawInfo.data} textStyle={styles.text} />
             </Table>
+            <SearchableDropdown
+              onTextChange={(text) => (text)}
+              onItemSelect={(item) => (handleChangeNameEquip)}
+              containerStyle={{
+                paddingTop:  10,
+                width: 150
+              }}
+              textInputStyle={{
+                padding: 12,
+                borderWidth: 1,
+                borderColor: '#ccc',
+                borderRadius: 5
+              }}
+              itemStyle={{
+                padding: 10,
+                marginTop: 2,
+                backgroundColor: '#ddd',
+                borderColor: '#bbb',
+                borderWidth: 1,
+                borderRadius: 5
+              }}
+              itemTextStyle={{
+                color: '#222'
+              }}
+              itemsContainerStyle={{
+                maxHeight: 140
+              }}
+              items={KKSInfo.item}
+              placeholder="KKS code"
+              resetValue={false}
+              underlineColorAndroid="transparent"
+            />
+            
             {/* <TextInput
                   onChangeText={(Num) => setWithdrawCount({ CountUse: parseInt(Num, 10) })}
                   value={this.Num}
