@@ -57,7 +57,8 @@ export const Submit = (props) => {
   const [KKSInfo, setKKSInfo] = useState({
     item: []
   })
-const [KKSSelect, setKKSselect] = React.useState([]);
+  const [nameselect, setNameselect] = useState('')
+  const [KKSSelect, setKKSselect] = React.useState([]);
   useEffect(() => {
     const fetching = async () => {
       try {
@@ -87,7 +88,10 @@ const [KKSSelect, setKKSselect] = React.useState([]);
   }, [])
   const handleChangeNameEquip = async (value) => {
     setKKSselect(value.name);
-    console.log(value.name)
+    // console.log(value.name)
+    let setNameEquip = await axios.get(`${config.apiUrl}/changeRunningEquip/setName/${value.name}`)
+    setNameselect(setNameEquip.data[0].NameEquip)
+    console.log(setNameEquip.data[0].NameEquip)
   };
     return (
       <>
@@ -133,11 +137,15 @@ const [KKSSelect, setKKSselect] = React.useState([]);
                 key="button-1"
               />
               <DialogButton
-                text="OK"
+                text="Confirm"
                 bordered
                 onPress={() => {
-                  // insertwithdraw(),
+                  if (nameselect==''){
+                    alert([{ text: 'please select kks' }])
+                  }else{
+                    // insertwithdraw(),
                   setconfirmDialog({ defaultAnimationDialog: false })
+                  }
                 }}
                 key="button-2"
               />
@@ -153,39 +161,45 @@ const [KKSSelect, setKKSselect] = React.useState([]);
               <Row data={withdrawInfo.tableHead} style={styles.head} textStyle={styles.text} />
               <Rows data={withdrawInfo.data} textStyle={styles.text} />
             </Table>
-            <SearchableDropdown
-              onTextChange={(text) => (text)}
-              onItemSelect={handleChangeNameEquip}
-              containerStyle={{
-                paddingTop:  10,
-                width: 150
-              }}
-              textInputStyle={{
-                padding: 12,
-                borderWidth: 1,
-                borderColor: '#ccc',
-                borderRadius: 5
-              }}
-              itemStyle={{
-                padding: 10,
-                marginTop: 2,
-                backgroundColor: '#ddd',
-                borderColor: '#bbb',
-                borderWidth: 1,
-                borderRadius: 5
-              }}
-              itemTextStyle={{
-                color: '#222'
-              }}
-              itemsContainerStyle={{
-                maxHeight: 140
-              }}
-              items={KKSInfo.item}
-              placeholder="KKS code"
-              resetValue={false}
-              underlineColorAndroid="transparent"
-            />
-            
+            <View style={styles.search}>
+              <SearchableDropdown
+                onTextChange={(text) => text}
+                onItemSelect={handleChangeNameEquip}
+                containerStyle={{
+                  width: 190
+                }}
+                textInputStyle={{
+                  padding: 12,
+                  borderWidth: 1,
+                  borderColor: '#ccc',
+                  borderRadius: 5
+                }}
+                itemStyle={{
+                  padding: 10,
+                  marginTop: 2,
+                  backgroundColor: '#ddd',
+                  borderColor: '#bbb',
+                  borderWidth: 1,
+                  borderRadius: 5
+                }}
+                itemTextStyle={{
+                  color: '#222'
+                }}
+                itemsContainerStyle={{
+                  maxHeight: 140
+                }}
+                items={KKSInfo.item}
+                placeholder="KKS code"
+                resetValue={false}
+                underlineColorAndroid="transparent"
+              />
+
+              <Text editable={false} style={{ fontSize: 20 }}>
+                {' '}
+                {nameselect}{' '}
+              </Text>
+            </View>
+
             {/* <TextInput
                   onChangeText={(Num) => setWithdrawCount({ CountUse: parseInt(Num, 10) })}
                   value={this.Num}
@@ -227,5 +241,9 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   head: { height: 40, backgroundColor: 'orange' },
-  text: { margin: 6 }
+  text: { margin: 6 },
+  search :{
+    display: 'flex',
+    marginTop: 10,
+  },
 })
