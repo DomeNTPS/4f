@@ -85,9 +85,9 @@ const [KKSSelect, setKKSselect] = React.useState([]);
     }
     fetching()
   }, [])
-  const handleChangeNameEquip = async () => {
-    setKKSselect(event.target.value);
-    console.log(event.target.value)
+  const handleChangeNameEquip = async (value) => {
+    setKKSselect(value.name);
+    console.log(value.name)
   };
     return (
       <>
@@ -155,7 +155,7 @@ const [KKSSelect, setKKSselect] = React.useState([]);
             </Table>
             <SearchableDropdown
               onTextChange={(text) => (text)}
-              onItemSelect={(item) => (handleChangeNameEquip)}
+              onItemSelect={handleChangeNameEquip}
               containerStyle={{
                 paddingTop:  10,
                 width: 150
