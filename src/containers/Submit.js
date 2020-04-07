@@ -57,20 +57,27 @@ export const Submit = (props) => {
   const [KKSInfo, setKKSInfo] = useState({
     item: []
   })
+  const [onlyitemwithdraw, setonlyitemwithdraw] = React.useState([])
   const [nameselect, setNameselect] = useState('')
-  const [KKSSelect, setKKSselect] = React.useState([]);
+  const [KKSSelect, setKKSselect] = React.useState([])
   useEffect(() => {
     const fetching = async () => {
       try {
         const tokenfromstore = await AsyncStorage.getItem('token')
         if (tokenfromstore !== null) {
           let allitemwithdraw = await axios.get(`${config.apiUrl}/itemcheck/withdraw/${tokenfromstore}`)
-          let allitemwithdrawinArray = allitemwithdraw.data.map(({ Count_withdraw, NameEquip }) => [NameEquip, Count_withdraw])
-          // console.log(allitemwithdrawinArray)
-          setwithdrawInfo((prev) => ({ ...prev, data: allitemwithdrawinArray }))
+          let allitemwithdrawmore = allitemwithdraw.data.filter(({Count_withdraw}) => Count_withdraw > 0)
+          let allitemwithdrawinArray = allitemwithdrawmore.map(({ Count_withdraw, NameEquip }) => [NameEquip, Count_withdraw])
+
+          setwithdrawInfo((prev) => ({...prev,data : allitemwithdrawinArray}));
+       
           let allKKS = await axios.get(`${config.apiUrl}/changeRunningEquip/setKKS/${tokenfromstore}`)
-          let allKKSaddId =allKKS.data.map(({KKS},index)=>({id : index ,name : KKS}))
-          // console.log(allKKSaddId)
+          // console.log(allitemwithdrawmore[0].NameEquip)
+          // let allKKSfiler = allKKS.data.filter(({KKS,NameEquip}) => {
+          //       return NameEquip == allitemwithdrawmore.NameEquip
+          // })
+          let allKKSaddId = allKKS.data.map(({KKS},index)=>({id : index ,name : KKS}))
+          // console.log(allKKSfiler)
           setKKSInfo((prev) => ({ ...prev, item: allKKSaddId }))
           setTOKEN({
             token: `${tokenfromstore}`
@@ -93,6 +100,14 @@ export const Submit = (props) => {
     setNameselect(setNameEquip.data[0].NameEquip)
     console.log(setNameEquip.data[0].NameEquip)
   };
+  const changeEquipment = async () => {
+    // console.log(now)
+    // console.log(DateExprie)
+     let setNameEquip = await axios.post(`${config.apiUrl}/changeRunningEquip/updaterunning/`,{
+       token: `${TOKEN.token}`,
+       KKS: `${KKSSelect}`
+     })
+  }
     return (
       <>
         <TouchableOpacity
@@ -143,7 +158,7 @@ export const Submit = (props) => {
                   if (nameselect==''){
                     alert([{ text: 'please select kks' }])
                   }else{
-                    // insertwithdraw(),
+                  changeEquipment(),
                   setconfirmDialog({ defaultAnimationDialog: false })
                   }
                 }}
