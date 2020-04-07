@@ -76,7 +76,19 @@ export const Submit = (props) => {
           // let allKKSfiler = allKKS.data.filter(({KKS,NameEquip}) => {
           //       return NameEquip == allitemwithdrawmore.NameEquip
           // })
-          let allKKSaddId = allKKS.data.map(({KKS},index)=>({id : index ,name : KKS}))
+          
+          const compareEquipmentNameAndhWithdrawItem = ({itemWithdraws,codeItems}) => {
+             const nameEquips = itemWithdraws.map((itemWithdraw)=>itemWithdraw[0])
+
+            return codeItems.filter((codeItem,i)=>{
+
+              return nameEquips.includes(codeItem.NameEquip)
+              
+            })
+          }
+          
+          /* console.log() */
+          let allKKSaddId = compareEquipmentNameAndhWithdrawItem({codeItems :allKKS.data,itemWithdraws:allitemwithdrawinArray}).map(({KKS},index)=>({id : index ,name : KKS}))
           // console.log(allKKSfiler)
           setKKSInfo((prev) => ({ ...prev, item: allKKSaddId }))
           setTOKEN({
@@ -262,3 +274,31 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 })
+
+
+/* 
+INPUT:  itemWithdraw = [["Valve", 5], ["Flow Rate meter", 1]]
+        codeitem = [{
+          "Valve",ithdraw = [["Valve", 5], ["Flow Rate meter
+          "10LAB10AA001"
+        }, {
+          "Flow Rate meter",
+          "10LAB10CF00TT001"
+        }, {
+          "tempater meter",
+          "10LAB10CT00TT001"
+        }, {
+          "Persumer meter",
+          "10LAB10CP0TT001"
+        },....]
+
+.
+
+OUTPUT: codeitem = [{
+          NameEquip :"Valve",
+          KKS:"10LAB10AA001"
+        }, {
+          "Flow Rate meter",
+          "10LAB10CF00TT001"
+        },....]
+*/
