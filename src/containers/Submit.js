@@ -128,6 +128,7 @@ export const Submit = (props) => {
     let allKKSaddId = compareEquipmentNameAndhWithdrawItem({codeItems :allKKS.data,itemWithdraws:allitemwithdrawinArray}).map(({KKS},index)=>({id : index ,name : KKS}))
           // console.log(allKKSfiler)
     setKKSInfo((prev) => ({ ...prev, item: allKKSaddId }))
+
   }
     return (
       <>
