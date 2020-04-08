@@ -79,11 +79,8 @@ export const Submit = (props) => {
           
           const compareEquipmentNameAndhWithdrawItem = ({itemWithdraws,codeItems}) => {
              const nameEquips = itemWithdraws.map((itemWithdraw)=>itemWithdraw[0])
-
             return codeItems.filter((codeItem,i)=>{
-
               return nameEquips.includes(codeItem.NameEquip)
-              
             })
           }
           
@@ -113,12 +110,24 @@ export const Submit = (props) => {
     console.log(setNameEquip.data[0].NameEquip)
   };
   const changeEquipment = async () => {
-    // console.log(now)
-    // console.log(DateExprie)
-     let setNameEquip = await axios.post(`${config.apiUrl}/changeRunningEquip/updaterunning/`,{
-       token: `${TOKEN.token}`,
-       KKS: `${KKSSelect}`
-     })
+    let setNameEquip = await axios.post(`${config.apiUrl}/changeRunningEquip/updaterunning/`,{
+      token: `${TOKEN.token}`,
+      KKS: `${KKSSelect}`
+    })
+    let allitemwithdraw = await axios.get(`${config.apiUrl}/itemcheck/withdraw/${TOKEN.token}`)
+    let allitemwithdrawmore = allitemwithdraw.data.filter(({Count_withdraw}) => Count_withdraw > 0)
+    let allitemwithdrawinArray = allitemwithdrawmore.map(({ Count_withdraw, NameEquip }) => [NameEquip, Count_withdraw])
+    setwithdrawInfo((prev) => ({...prev,data : allitemwithdrawinArray}));
+    let allKKS = await axios.get(`${config.apiUrl}/changeRunningEquip/setKKS/${TOKEN.token}`)
+    const compareEquipmentNameAndhWithdrawItem = ({itemWithdraws,codeItems}) => {
+      const nameEquips = itemWithdraws.map((itemWithdraw)=>itemWithdraw[0])
+      return codeItems.filter((codeItem,i)=>{
+        return nameEquips.includes(codeItem.NameEquip)
+      })
+    }
+    let allKKSaddId = compareEquipmentNameAndhWithdrawItem({codeItems :allKKS.data,itemWithdraws:allitemwithdrawinArray}).map(({KKS},index)=>({id : index ,name : KKS}))
+          // console.log(allKKSfiler)
+    setKKSInfo((prev) => ({ ...prev, item: allKKSaddId }))
   }
     return (
       <>
@@ -199,7 +208,8 @@ export const Submit = (props) => {
                   padding: 12,
                   borderWidth: 1,
                   borderColor: '#ccc',
-                  borderRadius: 5
+                  borderRadius: 5,
+                  justifyContent: 'center'
                 }}
                 itemStyle={{
                   padding: 10,
@@ -269,10 +279,15 @@ const styles = StyleSheet.create({
   },
   head: { height: 40, backgroundColor: 'orange' },
   text: { margin: 6 },
-  search :{
+  search: {
     display: 'flex',
     marginTop: 10,
+    justifyContent: 'center'
   },
+  name: {
+    fontSize: 16,
+    justifyContent: 'center',
+  }
 })
 
 

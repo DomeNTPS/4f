@@ -1,6 +1,6 @@
 import Constants from 'expo-constants'
 
-export const prodUrl = 'http://192.168.1.44:5000' // real server 'http://34.87.152.9:5000'
+export const prodUrl = 'http://192.168.1.40:5000' // real server 'http://34.87.152.9:5000'
 
 const ENV = {
   dev: {
