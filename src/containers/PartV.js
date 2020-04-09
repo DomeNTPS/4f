@@ -241,10 +241,10 @@ export const PartV = (props) => {
                   step={1}
                   valueType="integer"
                   rounded
-                  textColor="#B0228C"
+                  textColor="#000"
                   iconStyle={{ color: 'white' }}
-                  rightButtonBackgroundColor="#EA378A"
-                  leftButtonBackgroundColor="#E56B70"
+                  rightButtonBackgroundColor="#ec5707"
+                  leftButtonBackgroundColor="#F79862"
                   minValue={1}
                   maxValue={partInfo.CountStock}
                   containerStyle={{ margin: 'auto', marginTop: 10 }}
