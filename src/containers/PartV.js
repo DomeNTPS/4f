@@ -32,6 +32,7 @@ import { fetchUpdateAsync } from 'expo/build/Updates/Updates'
 import useForceUpdate from 'use-force-update'
 // import Logo from "../../Image/boiler/Water-Treatment-Steam-Boiler-749x372.png";\
 import config from '../config'
+import NumericInput, { calcSize } from 'react-native-numeric-input'
 
 export const PartV = (props) => {
   const { navigation } = props
@@ -42,7 +43,7 @@ export const PartV = (props) => {
     KKS: 'loading',
     NameEquip: 'loading',
     URLimage: 'loading',
-    CountStock: 'loading',
+    CountStock: 0,
     KKS1: 'loading',
     KKS4: 'loading'
   })
@@ -58,6 +59,7 @@ export const PartV = (props) => {
   const [WithdrawCount, setWithdrawCount] = useState({
     CountUse: 0
   })
+  const [num, setNum] = useState(1)
   useEffect(() => {
     const fetching = async () => {
       try {
@@ -96,20 +98,20 @@ export const PartV = (props) => {
     try {
       await axios.post(`${config.apiUrl}/insertlog/`, {
         token: `${TOKEN.token}`,
-        Process :'WithdrawEquipment',
+        Process: 'WithdrawEquipment',
         KKS1: `${partInfo.KKS1}`,
         KKS4: `${partInfo.KKS4}`,
-        Countlog: `${WithdrawCount.CountUse}`,
+        Countlog: num,
         Datelog: `${now}`
       })
       await axios.post(`${config.apiUrl}/insertwithdraw/`, {
         token: `${TOKEN.token}`,
         KKS1: `${partInfo.KKS1}`,
         KKS4: `${partInfo.KKS4}`,
-        Count_withdraw: WithdrawCount.CountUse,
+        Count_withdraw: num
       })
       await axios.post(`${config.apiUrl}/updateinventory/`, {
-        CountStock: `${partInfo.CountStock - WithdrawCount.CountUse}`,
+        CountStock: partInfo.CountStock - num,
         KKS4: `${partInfo.KKS4}`,
         KKS1: `${partInfo.KKS1}`
       })
@@ -192,6 +194,7 @@ export const PartV = (props) => {
                     text="CANCEL"
                     bordered
                     onPress={() => {
+                      console.log(partInfo.CountStock)
                       setAnimationDialog({ defaultAnimationDialog: false })
                     }}
                     key="button-1"
@@ -213,7 +216,7 @@ export const PartV = (props) => {
                 }}
               >
                 <Text>In inventory {partInfo.CountStock} piece </Text>
-                <TextInput
+                {/* <TextInput
                   onChangeText={(Num) => setWithdrawCount({ CountUse: parseInt(Num, 10) })}
                   value={this.Num}
                   defaultValue={Count}
@@ -228,6 +231,24 @@ export const PartV = (props) => {
                     fontSize: 20
                   }}
                   keyboardType="numeric"
+                /> */}
+                <NumericInput
+                  value={num}
+                  onChange={(value) => setNum(value)} //ควยโจ้..
+                  totalWidth={170}
+                  totalHeight={30}
+                  iconSize={25}
+                  step={1}
+                  valueType="integer"
+                  rounded
+                  textColor="#B0228C"
+                  iconStyle={{ color: 'white' }}
+                  rightButtonBackgroundColor="#EA378A"
+                  leftButtonBackgroundColor="#E56B70"
+                  minValue={0}
+                  maxValue={partInfo.CountStock}
+                  containerStyle={{ margin: 'auto', marginTop: 10 }}
+                  validateOnBlur={partInfo.CountStock <= num ? true : false}
                 />
               </DialogContent>
             </Dialog>
