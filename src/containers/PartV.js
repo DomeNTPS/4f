@@ -234,7 +234,7 @@ export const PartV = (props) => {
                 /> */}
                 <NumericInput
                   value={num}
-                  onChange={(value) => setNum(value)} //ควยโจ้..
+                  onChange={(value) => setNum(value)} 
                   totalWidth={170}
                   totalHeight={30}
                   iconSize={25}
@@ -245,7 +245,7 @@ export const PartV = (props) => {
                   iconStyle={{ color: 'white' }}
                   rightButtonBackgroundColor="#EA378A"
                   leftButtonBackgroundColor="#E56B70"
-                  minValue={0}
+                  minValue={1}
                   maxValue={partInfo.CountStock}
                   containerStyle={{ margin: 'auto', marginTop: 10 }}
                   validateOnBlur={partInfo.CountStock <= num ? true : false}
