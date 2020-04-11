@@ -96,24 +96,14 @@ export const PartV = (props) => {
   }
   const insertwithdraw = async () => {
     try {
-      await axios.post(`${config.apiUrl}/insertlog/`, {
-        token: `${TOKEN.token}`,
-        Process: 'WithdrawEquipment',
-        KKS1: `${partInfo.KKS1}`,
-        KKS4: `${partInfo.KKS4}`,
-        Countlog: num,
-        Datelog: `${now}`
-      })
       await axios.post(`${config.apiUrl}/insertwithdraw/`, {
         token: `${TOKEN.token}`,
         KKS1: `${partInfo.KKS1}`,
         KKS4: `${partInfo.KKS4}`,
-        Count_withdraw: num
-      })
-      await axios.post(`${config.apiUrl}/updateinventory/`, {
+        Count_withdraw: num,
+        Process: 'WithdrawEquipment',
         CountStock: partInfo.CountStock - num,
-        KKS4: `${partInfo.KKS4}`,
-        KKS1: `${partInfo.KKS1}`
+        Datelog: `${now}`
       })
       const kks = navigation.getParam('KKS', 'some default value')
       let { data } = await axios.get(`${config.apiUrl}/running_equipment/${kks}`)
