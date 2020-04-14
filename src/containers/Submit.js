@@ -178,7 +178,7 @@ export const Submit = (props) => {
                 bordered
                 onPress={() => {
                   if (nameselect==''){
-                    alert([{ text: 'please select kks' }])
+                    alert('Please select Equipment')
                   }else{
                   changeEquipment(),
                   setconfirmDialog({ defaultAnimationDialog: false })
