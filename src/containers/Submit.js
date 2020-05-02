@@ -140,7 +140,7 @@ export const Submit = (props) => {
             setconfirmDialog({ defaultAnimationDialog: true })
           }}
         >
-          <Text style={styles.buttonText}> Confirm fix </Text>
+          <Text style={styles.buttonText}> Device confirmation </Text>
         </TouchableOpacity>
         <Dialog
           onDismiss={() => {

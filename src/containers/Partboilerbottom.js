@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   containerbottom0: {
     borderColor: '#000',
-    borderWidth: 2,
+    borderWidth: 5,
     height: '10%',
     width: '50%',
     position: 'absolute',
